@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Buscador - Enciclopedia de la la Salud</title>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
+    <nav>
+      <a href="index.html">Inicio</a> |
+      <a href="buscador.html">Buscador</a> |
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Buscador de artículos</h2>
+    <form action="respuesta_buscador.html" method="get">
+
+      <label for="descripcion">Descripción:</label><br>
+      <input type="text" id="descripcion" name="descripcion" maxlength="200" required><br><br>
+
+      <label for="causas">Causas:</label><br>
+      <input type="text" id="causas" name="causas" maxlength="200"><br><br>
+
+      <label for="sintomas">Síntomas:</label><br>
+      <select id="sintomas" name="sintomas" multiple>
+        <option value="fiebre">Fiebre</option>
+        <option value="vomito">Vómito</option>
+        <option value="diarrea">Diarrea</option>
+        <option value="dolor">Dolor muscular</option>
+      </select><br><br>
+      
+      <label for="pruebas">Pruebas y exámenes:</label><br>
+      <select id="pruebas" name="pruebas" multiple>
+        <option value="sangre">Análisis de sangre</option>
+        <option value="eco">Ecografía</option>
+        <option value="rx">Radiografía</option>
+        <option value="tac">Tomografía</option>
+        <option value="ultra">Ultrasonido</option>
+      </select><br><br>
+
+      <label for="tratamiento">Tratamiento:</label><br>
+      <input type="text" id="tratamiento" name="tratamiento" maxlength="200"><br><br>
+
+      <fieldset>
+        <legend>Expectativas:</legend>
+        <input type="radio" id="negativas" name="expectativas" value="negativas">
+        <label for="negativas">Negativas</label><br>
+        <input type="radio" id="sindefinir" name="expectativas" value="sindefinir">
+        <label for="sindefinir">Positivas</label><br>
+        <input type="radio" id="positivas" name="expectativas" value="positivas">
+        <label for="positivas">Sin definir</label>
+      </fieldset><br>
+
+      <button type="submit">Buscar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
+    <a href="index.html">Volver al inicio</a>
+    <a href="contacto.html">Contacto</a>
+  </footer>
+</body>
+</html>
