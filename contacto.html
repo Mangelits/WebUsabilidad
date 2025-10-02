@@ -15,14 +15,14 @@
 
   <main>
     <h2>Formulario de contacto</h2>
-    <p>Por favor, rellene los siguientes campos. Los campos marcados como (*) obligatorios son necesarios.</p>
+    <p>Por favor, rellene los siguientes campos. Los campos marcados como obligatorios son necesarios.</p>
 
     <form action="respuesta_contacto.html" method="get">
-      <label for="asunto">* Asunto:</label><br>
-      <input type="text" id="asunto" name="asunto" maxlength="100" placeholder="100 caracteres máx" required><br><br>
+      <label for="asunto">Asunto:</label><br>
+      <input type="text" id="asunto" name="asunto" maxlength="100" required><br><br>
 
-      <label for="comentario">* Comentario o pregunta:</label><br>
-      <textarea id="comentario" name="comentario" rows="5" cols="40" maxlength="2000" placeholder="2000 caracteres maximos"></textarea><br><br>
+      <label for="comentario">Comentario o pregunta:</label><br>
+      <textarea id="comentario" name="comentario" rows="5" cols="40" maxlength="2000" required></textarea><br><br>
 
       <label for="yo-soy">Yo soy:</label><br>
       <select id="yo-soy" name="yo-soy">
@@ -49,8 +49,7 @@
       </fieldset><br>
 
       <label for="email">Correo electrónico:</label><br>
-      <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
- placeholder="modelo-email@mail.com" maxlength="1000"><br><br>
+      <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="modelo-email@mail.com" maxlength="1000"><br><br>
 
       <input type="checkbox" id="info" name="info" value="si">
       <label for="info">Deseo recibir más información</label><br><br>
@@ -61,9 +60,9 @@
 
   <footer>
     <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-    <a href="index.html">Volver al inicio</a>
+    <p><a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
+    
   </footer>
 </body>
 </html>
-
 
