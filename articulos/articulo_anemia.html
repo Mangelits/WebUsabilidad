@@ -2,11 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Anemia - Enciclopedia de la Salud</title>
+    <link rel="stylesheet" href="../estilos.css">
     <link rel="stylesheet" href="../estilos-css/estilo_articulos.css">
 </head>
 <body>
     <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
         <h1><a href="../index.html">Enciclopedia de la Salud</a></h1>
         <nav>
             <a href="../index.html">Inicio</a>
@@ -14,9 +17,7 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Migas de Pan -->
-        <nav aria-label="Migas de pan">
+    <main id="contenido-principal"> <nav aria-label="Migas de pan">
             <ol>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../letras/letra_a.html">Índice A</a></li>
@@ -27,9 +28,9 @@
         <article>
             <h2>Anemia</h2>
 
-            <!-- INICIO DE LA TABLA DE CONTENIDOS -->
             <section id="tabla-de-contenidos">
                 <h3>Tabla de Contenidos</h3>
+                <p>Navegue rápidamente a la sección de interés:</p>
                 <ul>
                     <li><a href="#descripcion">Descripción</a></li>
                     <li><a href="#tipos">Tipos de anemia</a></li>
@@ -48,7 +49,10 @@
                 <h3 id="descripcion">Descripción</h3>
                 <p>La <strong>anemia</strong> es una enfermedad en la que el número de glóbulos rojos, o la concentración de hemoglobina en sangre, es inferior a lo normal. La hemoglobina es una proteína dentro de los glóbulos rojos que transporta oxígeno desde los pulmones al resto del cuerpo.</p>
                 <p>Cuando una persona tiene anemia, su cuerpo no recibe suficiente sangre rica en oxígeno, lo que provoca que se sienta cansada o débil.</p>
-                <img src="../img/anemia.jpg" alt="Diferencia entre cantidad de glóbulos rojos en persona normal y persona con anemia" width="300">
+                <figure>
+                    <img src="../img/anemia.jpg" alt="Diferencia entre cantidad de glóbulos rojos en persona normal y persona con anemia" width="300">
+                    <figcaption>Representación visual de la escasez de glóbulos rojos en la anemia comparada con la sangre normal.</figcaption>
+                </figure>
             </section>
 
             <section>
@@ -208,7 +212,10 @@
             <section>
                 <h3 id="video">Vídeo explicativo</h3>
                 <h4>Por qué la anemia es más importante de lo que crees</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/pynJ01n218E?si=dRrrYjxtGgeS63JO" title="Por qué la anemia es más importante de lo que crees" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figure>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/pynJ01n218E?si=dRrrYjxtGgeS63JO" title="Por qué la anemia es más importante de lo que crees" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption>Video del canal TED-Ed sobre la importancia de la anemia.</figcaption>
+                </figure>
             </section>
         </article>
     </main>
@@ -216,7 +223,6 @@
     <footer>
         <p><a href="../letras/letra_a.html">Volver al índice de A</a></p>
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
-    
     </footer>
 </body>
 </html>
