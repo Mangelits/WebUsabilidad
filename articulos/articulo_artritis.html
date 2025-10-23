@@ -2,17 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Artritis - Enciclopedia de la Salud</title>
+    <link rel="stylesheet" href="../estilos.css">
     <link rel="stylesheet" href="../estilos-css/estilo_articulos.css">
 </head>
 <body>
     <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
         <h1><a href="../index.html">Enciclopedia de la Salud</a></h1>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../buscador.html">Buscador</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- Migas de Pan -->
-        <nav aria-label="Migas de pan">
+    <main id="contenido-principal"> <nav aria-label="Migas de pan">
             <ol>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../letras/letra_a.html">Índice A</a></li>
@@ -23,9 +28,9 @@
         <article>
             <h2>Artritis</h2>
 
-            <!-- INICIO DE LA TABLA DE CONTENIDOS -->
             <section id="tabla-de-contenidos">
                 <h3>Tabla de Contenidos</h3>
+                <p>Navegue rápidamente a la sección de interés:</p>
                 <ul>
                     <li><a href="#descripcion">Descripción</a></li>
                     <li><a href="#causas">Causas</a></li>
@@ -44,8 +49,10 @@
                 <h3 id="descripcion">Descripción</h3>
                 <p>La <strong>artritis</strong> es la inflamación o el desgaste de una o varias articulaciones. Causa dolor y rigidez y puede empeorar con la edad. No es una única enfermedad, sino un término general que agrupa más de 100 tipos diferentes de afecciones articulares y reumatológicas.</p>
                 <p>Los dos tipos más comunes son la <strong>artrosis</strong> (osteoartritis), que implica el desgaste del cartílago, y la <strong>artritis reumatoide</strong>, que es un trastorno autoinmune.</p>
-                <img src="../img/artritis.jpg" alt="Diferencia entre artritis reumatoide y artrosis" width="300">
-
+                <figure>
+                    <img src="../img/artritis.jpg" alt="Diferencia entre artritis reumatoide y artrosis" width="300">
+                    <figcaption>Diferencias visuales entre el daño causado por la artrosis (desgaste del cartílago) y la artritis reumatoide (inflamación de la membrana sinovial).</figcaption>
+                </figure>
             </section>
 
             <section>
@@ -183,7 +190,7 @@
                             <li><strong>Artroplastia (Reemplazo articular):</strong> Se extrae la articulación dañada y se reemplaza por una prótesis (común en cadera y rodilla).</li>
                             <li><strong>Fusión articular (Artrodesis):</strong> Se unen los huesos de la articulación permanentemente (más común en muñecas o tobillos).</li>
                         </ul>
-                    </d>
+                    </dd>
                 </dl>
             </section>
 
@@ -214,7 +221,10 @@
             <section>
                 <h3 id="video">Vídeo explicativo</h3>
                 <h4>Artrosis y Artritis - Qué es, diferencias, causas y síntomas</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/GdYiFnVHbHI?si=IGjFDkHrjFMYcv4o" title="Artrosis y Artritis - Qué es, diferencias, causas y síntomas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figure>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GdYiFnVHbHI?si=IGjFDkHrjFMYcv4o" title="Artrosis y Artritis - Qué es, diferencias, causas y síntomas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption>Video explicativo sobre las diferencias, causas y síntomas de la artrosis y la artritis.</figcaption>
+                </figure>
             </section>
         </article>
     </main>
@@ -222,7 +232,6 @@
     <footer>
         <p><a href="../letras/letra_a.html">Volver al índice de A</a></p>
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
-    
     </footer>
 </body>
 </html>
