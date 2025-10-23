@@ -1,0 +1,207 @@
+
+html {
+    /* Propiedad extra: box-sizing 
+      Qué hace: Hace que el 'padding' y 'border' se incluyan
+      dentro del ancho (width) total del elemento, 
+      facilitando mucho el diseño.
+    */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* Hereda el box-sizing de html */
+}
+
+body {
+    /* CAMBIO: Fuente Serif (Georgia) para un look más formal */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px; /* Tamaño de letra base para legibilidad */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    color: #333333; /* Color de texto principal (oscuro) */
+    margin: 0;
+    padding: 0;
+    
+    /* Propiedad extra: line-height (altura de línea)
+      Qué hace: Aumenta el espacio entre líneas de texto, 
+      mejorando la legibilidad. (WCAG 1.4.12)
+    */
+    line-height: 1.6;
+}
+
+header, footer {
+    /* CAMBIO: Color formal (gris carbón) */
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 1em;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0.5em 0;
+    /* CAMBIO: Tamaño de fuente ajustado */
+    font-size: 2em; 
+    text-align: center; /* Propiedad extra: Centra el título */
+}
+
+header nav {
+    text-align: center; /* Propiedad extra: Centra la navegación */
+    padding-bottom: 1em;
+}
+
+header a, footer a {
+    color: #ffffff;
+    /* Propiedad extra: text-decoration
+      Qué hace: Quita el subrayado por defecto de los enlaces.
+    */
+    text-decoration: none;
+    font-weight: bold; /* Propiedad extra: Texto en negrita */
+    padding: 8px;
+    margin: 0 5px;
+    /* CAMBIO: Eliminado border-radius */
+}
+
+main {
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    margin: 20px auto; /* Centra el bloque principal */
+    padding: 20px;
+    border: 1px solid #ddd; /* Borde sutil */
+
+    /* Propiedades extra para centrar y limitar el ancho */
+    max-width: 900px; /* Ancho máximo (WCAG 1.4.10 Reflow) */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+    /* CAMBIO: Eliminado border-radius */
+}
+
+h2 {
+    /* CAMBIO: Tamaño de fuente ajustado */
+    font-size: 1.75em;
+    /* CAMBIO: Color formal (gris carbón) */
+    color: #2c3e50; 
+    border-bottom: 2px solid #f4f4f4; /* Línea separadora */
+    padding-bottom: 10px;
+}
+
+footer {
+    text-align: center; /* Propiedad extra: centrado */
+    margin-top: 20px;
+    font-size: 0.9em; /* Propiedad extra: tamaño de fuente */
+}
+
+/* --- ESTILOS DE ACCESIBILIDAD (Foco) --- */
+
+/* Define un indicador de foco claro para enlaces, botones y campos 
+  (WCAG 2.4.7 Focus Visible - AA)
+*/
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    /* Propiedad extra: outline
+      Qué hace: Define un borde de foco personalizado.
+    */
+    outline: 3px solid #0078d4; /* Mantenemos azul para claridad */
+    outline-offset: 2px; /* Propiedad extra: separa el borde del elemento */
+    /* CAMBIO: Eliminado border-radius */
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA FORMULARIOS --- */
+
+section {
+    background-color: #fdfdfd;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    /* CAMBIO: Eliminado border-radius */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Espaciado entre cada bloque del formulario (label/input).
+  Usar 'margin' es mejor que <br> (WCAG 1.3.1 Info and Relationships)
+*/
+form div,
+form fieldset {
+    margin-bottom: 1.5em; 
+}
+
+label,
+legend {
+    /* Propiedad extra: resalta las etiquetas */
+    font-weight: bold; 
+    color: #333;
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+    /* Propiedad extra: display
+      Qué hace: Asegura que la etiqueta ocupe su propia línea.
+    */
+    display: block; 
+}
+
+/* Estilos para campos de texto, email, fecha, textarea y select */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    /* Propiedad extra: width
+      Qué hace: Hace que los campos ocupen el 100% del contenedor.
+      (Facilita el diseño responsive - WCAG 1.3.4 Orientation)
+    */
+    width: 100%;
+    
+    padding: 10px;
+    /* CAMBIO: Fuente Serif (Georgia) heredada */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    /* CAMBIO: Eliminado border-radius */
+}
+
+/* Contenedor de radio buttons y checkboxes */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 1.5em;
+    /* CAMBIO: Eliminado border-radius */
+    background-color: #ffffff;
+}
+
+fieldset legend {
+    padding: 0 10px; /* Separa la leyenda del borde */
+    margin-left: 5px; /* Alineación */
+}
+
+/* Estilos para radio buttons y checkboxes */
+fieldset div label {
+    font-weight: normal; /* Las etiquetas dentro del fieldset no son negrita */
+    /* Propiedad extra: alinea la etiqueta con el input */
+    display: inline-block; 
+    margin-left: 5px;
+}
+
+/* Botón de envío */
+button[type="submit"] {
+    font-size: 1.1em;
+    font-weight: bold; /* Propiedad extra */
+    color: #ffffff;
+    /* CAMBIO: Color formal (gris carbón) */
+    background-color: #2c3e50;
+    border: none;
+    padding: 12px 25px;
+    
+    /* Propiedad extra: cursor */
+    cursor: pointer; /* Indica que es clickeable */
+    /* CAMBIO: Eliminado border-radius */
+    
+    /* Propiedad extra: transition
+      Qué hace: Crea una animación suave para el cambio de color.
+    */
+    transition: background-color 0.2s;
+}
+
+/* Estado :hover y :focus para el botón */
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    /* CAMBIO: Sombra más oscura del color formal */
+    background-color: #1a252f;
+}
+
