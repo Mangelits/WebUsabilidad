@@ -1,54 +1,93 @@
-/* ==================================== */
-/* 1. VARIABLES Y ESTILOS BASE */
-/* ==================================== */
+
+
+/* 1. VARIABLES CSS (MODULARIDAD) */
+
 :root {
-    /* Variables para modularidad */
-    --color-fondo-principal: #f4f4f9;
-    --color-encabezado: #007bff;
+    /* REQUISITO: Variables CSS */
+    --color-principal: #007bff; /* Azul primario, usado en headers, botones */
     --color-texto-base: #333;
-    --color-acento: #ffc107;
-    --fuente-base: Arial, Helvetica, sans-serif;
+    --color-fondo-claro: #f4f4f9;
+    --color-acento: #ffc107; /* Amarillo para acentos/foco */
+    --fuente-base: Arial, Helvetica, sans-serif; /* REQUISITO: font */
+    --espacio-s: 8px;
+    --espacio-m: 16px;
+    --espacio-l: 24px;
 }
 
-/* Estilo general del cuerpo y texto */
+
+/* 2. ESTILOS BASE Y TIPOGRAFÍA */
+
+/* REQUISITO: Propiedades mínimas: font, color, background, margin, padding */
 body {
     font-family: var(--fuente-base); /* font */
     color: var(--color-texto-base); /* color */
-    background: var(--color-fondo-principal); /* background */
+    background: var(--color-fondo-claro); /* background */
     margin: 0; /* margin */
     padding: 0; /* padding */
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    color: var(--color-encabezado); /* color */
+h1, h2 {
+    color: var(--color-principal); /* color */
+    margin-top: var(--espacio-l); /* margin */
+    padding-bottom: var(--espacio-s); /* padding */
 }
 
-/* Estilo de enlaces */
+/* Enlaces base */
 a {
-    color: var(--color-encabezado); /* color */
-    /* Usabilidad: Subrayar todos los enlaces [cite: 1153] */
+    color: var(--color-principal); /* color */
     text-decoration: underline; 
 }
 
-/* Foco visible (accesibilidad) [cite: 178] */
-a:focus, button:focus, input:focus, select:focus, textarea:focus {
+
+/* 3. ACCESIBILIDAD Y USABILIDAD (REQUISITO) */
+
+
+/* Foco visible: Evitar el error de outline: none; */
+:focus {
     outline: 2px solid var(--color-acento); 
-    background-color: #eee; /* background */
+    outline-offset: 2px;
+    background-color: #eee; /* background (para contraste) */
 }
 
-/* Hover (usabilidad) [cite: 194] */
 a:hover {
-    color: var(--color-acento); /* color */
+    color: var(--color-fondo-claro); /* color */
+    background-color: var(--color-principal); /* background */
+    text-decoration: none;
 }
 
-/* ==================================== */
-/* 2. ESTRUCTURA (HEADER/FOOTER/MAIN) */
-/* ==================================== */
+/* Enlace "saltar a"*/
+.saltar-a {
+    position: absolute;
+    left: -9999px; /* Oculto fuera de la pantalla */
+    padding: var(--espacio-s); /* padding */
+    background: var(--color-acento); /* background */
+    border: 1px solid var(--color-texto-base); /* border */
+    z-index: 1000;
+}
+
+.saltar-a:focus {
+    left: 0;
+    top: 0;
+    text-decoration: none;
+    /* Sobrescribe el fondo de :focus, usando el fondo del link */
+    background-color: var(--color-acento); 
+}
+
+/* Campo obligatorio visual */
+.obligatorio {
+    color: red; /* color */
+    font-weight: bold; /* font */
+}
+
+
+
+/* 4. ESTRUCTURA GLOBAL (HEADER / FOOTER / NAV) */
+
 
 header {
-    background: var(--color-encabezado); /* background */
-    padding: 15px; /* padding */
+    background: var(--color-principal); /* background */
+    padding: var(--espacio-m); /* padding */
     color: white; /* color */
 }
 
@@ -57,135 +96,83 @@ header a {
     text-decoration: none;
 }
 
-main {
-    padding: 20px; /* padding */
-    /* Para el enlace "saltar a" */
-    min-height: 50vh; 
+header nav {
+    margin-top: var(--espacio-s); /* margin */
 }
 
-/* Navegación principal (Horizontal simple) */
-header nav ul {
+/* Navegación principal (Índice, Buscador, etc.) */
+.nav-principal {
     list-style: none;
     padding: 0; /* padding */
-    margin: 0; /* margin */
+    margin: 0 0 var(--espacio-s) 0; /* margin */
 }
-
 .nav-principal li {
     display: inline;
-    margin-right: 15px; /* margin */
-    font-size: 1.1em; /* font */
+    margin-right: var(--espacio-l); /* margin */
+    font-weight: bold; /* font */
 }
 
+/* Navegación de letras */
+.nav-letras {
+    list-style: none;
+    padding: 0; /* padding */
+    margin: var(--espacio-s) 0 0 0; /* margin */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* border */
+    padding-top: var(--espacio-s); /* padding */
+}
 .nav-letras li {
-    display: inline-block;
-    border: 1px solid white; /* border */
-    padding: 3px 6px; /* padding */
-    margin: 3px; /* margin */
     font-size: 0.9em; /* font */
+}
+
+
+main {
+    padding: var(--espacio-l); /* padding */
+    min-height: 50vh;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar main */
 }
 
 footer {
     background: var(--color-texto-base); /* background */
     color: white; /* color */
-    padding: 10px; /* padding */
+    padding: var(--espacio-m); /* padding */
     text-align: center;
-    border-top: 3px solid var(--color-acento); /* border */
+    border-top: 5px solid var(--color-acento); /* border */
 }
 
-/* ==================================== */
-/* 3. CLASES SOLICITADAS Y ENLACE "SALTAR A" */
-/* ==================================== */
-
-/* Ejemplo de clase solicitada: un borde para destacar */
-.conBorde {
-    border: 1px dashed var(--color-acento); /* border */
-    padding: 10px; /* padding */
-    margin-bottom: 10px; /* margin */
+footer a {
+    color: var(--color-acento); /* color */
 }
 
-/* Enlace "saltar a" oculto que se muestra al recibir foco [cite: 116] */
-.saltar-a {
-    position: absolute;
-    left: -9999px;
-    background: white; /* background */
-    color: var(--color-encabezado); /* color */
-    padding: 10px; /* padding */
-    z-index: 1000;
-    border: 1px solid var(--color-encabezado); /* border */
-    text-decoration: none;
-}
+/* 5. DISEÑO ADAPTATIVO BÁSICO (INDEX PAGE) */
 
-.saltar-a:focus {
-    left: 0;
-}
 
-/* ==================================== */
-/* 4. MAQUETACIÓN DE FORMULARIOS */
-/* ==================================== */
-
-/* Maquetación simple con display: block */
-.formulario-alineado label {
-    display: block;
-    margin-bottom: 5px; /* margin */
-    font-weight: bold;
-}
-
-.formulario-alineado input[type="text"], 
-.formulario-alineado input[type="email"],
-.formulario-alineado input[type="date"],
-.formulario-alineado textarea,
-.formulario-alineado select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px; /* padding */
-    margin-bottom: 10px; /* margin */
-    border: 1px solid #ccc; /* border */
-}
-
-/* Para radio buttons/checkbox y fieldset, volvemos a la disposición simple */
-fieldset {
-    border: 1px solid #ccc; /* border */
-    padding: 15px; /* padding */
-    margin: 20px 0; /* margin */
-    background: #fff; /* background */
-}
-legend {
-    font-weight: bold; /* font */
-    color: var(--color-encabezado); /* color */
-}
-
-/* ==================================== */
-/* 5. DISEÑO ADAPTATIVO BÁSICO */
-/* ==================================== */
-
-/* Diseño de móviles por defecto (los artículos se apilan) */
-.destacados {
-    margin-top: 20px; /* margin */
-}
+/* Estilo para los artículos en la sección destacados */
 .destacado {
     border: 1px solid #ccc; /* border */
-    padding: 15px; /* padding */
-    margin-bottom: 15px; /* margin */
+    margin-bottom: var(--espacio-m); /* margin */
+    padding: var(--espacio-m); /* padding */
     background: white; /* background */
 }
 
-/* Cambio a dos columnas en pantallas medianas/grandes (>= 768px) */
+
 @media screen and (min-width: 768px) {
-    /* Maquetación: dos columnas para temas destacados */
+    
+    /Maquetación en columnas para los destacados en index.html */
+    .destacados {
+        overflow: hidden; /* Clearfix para los elementos flotantes */
+        margin-top: var(--espacio-l);
+    }
     .destacado {
-        /* Uso simple de flotado para las columnas */
         float: left;
-        width: 31%; /* ~33% menos márgenes */
-        margin-right: 15px; /* margin */
+        width: 31%; 
+        margin-right: 2%; /* Espacio entre columnas */
+        height: auto; /* Ajuste de altura */
     }
     .destacado:last-child {
-        margin-right: 0; /* margin */
-    }
-    
-    /* Limpieza de flotados */
-    .destacados::after {
-        content: "";
-        display: table;
-        clear: both;
+        margin-right: 0;
     }
 }
