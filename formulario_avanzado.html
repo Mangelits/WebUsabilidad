@@ -2,11 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Formulario avanzado - Enciclopedia de la Salud</title>
   <link rel="stylesheet" href="estilos/estilos_buscadores-formularios.css">
 </head>
 <body>
   <header>
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
     <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
     <nav>
       <a href="index.html">Inicio</a>
@@ -14,48 +16,26 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Formulario de preferencias</h2>
-    <section>
-      <p>Por favor, complete los siguientes campos. Los obligatorios están marcados con *.</p>
-      <form action="respuesta_formulario_avanzado.html" method="get">
-        
-        <div>
-          <label for="color">Color favorito:</label>
-          <input type="color" id="color" name="color">
-        </div>
+  <main id="contenido-principal"> <h2>Formulario de preferencias</h2>
+    
+    <form action="respuesta_formulario_avanzado.html" method="get" class="form-responsive"> 
 
-        <div>
-          <label for="fecha">Fecha de cita médica (*):</label>
-          <input type="date" id="fecha" name="fecha" required>
-        </div>
+      <p>Por favor, complete los siguientes campos. Los campos marcados con <span class="obligatorio">*</span> son obligatorios. </p>
+      
+      <div class="form-group">
+        <label for="color">Color favorito:</label>
+        <input type="color" id="color" name="color">
+        <p class="aclaracion">Elige un color para personalizar la apariencia de los resultados.</p>
+      </div>
 
-        <div>
-          <label for="correo">Correo electrónico (*):</label>
-          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
-        </div>
+      <div class="form-group">
+        <label for="fecha">Fecha de cita médica <span class="obligatorio">*</span>:</label>
+        <input type="date" id="fecha" name="fecha" required> 
+        <p class="aclaracion">Usaremos esta fecha para estimar la próxima fecha disponible.</p>
+      </div>
 
-        <div>
-          <label for="edad">Edad:</label>
-          <input type="number" id="edad" name="edad" min="0" max="120">
-        </div>
-
-        <div>
-          <label for="dolor">Nivel de dolor (0–10):</label>
-          <input type="range" id="dolor" name="dolor" min="0" max="10" step="1">
-        </div>
-
-        <div>
-          <button type="submit">Enviar</button>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer estándar del sitio -->
-  <footer>
-    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-    <p><a href="index.html">Volver al inicio</a> | <a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-  </footer>
-</body>
-</html>
+      <div class="form-group">
+        <label for="correo">Correo electrónico <span class="obligatorio">*</span>:</label>
+        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+        <p class="aclaracion">Debe seguir el formato estándar, ej: nombre@dominio.com.</p>
+      </div>
