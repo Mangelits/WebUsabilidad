@@ -1,0 +1,199 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #004a99;
+    color: #ffffff;
+    padding: 1.25em 1.5em;
+    margin: 0;
+}
+
+header h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.2em;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 a, footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header h1 a:hover, footer a:hover, footer a:focus {
+    text-decoration: underline;
+}
+
+footer {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 2.5em;
+    border-top: 5px solid #002d5c;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5em 0 0 0;
+}
+
+header nav li {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.nav-principal li a {
+    font-size: 1.1em;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5em 0.75em;
+    display: block;
+    border-radius: 4px;
+}
+
+.nav-principal li a:hover,
+.nav-principal li a:focus {
+    background-color: #002d5c;
+    text-decoration: none;
+}
+
+.nav-letras {
+    margin-top: 1em;
+    padding-top: 0.5em;
+    border-top: 1px solid #0060c0;
+}
+
+.nav-letras li a {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #004a99;
+    background-color: #f4f7f6;
+    padding: 0.25em 0.6em;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.nav-letras li a:hover,
+.nav-letras li a:focus {
+    background-color: #ffffff;
+    color: #002d5c;
+}
+
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+main > section {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5em 2.5em;
+    margin-bottom: 2em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+main h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    color: #004a99;
+    border-bottom: 2px solid #004a99;
+    padding-bottom: 0.3em;
+    margin-top: 0.25em;
+    margin-bottom: 1em;
+}
+
+.conBorde {
+    background-color: #e6f0fa;
+    border: 2px solid #004a99;
+    padding: 1em 1.5em;
+    border-radius: 8px;
+}
+
+.destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.destacado {
+    flex-basis: 100%;
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: 0.5em 1.5em 1.5em 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.destacado h3 {
+    margin-bottom: 0.5em;
+}
+
+.destacado h3 a {
+    text-decoration: none;
+    color: #004a99;
+    font-size: 1.3em;
+}
+
+.destacado h3 a:hover {
+    text-decoration: underline;
+}
+
+.destacado p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.fa-book {
+    margin-right: 0.5em;
+    color: #004a99;
+}
+
+.saltar-a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.saltar-a:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    display: block;
+    padding: 0.75em 1em;
+    background-color: #ffffff;
+    color: #004a99;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid #002d5c;
+    margin: 0.5em;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+
+

@@ -13,45 +13,33 @@
  * - scroll-behavior: Para animar el desplazamiento al usar la tabla de contenidos.
  */
 
-/* --- Configuración Global --- */
 html {
-    /* NUEVO: box-sizing hace que padding/border no aumenten el tamaño final del elemento */
     box-sizing: border-box; 
-    
-    /* NUEVO: scroll-behavior anima el salto al hacer clic en un enlace #ancla */
     scroll-behavior: smooth;
 }
 
-/* NUEVO: Hereda el box-sizing a todos los elementos */
-*, *:before, *:after {
-    box-sizing: inherit;
-}
 
-/* --- Estilos Generales (Body) --- */
+/* --- Body --- */
 body {
     font-size: 100%; /* Permite al usuario reescalar (WCAG 1.4.4) */
     font-family: Arial, Helvetica, sans-serif;
     
-    /* WCAG 1.4.3 (Contraste): Texto oscuro sobre fondo claro */
+    /* WCAG 1.4.3 (Contraste) */
     color: #222222;
     background-color: #ffffff;
     
     /* NUEVO: max-width limita el ancho para legibilidad (WCAG 1.4.8) */
     max-width: 960px;
-    
-    /* * NUEVO: margin: 0 auto; (usando 'auto') centra el body 
-     * cuando la pantalla es más ancha que max-width.
-     */
     margin: 0 auto;
     padding: 1rem;
 }
 
-/* --- Cabecera (Header) --- */
+/* --- Header --- */
 header {
-    background-color: #003366; /* Azul oscuro */
+    background-color: #003366;
     color: #ffffff;
     padding: 1.5rem;
-    border-bottom: 5px solid #0056b3; /* Azul más claro */
+    border-bottom: 5px solid #0056b3;
 }
 
 header h1 {
@@ -59,26 +47,23 @@ header h1 {
     margin-bottom: 1rem;
 }
 
-/* Enlaces dentro de la cabecera */
+
 header a {
     color: #ffffff;
-    /* NUEVO: text-decoration: none; quita el subrayado */
     text-decoration: none;
 }
 
-/* --- Navegación Principal (Header Nav) --- */
+/* --- Header Nav --- */
 header nav a {
     padding: 0.5rem;
     font-size: 1.1rem;
 }
 
-/* --- Contenido Principal (Main) --- */
 main {
-    padding: 1rem 0; /* Espaciado vertical */
+    padding: 1rem 0;
 }
 
-/* --- Migas de Pan (Breadcrumbs) --- */
-/* Ya no necesita el fondo/borde feo de la versión restringida */
+/* --- Migas de Pan --- */
 nav[aria-label="Migas de pan"] {
     padding: 0.5rem 0;
     margin-bottom: 1.5rem;
@@ -88,29 +73,23 @@ nav[aria-label="Migas de pan"] {
 nav[aria-label="Migas de pan"] ol {
     margin: 0;
     padding: 0;
-    /* NUEVO: list-style: none; quita los números/puntos de la lista */
     list-style: none; 
-    /* NUEVO: display: flex; coloca los elementos <li> en una línea horizontal */
     display: flex;
 }
 
-/* NUEVO: Añade el separador ">" antes de cada <li> */
 nav[aria-label="Migas de pan"] li::before {
-    /* NUEVO: content: '...'; inserta contenido (el separador) */
     content: '>';
-    margin: 0 0.5rem; /* Separación del texto */
+    margin: 0 0.5rem;
     color: #555555;
 }
-
-/* NUEVO: Elimina el separador del primer elemento */
 nav[aria-label="Migas de pan"] li:first-child::before {
     content: '';
     margin: 0;
 }
 
-/* --- Tabla de Contenidos (Índice) --- */
+/* --- Tabla de Contenidos --- */
 #tabla-de-contenidos {
-    background-color: #f0f8ff; /* Azul muy claro */
+    background-color: #f0f8ff;
     border: 1px solid #bde0ff;
     padding: 1rem 1.5rem;
     margin-bottom: 2rem;
@@ -120,34 +99,28 @@ nav[aria-label="Migas de pan"] li:first-child::before {
     margin-top: 0;
 }
 
-/* --- Tipografía del Contenido --- */
 h2, h3 {
-    color: #003366; /* Azul oscuro para jerarquía */
+    color: #003366;
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #eeeeee;
 }
 
-/* --- Enlaces Generales (Main/Footer) --- */
+/* --- Main/Footer --- */
 a {
     color: #0056b3; /* Azul accesible (Contraste 4.5:1 sobre blanco) */
 }
 
-/* * WCAG 2.4.7 (Focus Visible)
- * NUEVO: outline: ...; es la forma estándar de mostrar el foco, 
- * es más clara que cambiar el fondo.
- */
+/* * WCAG 2.4.7 (Focus Visible) */
 a:focus {
     outline: 3px solid #0056b3;
 }
 
-/* NUEVO: Foco de alto contraste para enlaces sobre fondo oscuro (cabecera) */
 header a:focus {
     outline: 3px solid #ffffff;
 }
 
-/* --- Estilos de Listas --- */
 ul, ol {
     padding-left: 2rem;
     margin-bottom: 1rem;
@@ -177,29 +150,25 @@ th {
     background-color: #f4f4f4;
 }
 
-/* --- Media (Imágenes y Vídeos) --- */
+/* --- Imágenes e Iframes --- */
 img, iframe {
-    /* NUEVO: max-width: 100%; asegura que no se desborden (Responsive) */
     max-width: 100%;
-    /* NUEVO: height: auto; mantiene la proporción al reescalar */
     height: auto;
-    /* NUEVO: display: block; permite centrarlas con margin: auto */
     display: block;
     margin: 1.5rem auto;
     border: 1px solid #dddddd;
-    padding: 4px; /* Pequeño marco para imágenes */
+    padding: 4px;
 }
 
 iframe {
-    padding: 0; /* Los iframes no deben tener padding */
-    /* Asignamos un ancho habitual pero max-width lo controlará */
+    padding: 0;
     width: 560px; 
 }
 
 
-/* --- Pie de Página (Footer) --- */
+/* --- Footer --- */
 footer {
-    background-color: #f9f9f9;
+    background-color: #408589;
     color: #444444;
     padding: 1.5rem;
     margin-top: 2rem;
