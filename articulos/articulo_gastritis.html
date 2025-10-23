@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Gastritis - Enciclopedia de la Salud</title>
+    <!-- CSS ENLAZADO -->
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     <header>
@@ -14,16 +16,67 @@
     </header>
 
     <main>
+        <!-- Migas de Pan -->
+        <nav aria-label="Migas de pan">
+            <ol>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../letras/letra_g.html">Índice G</a></li>
+                <li><span aria-current="page">Gastritis</span></li>
+            </ol>
+        </nav>
+
         <article>
             <h2>Gastritis</h2>
+
+            <!-- INICIO DE LA TABLA DE CONTENIDOS -->
+            <section id="tabla-de-contenidos">
+                <h3>Tabla de Contenidos</h3>
+                <ul>
+                    <li><a href="#descripcion">Descripción</a></li>
+                    <li><a href="#causas-principales">Causas Principales</a></li>
+                    <li><a href="#tipos">Tipos de gastritis</a></li>
+                    <li><a href="#sintomas">Síntomas</a></li>
+                    <li><a href="#factores-riesgo">Factores de Riesgo</a></li>
+                    <li><a href="#diagnostico">Pruebas y diagnóstico</a></li>
+                    <li><a href="#tratamiento">Tratamiento</a></li>
+                    <li><a href="#complicaciones">Complicaciones</a></li>
+                    <li><a href="#prevencion-dieta">Prevención y Dieta</a></li>
+                    <li><a href="#video">Vídeo explicativo</a></li>
+                </ul>
+            </section>
+            <!-- FIN DE LA TABLA DE CONTENIDOS -->
+
             <section>
-                <h3>Descripción</h3>
-                <p>La <strong>gastritis</strong> es una inflamación del revestimiento del estómago que puede causar dolor abdominal, náuseas y otros síntomas digestivos.</p>
+                <h3 id="descripcion">Descripción</h3>
+                <p>La <strong>gastritis</strong> es un término general para un grupo de afecciones con una cosa en común: la <b>inflamación del revestimiento del estómago</b> (conocido como mucosa gástrica). Esta inflamación es una respuesta del cuerpo a algún tipo de irritación o daño.</p>
+                <p>Cuando el revestimiento del estómago se inflama, se vuelve rojo e hinchado y puede ser doloroso. Esta inflamación puede ocurrir de forma repentina (<strong>gastritis aguda</strong>) o manifestarse lentamente con el tiempo (<strong>gastritis crónica</strong>). En algunos casos, la gastritis puede desgastar el revestimiento del estómago, causando erosiones o incluso úlceras.</p>
                 <img src="../img/gastritis.jpg" alt="Inflamación del revestimiento del estómago en casos de gastritis" width="300">
             </section>
 
             <section>
-                <h3>Tipos de gastritis</h3>
+                <h3 id="causas-principales">Causas Principales</h3>
+                <p>La gastritis ocurre cuando la barrera mucosa que protege el estómago del ácido gástrico se debilita o daña. Varias condiciones y factores de estilo de vida pueden causar esto:</p>
+                <dl>
+                    <dt><strong>Infección por <em>Helicobacter pylori</em></strong></dt>
+                    <dd>Esta es la causa más común de gastritis crónica en todo el mundo. Es una bacteria que vive en el revestimiento mucoso del estómago. Sin tratamiento, la infección puede durar toda la vida y provocar inflamación crónica, úlceras y, en algunos casos, cáncer de estómago.</dd>
+                    
+                    <dt><strong>Uso de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr></strong></dt>
+                    <dd>El uso frecuente o prolongado de antiinflamatorios no esteroideos, como el <strong>ibuprofeno</strong>, el <strong>naproxeno</strong> o la <strong>aspirina</strong>, puede dañar la mucosa gástrica. Estos medicamentos reducen una sustancia que ayuda a proteger el estómago del ácido.</dd>
+
+                    <dt><strong>Consumo excesivo de alcohol</strong></dt>
+                    <dd>El alcohol puede irritar y erosionar el revestimiento del estómago, haciéndolo más vulnerable al ácido gástrico. Esto suele causar gastritis aguda.</dd>
+
+                    <dt><strong>Estrés fisiológico severo</strong></dt>
+                    <dd>No se trata del estrés diario, sino de un estrés físico grave debido a una cirugía mayor, una lesión traumática, quemaduras graves o una enfermedad crítica. Esto puede causar "gastritis por estrés".</dd>
+                    
+                    <dt><strong>Gastritis autoinmune</strong></dt>
+                    <dd>En este tipo menos común, el propio sistema inmunitario del cuerpo ataca por error las células sanas del revestimiento del estómago. Esto es más común en personas con otras enfermedades autoinmunes.</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h3 id="tipos">Tipos de gastritis</h3>
+                <p>La gastritis se clasifica generalmente según su duración (aguda o crónica) y la causa subyacente.</p>
                 <table>
                     <caption>Clasificación de algunos tipos de gastritis, su causa y su respectivo tratamiento</caption>
                     <thead>
@@ -35,62 +88,108 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Gastritis aguda</td>
-                            <td>Infección, medicamentos o alcohol</td>
-                            <td>Antibióticos, antiácidos, dieta blanda</td>
+                            <td>Gastritis Aguda</td>
+                            <td>Consumo de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr>, alcohol, estrés severo</td>
+                            <td>Antiácidos, suspensión del irritante, dieta blanda</td>
                         </tr>
                         <tr>
-                            <td>Gastritis crónica</td>
-                            <td>Helicobacter pylori o enfermedades autoinmunes</td>
-                            <td>Erradicación de <abbr title="Bactaria Helicobacter pylori.">H. pylori</abbr>, inhibidores de la bomba de protones</td>
+                            <td>Gastritis Crónica por H. pylori</td>
+                            <td>Infección por <em>Helicobacter pylori</em></td>
+                            <td>Erradicación con antibióticos, inhibidores de ácido</td>
                         </tr>
                         <tr>
-                            <td>Gastritis erosiva</td>
-                            <td>Uso prolongado de <abbr tittle="Antiinflamatorios No Esteroideos">AINEs</abbr></td>
-                            <td>Suspensión de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr>, protectores gástricos</td>
+                            <td>Gastritis Erosiva</td>
+                            <td>Uso prolongado de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr>, alcohol, estrés</td>
+                            <td>Suspensión de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr>, protectores gástricos (ej. sucralfato)</td>
+                        </tr>
+                         <tr>
+                            <td>Gastritis Autoinmune</td>
+                            <td>Reacción del sistema inmunitario</td>
+                            <td>Suplementos de vitamina B12 (si hay anemia perniciosa)</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
 
             <section>
-                <h3>Causas</h3>
-                <p>La gastritis puede ser causada por <strong>infecciones bacterianas</strong>, consumo excesivo de alcohol, estrés, o el uso prolongado de medicamentos como los antiinflamatorios no esteroideos (AINEs).</p>
-            </section>
-
-            <section>
-                <h3>Síntomas</h3>
+                <h3 id="sintomas">Síntomas</h3>
+                <p>Los síntomas de la gastritis pueden variar mucho entre individuos. De hecho, <strong>algunas personas con gastritis no presentan ningún síntoma</strong>. Cuando los síntomas ocurren, los más comunes incluyen:</p>
                 <ul>
-                    <li>Dolor abdominal</li>
-                    <li>Náuseas</li>
-                    <li>Pérdida de apetito</li>
-                    <li>Indigestión</li>
+                    <li><strong>Dolor o ardor</strong> (indigestión) en la parte superior del abdomen, que puede empeorar o mejorar al comer.</li>
+                    <li>Náuseas y vómitos (que pueden ser claros, verdes/amarillos o, en casos graves, con sangre).</li>
+                    <li>Sensación de <strong>plenitud o hinchazón</strong> en la parte superior del abdomen después de comer.</li>
+                    <li>Pérdida de apetito.</li>
+                    <li>Heces oscuras o alquitranadas (esto indica sangrado y es una emergencia).</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Pruebas y diagnóstico</h3>
-                <p>Las pruebas para detectar y diagnosticar la gastritis incluyen: </p>
+                <h3 id="factores-riesgo">Factores de Riesgo</h3>
+                <p>Ciertos factores pueden aumentar el riesgo de desarrollar gastritis:</p>
                 <ul>
-                    <li>Endoscopia digestiva alta</li>
-                    <li>Biopsia gástrica</li>
-                    <li>Pruebas para Helicobacter pylori</li>
+                    <li>Infección por <em>H. pylori</em>.</li>
+                    <li>Uso regular de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr> o corticosteroides.</li>
+                    <li>Edad avanzada, ya que el revestimiento del estómago tiende a volverse más delgado.</li>
+                    <li>Consumo habitual y excesivo de alcohol.</li>
+                    <li>Tabaquismo.</li>
+                    <li>Niveles altos de estrés (físico o emocional).</li>
+                    <li>Padecer otras enfermedades, como trastornos autoinmunes, <abbr title="Virus de Inmunodeficiencia Humana">VIH</abbr>/<abbr title="Síndrome de Inmunodeficiencia Adquirida">SIDA</abbr> o enfermedad de Crohn.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Tratamiento</h3>
-                <p>El tratamiento de la gastritis depende de su causa y gravedad, pero comúnmente incluye: </p>
+                <h3 id="diagnostico">Pruebas y diagnóstico</h3>
+                <p>Para diagnosticar la gastritis, el médico revisará el historial clínico y los síntomas. Las pruebas pueden incluir:</p>
                 <ul>
-                    <li>Antiácidos</li>
-                    <li>Inhibidores de la bomba de protones</li>
-                    <li>Antibióticos (si hay infección por H. pylori)</li>
-                    <li>Modificaciones en la dieta</li>
+                    <li><strong>Endoscopia digestiva alta (Gastroscopia):</strong> Es la prueba más precisa. Se introduce un tubo delgado con una cámara (endoscopio) por la garganta para observar directamente el revestimiento del estómago y buscar signos de inflamación, erosiones o úlceras.</li>
+                    <li><strong>Biopsia gástrica:</strong> Durante la endoscopia, el médico puede tomar pequeñas muestras de tejido del revestimiento del estómago. Estas muestras se analizan en un laboratorio para confirmar la inflamación y, fundamentalmente, para detectar la presencia de <em>H. pylori</em> o cambios celulares (como en la gastritis autoinmune).</li>
+                    <li><strong>Pruebas para <em>Helicobacter pylori</em>:</strong> Además de la biopsia, esta bacteria se puede detectar con métodos no invasivos, como una <strong>prueba de aliento con urea</strong>, un análisis de sangre (para anticuerpos) o un análisis de heces (antígenos).</li>
+                    <li><strong>Análisis de sangre:</strong> Pueden usarse para buscar signos de anemia (recuento bajo de glóbulos rojos), que puede ser causada por un sangrado crónico debido a la gastritis.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Vídeo explicativo</h3>
+                <h3 id="tratamiento">Tratamiento</h3>
+                <p>El tratamiento de la gastritis depende de su causa y gravedad. El objetivo es reducir la inflamación, aliviar los síntomas y tratar la causa subyacente para prevenir complicaciones.</p>
+                <p><strong>Para neutralizar o reducir el ácido estomacal:</strong></p>
+                <ul>
+                    <li><strong>Antiácidos:</strong> Medicamentos de venta libre (como Almax, Tums, Maloox) que neutralizan el ácido estomacal y proporcionan alivio rápido pero temporal.</li>
+                    <li><strong>Bloqueadores H2:</strong> (Como la famotidina) Reducen la cantidad de ácido que produce el estómago.</li>
+                    <li><strong>Inhibidores de la bomba de protones (<abbr title="Inhibidores de la Bomba de Protones">IBP</abbr>):</strong> (Como el omeprazol, pantoprazol, lansoprazol) Son los más potentes para reducir la producción de ácido, permitiendo que la mucosa inflamada se cure.</li>
+                </ul>
+                <p><strong>Para tratar la causa subyacente:</strong></p>
+                <ul>
+                    <li><strong>Antibióticos (si hay infección por H. pylori):</strong> Erradicar la bacteria es crucial. Generalmente, se usa una combinación de dos o tres antibióticos junto con un <abbr title="Inhibidor de la Bomba de Protones">IBP</abbr> durante 10 a 14 días.</li>
+                    <li><strong>Suspensión de irritantes:</strong> Si la causa es el uso de <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr> o alcohol, el médico indicará suspender o cambiar estos medicamentos y evitar el alcohol.</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h3 id="complicaciones">Complicaciones</h3>
+                <p>Si no se trata, la gastritis crónica puede llevar a problemas más serios:</p>
+                <ul>
+                    <li><strong>Úlceras pépticas:</strong> Llagas abiertas en el revestimiento del estómago o el duodeno.</li>
+                    <li><strong>Sangrado gástrico:</strong> La gastritis erosiva puede causar sangrado, que puede ser lento y crónico (llevando a la anemia) o agudo y severo (una emergencia médica).</li>
+                    <li><strong>Gastritis atrófica:</strong> Una forma crónica que destruye las glándulas productoras de ácido y puede aumentar el riesgo de cáncer.</li>
+                    <li><strong>Anemia perniciosa:</strong> La gastritis autoinmune puede dañar las células que producen el "factor intrínseco", necesario para absorber la vitamina B12, lo que lleva a la anemia.</li>
+                    <li><strong>Cáncer de estómago:</strong> La gastritis crónica, especialmente la causada por <em>H. pylori</em> y la autoinmune, aumenta el riesgo de desarrollar cáncer gástrico a largo plazo.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="prevencion-dieta">Prevención y Dieta</h3>
+                <p>Los cambios en el estilo de vida son fundamentales tanto para tratar la gastritis como para prevenirla:</p>
+                <ul>
+                    <li><strong>Modificaciones en la dieta:</strong> Evitar alimentos y bebidas que irriten el estómago. Los desencadenantes comunes incluyen alimentos picantes, fritos, grasos, ácidos (cítricos, tomate), café y bebidas carbonatadas.</li>
+                    <li><strong>Evitar el alcohol y el tabaco:</strong> Ambos son irritantes potentes de la mucosa gástrica.</li>
+                    <li><strong>Comer porciones más pequeñas:</strong> Comer comidas más pequeñas y frecuentes puede ayudar a reducir la carga de ácido en el estómago.</li>
+                    <li><strong>Manejar el estrés:</strong> Aprender técnicas de relajación, meditación o hacer ejercicio puede ayudar a manejar el estrés, que puede empeorar los síntomas.</li>
+                    <li><strong>Usar <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr> con precaución:</strong> Si debe tomar <abbr title="Antiinflamatorios No Esteroideos">AINEs</abbr>, hágalo con comida y por el período más corto posible. Consulte a su médico si necesita tomarlos a largo plazo; puede necesitar un protector gástrico (<abbr title="Inhibidor de la Bomba de Protones">IBP</abbr>).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="video">Vídeo explicativo</h3>
                 <h4>¿Qué es la gastritis y cómo tratarla?</h4>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/3xKZzFZJvZk" title="¿Qué es la gastritis y cómo tratarla?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
@@ -102,5 +201,4 @@
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
     </footer>
 </body>
-
 </html>

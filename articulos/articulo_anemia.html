@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Anemia - Enciclopedia de la Salud</title>
+    <!-- CSS ENLAZADO -->
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     <header>
@@ -14,16 +16,46 @@
     </header>
 
     <main>
+        <!-- Migas de Pan -->
+        <nav aria-label="Migas de pan">
+            <ol>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../letras/letra_a.html">Índice A</a></li>
+                <li><span aria-current="page">Anemia</span></li>
+            </ol>
+        </nav>
+
         <article>
             <h2>Anemia</h2>
+
+            <!-- INICIO DE LA TABLA DE CONTENIDOS -->
+            <section id="tabla-de-contenidos">
+                <h3>Tabla de Contenidos</h3>
+                <ul>
+                    <li><a href="#descripcion">Descripción</a></li>
+                    <li><a href="#tipos">Tipos de anemia</a></li>
+                    <li><a href="#causas">Causas</a></li>
+                    <li><a href="#factores-riesgo">Factores de Riesgo</a></li>
+                    <li><a href="#sintomas">Síntomas</a></li>
+                    <li><a href="#diagnostico">Pruebas y diagnóstico</a></li>
+                    <li><a href="#tratamiento">Tratamiento</a></li>
+                    <li><a href="#complicaciones">Complicaciones</a></li>
+                    <li><a href="#prevencion">Prevención</a></li>
+                    <li><a href="#video">Vídeo explicativo</a></li>
+                </ul>
+            </section>
+            <!-- FIN DE LA TABLA DE CONTENIDOS -->
+
             <section>
-                <h3>Descripción</h3>
-                <p>La <strong>anemia</strong> es una enfermedad en la que el número de glóbulos rojos, o la concentración de hemoglobina en sangre, es inferior a lo normal.</p>
+                <h3 id="descripcion">Descripción</h3>
+                <p>La <strong>anemia</strong> es una enfermedad en la que el número de glóbulos rojos, o la concentración de hemoglobina en sangre, es inferior a lo normal. La hemoglobina es una proteína dentro de los glóbulos rojos que transporta oxígeno desde los pulmones al resto del cuerpo.</p>
+                <p>Cuando una persona tiene anemia, su cuerpo no recibe suficiente sangre rica en oxígeno, lo que provoca que se sienta cansada o débil.</p>
                 <img src="../img/anemia.jpg" alt="Diferencia entre cantidad de glóbulos rojos en persona normal y persona con anemia" width="300">
             </section>
 
             <section>
-                <h3>Tipos de anemia</h3>
+                <h3 id="tipos">Tipos de anemia</h3>
+                <p>Existen muchos tipos de anemia, cada uno con su propia causa. A continuación se detallan algunos de los más comunes:</p>
                 <table>
                     <caption>Clasificación de algunos tipos de anemia, su causa y su respectivo tratamiento</caption>
                     <thead>
@@ -37,60 +69,146 @@
                         <tr>
                             <td>Anemia ferropénica</td>
                             <td>Déficit de hierro</td>
-                            <td>Suplementos de hierro</td>
+                            <td>Suplementos de hierro, cambios en la dieta</td>
                         </tr>
                         <tr>
-                            <td>Anemia perniciosa</td>
-                            <td>Déficit de vitamina B12</td>
-                            <td>Suplementos de vitamina B12</td>
+                            <td>Anemia perniciosa (por déficit de Vitamina B12)</td>
+                            <td>Déficit de vitamina B12 (a menudo por mala absorción)</td>
+                            <td>Inyecciones o suplementos de vitamina B12</td>
+                        </tr>
+                        <tr>
+                            <td>Anemia por deficiencia de folato</td>
+                            <td>Déficit de ácido fólico (Vitamina B9)</td>
+                            <td>Suplementos de ácido fólico, cambios en la dieta</td>
                         </tr>
                         <tr>
                             <td>Anemia aplásica</td>
-                            <td>Fallos en la médula ósea</td>
-                            <td>Transfusiones, transplante de médula</td>
+                            <td>Fallos en la médula ósea (no produce suficientes células)</td>
+                            <td>Transfusiones, medicamentos, transplante de médula</td>
+                        </tr>
+                        <tr>
+                            <td>Anemia hemolítica</td>
+                            <td>Destrucción acelerada de glóbulos rojos</td>
+                            <td>Medicamentos (corticosteroides), transfusiones, cirugía</td>
+                        </tr>
+                        <tr>
+                            <td>Anemia de células falciformes</td>
+                            <td>Genética (glóbulos rojos con forma anómala)</td>
+                            <td>Manejo del dolor, hidratación, medicamentos, transfusiones</td>
+                        </tr>
+                         <tr>
+                            <td>Anemia por enfermedad crónica</td>
+                            <td>Enfermedades inflamatorias (cáncer, VIH, artritis)</td>
+                            <td>Tratamiento de la enfermedad subyacente, suplementos</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
 
             <section>
-                <h3>Causas</h3>
-                <p>La causa de la anemia suele ser la <strong>falta de hierro en la sangre</strong>. Esto puede deberse a una mala alimentación, menstruaciones abundantes o enfermedades crónicas, entre otros.</p>
+                <h3 id="causas">Causas</h3>
+                <p>Las causas de la anemia se pueden agrupar en tres categorías principales:</p>
+                <dl>
+                    <dt><strong>1. Pérdida de sangre (hemorragia)</strong></dt>
+                    <dd>Cuando se pierde sangre, el cuerpo pierde hierro. Si la pérdida es crónica (lenta y prolongada), el cuerpo puede no tener suficiente hierro para producir nueva hemoglobina. Causas comunes incluyen menstruaciones abundantes, úlceras, cáncer de colon o uso regular de algunos analgésicos.</dd>
+                    
+                    <dt><strong>2. Producción disminuida o defectuosa de glóbulos rojos</strong></dt>
+                    <dd>El cuerpo puede no producir suficientes glóbulos rojos, o estos pueden ser defectuosos. Esto puede deberse a:</dd>
+                    <ul>
+                        <li>Deficiencias nutricionales (hierro, vitamina B12, folato).</li>
+                        <li>Problemas en la médula ósea (como en la anemia aplásica o la leucemia).</li>
+                        <li>Enfermedades crónicas que interfieren con las hormonas que producen glóbulos rojos.</li>
+                    </ul>
+
+                    <dt><strong>3. Destrucción acelerada de glóbulos rojos (hemólisis)</strong></dt>
+                    <dd>El cuerpo destruye los glóbulos rojos más rápido de lo que puede reemplazarlos. Esto puede ser causado por enfermedades autoinmunes, infecciones, toxinas o factores hereditarios (como la anemia de células falciformes).</dd>
+                </dl>
+                <p>La causa más común a nivel mundial es la <strong>falta de hierro en la sangre</strong> (anemia ferropénica).</p>
             </section>
 
             <section>
-                <h3>Síntomas</h3>
+                <h3 id="factores-riesgo">Factores de Riesgo</h3>
+                <p>Ciertas condiciones o factores pueden aumentar el riesgo de padecer anemia:</p>
                 <ul>
-                    <li>Fatiga y falta de energía</li>
-                    <li>Mareos</li>
-                    <li>Palidez</li>
-                    <li>Debilidad</li>
+                    <li><strong>Dieta deficiente:</strong> Una dieta baja en hierro, vitamina B12 y folato.</li>
+                    <li><strong>Trastornos intestinales:</strong> Enfermedades como la celiaquía o la enfermedad de Crohn, que afectan la absorción de nutrientes.</li>
+                    <li><strong>Menstruación:</strong> Las mujeres en edad fértil tienen mayor riesgo debido a la pérdida de sangre mensual.</li>
+                    <li><strong>Embarazo:</strong> Las necesidades de hierro y folato aumentan durante el embarazo.</li>
+                    <li><strong>Enfermedades crónicas:</strong> Cáncer, insuficiencia renal o enfermedades autoinmunes.</li>
+                    <li><strong>Antecedentes familiares:</strong> Anemias hereditarias como la de células falciformes.</li>
+                    <li><strong>Edad:</strong> Los adultos mayores tienen un mayor riesgo de deficiencias nutricionales y enfermedades crónicas.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Pruebas y diagnóstico</h3>
-                <p>Las pruebas para detectar y diagnosticar la anemia incluyen: </p>
+                <h3 id="sintomas">Síntomas</h3>
+                <p>Los síntomas de la anemia varían según la gravedad. Al principio, pueden ser tan leves que pasan desapercibidos.</p>
                 <ul>
-                    <li>Hemograma completo con leucocitos y recuento de plaquetas</li>
-                    <li>Recuento de reticulocitos</li>
-                    <li>Índices hematimétricos y morfología de los eritrocitos</li>
+                    <li>Fatiga y falta de energía (síntoma más común)</li>
+                    <li>Debilidad generalizada</li>
+                    <li>Palidez en la piel, las mucosas y las uñas</li>
+                    <li>Mareos o aturdimiento</li>
+                    <li>Dificultad para respirar (disnea), especialmente con el esfuerzo</li>
+                    <li>Dolor de cabeza</li>
+                    <li>Manos y pies fríos</li>
+                    <li>Dolor en el pecho o latidos cardíacos rápidos o irregulares (arritmias)</li>
+                    <li>En casos de deficiencia de hierro: antojos de sustancias no nutritivas (pica), como hielo o tierra.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Tratamiento</h3>
-                <p>El tratamiento de la anemia depende de su causa y gravedad, pero comúnmente incluye: </p>
+                <h3 id="diagnostico">Pruebas y diagnóstico</h3>
+                <p>El diagnóstico se basa en los síntomas y en análisis de sangre. Las pruebas para detectar y diagnosticar la anemia incluyen: </p>
                 <ul>
-                    <li>Suplementos de hierro</li>
-                    <li>Vitamina B12</li>
-                    <li>Ácido fólico</li>
-                    <li>Medicamentos con agentes estimulantes de la eritropoyesis</li>
+                    <li><strong>Hemograma completo (<abbr title="Hemograma Completo">CSC</abbr>):</strong> Mide la cantidad de todos los componentes de la sangre, incluyendo los glóbulos rojos, la hemoglobina y el hematocrito (porcentaje de glóbulos rojos en la sangre).</li>
+                    <li><strong>Índices hematimétricos y morfología de los eritrocitos:</strong> Evalúa el tamaño, la forma y el color de los glóbulos rojos, lo que da pistas sobre el tipo de anemia.</li>
+                    <li><strong>Recuento de reticulocitos:</strong> Mide la cantidad de glóbulos rojos jóvenes, indicando si la médula ósea está produciendo células a un ritmo adecuado.</li>
+                    <li><strong>Estudios de hierro:</strong> Mide los niveles de ferritina (hierro almacenado), sideremia (hierro en sangre) y transferrina (proteína que transporta el hierro).</li>
+                    <li><strong>Niveles de vitamina B12 y folato.</strong></li>
                 </ul>
             </section>
 
             <section>
-                <h3>Vídeo explicativo</h3>
+                <h3 id="tratamiento">Tratamiento</h3>
+                <p>El tratamiento de la anemia depende de su causa y gravedad. No se debe tomar suplementos sin un diagnóstico médico, ya que un exceso de hierro puede ser tóxico.</p>
+                <ul>
+                    <li>Suplementos de hierro (para anemia ferropénica)</li>
+                    <li>Suplementos de Vitamina B12 (oral o inyectada)</li>
+                    <li>Suplementos de Ácido fólico</li>
+                    <li>Medicamentos con agentes estimulantes de la eritropoyesis (para estimular la médula ósea)</li>
+                    <li>Medicamentos inmunosupresores (para anemia aplásica o hemolítica autoinmune)</li>
+                    <li>Transfusiones de sangre (en casos graves o de pérdida rápida de sangre)</li>
+                    <li>Transplante de médula ósea (para anemias graves como la aplásica)</li>
+                    <li>Cambios en la dieta.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="complicaciones">Complicaciones</h3>
+                <p>Si no se trata, la anemia puede causar serios problemas de salud:</p>
+                <ul>
+                    <li><strong>Fatiga extrema:</strong> Puede ser tan intensa que impide realizar las tareas diarias.</li>
+                    <li><strong>Problemas cardíacos:</strong> La anemia puede forzar al corazón a bombear más sangre para compensar la falta de oxígeno, pudiendo llevar a arritmias, insuficiencia cardíaca o agrandamiento del corazón.</li>
+                    <li><strong>Complicaciones en el embarazo:</strong> Puede causar partos prematuros o bebés con bajo peso al nacer.</li>
+                    <li><strong>Problemas neurológicos:</strong> La deficiencia de B12 puede dañar los nervios.</li>
+                    <li><strong>Sistema inmunitario debilitado:</strong> Aumenta la susceptibilidad a las infecciones.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="prevencion">Prevención</h3>
+                <p>Muchas formas de anemia no se pueden prevenir (como las genéticas), pero las anemias por deficiencia nutricional (las más comunes) a menudo sí pueden evitarse con una dieta equilibrada y variada.</p>
+                <ul>
+                    <li><strong>Alimentos ricos en hierro:</strong> Carnes rojas, legumbres, lentejas, cereales fortificados, verduras de hoja verde oscura (espinacas).</li>
+                    <li><strong>Alimentos ricos en folato:</strong> Frutas, verduras de hoja verde, guisantes, cacahuetes y productos de grano enriquecidos (pan, pasta).</li>
+                    <li><strong>Alimentos ricos en vitamina B12:</strong> Carne, productos lácteos, huevos y alimentos fortificados.</li>
+                    <li><strong>Alimentos ricos en vitamina C:</strong> Cítricos, fresas, pimientos y brócoli. Ayudan al cuerpo a absorber mejor el hierro.</li>
+                </ul>
+                <p>Consultar a un médico si se tienen factores de riesgo o síntomas es crucial para un diagnóstico temprano.</p>
+            </section>
+
+            <section>
+                <h3 id="video">Vídeo explicativo</h3>
                 <h4>Por qué la anemia es más importante de lo que crees</h4>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/pynJ01n218E?si=dRrrYjxtGgeS63JO" title="Por qué la anemia es más importante de lo que crees" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
@@ -104,3 +222,4 @@
     </footer>
 </body>
 </html>
+

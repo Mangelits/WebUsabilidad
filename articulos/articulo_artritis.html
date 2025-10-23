@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Artritis - Enciclopedia de la Salud</title>
+    <!-- CSS ENLAZADO -->
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
     <header>
@@ -10,26 +12,63 @@
     </header>
 
     <main>
+        <!-- Migas de Pan -->
+        <nav aria-label="Migas de pan">
+            <ol>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../letras/letra_a.html">Índice A</a></li>
+                <li><span aria-current="page">Artritis</span></li>
+            </ol>
+        </nav>
+        
         <article>
             <h2>Artritis</h2>
+
+            <!-- INICIO DE LA TABLA DE CONTENIDOS -->
+            <section id="tabla-de-contenidos">
+                <h3>Tabla de Contenidos</h3>
+                <ul>
+                    <li><a href="#descripcion">Descripción</a></li>
+                    <li><a href="#causas">Causas</a></li>
+                    <li><a href="#tipos">Tipos de artritis</a></li>
+                    <li><a href="#sintomas">Síntomas</a></li>
+                    <li><a href="#factores-riesgo">Factores de riesgo</a></li>
+                    <li><a href="#diagnostico">Pruebas y diagnóstico</a></li>
+                    <li><a href="#tratamiento">Tratamiento</a></li>
+                    <li><a href="#complicaciones">Complicaciones</a></li>
+                    <li><a href="#prevencion">Prevención</a></li>
+                    <li><a href="#video">Vídeo explicativo</a></li>
+                </ul>
+            </section>
+            <!-- FIN DE LA TABLA DE CONTENIDOS -->
+
             <section>
-                <h3>Descripción</h3>
-                <p>La <strong>artritis</strong> es la inflamación o el desgaste de una o varias articulaciones. Los dos tipos más comunes son la <strong>artrosis</strong> y la <strong>artritis reumatoide</strong>.</p>
+                <h3 id="descripcion">Descripción</h3>
+                <p>La <strong>artritis</strong> es la inflamación o el desgaste de una o varias articulaciones. Causa dolor y rigidez y puede empeorar con la edad. No es una única enfermedad, sino un término general que agrupa más de 100 tipos diferentes de afecciones articulares y reumatológicas.</p>
+                <p>Los dos tipos más comunes son la <strong>artrosis</strong> (osteoartritis), que implica el desgaste del cartílago, y la <strong>artritis reumatoide</strong>, que es un trastorno autoinmune.</p>
                 <img src="../img/artritis.jpg" alt="Diferencia entre artritis reumatoide y artrosis" width="300">
 
             </section>
 
             <section>
-                <h3>Causas</h3>
-                <p>Las causas varían dependiendo del tipo de artritis: </p>
-                <p><strong>Artrosis</strong></p>
-                <p>La <strong>artrosis</strong> es el tipo de artritis más común. Su principal causa es el daño por desgaste del cartílago de la articulación. Este desgaste natural puede ocurrir a lo largo de muchos años o puede acelerarse debido a una lesión o infección de las articulaciones.</p>
+                <h3 id="causas">Causas</h3>
+                <p>Las causas varían drásticamente dependiendo del tipo de artritis:</p>
+                
+                <p><strong>Artrosis (Osteoartritis)</strong></p>
+                <p>La <strong>artrosis</strong> es el tipo de artritis más común. Su principal causa es el daño por desgaste del cartílago de la articulación, el tejido resbaladizo que cubre los extremos de los huesos. Este desgaste natural puede ocurrir a lo largo de muchos años o puede acelerarse debido a una lesión, infección o por el estrés repetitivo sobre la articulación.</p>
+                
                 <p><strong>Artritis reumatoide</strong></p>
-                <p>En la <strong>artritis reumatoide</strong>, el sistema inmunitario del cuerpo ataca el revestimiento de la cápsula de las articulaciones, provocando que este se inflame y provoque dolor. Si la enfermedad avanza lo suficiente, el cartílago y el hueso que conforman la articulación pueden llegar a destruirse por completo.</p>
+                <p>En la <strong>artritis reumatoide</strong>, el sistema inmunitario del cuerpo ataca por error el revestimiento de la cápsula de las articulaciones (la membrana sinovial). Esto provoca que la membrana se inflame, hinche y provoque dolor. Si la enfermedad avanza lo suficiente, esta inflamación crónica puede invadir y destruir el cartílago y el hueso que conforman la articulación.</p>
+
+                <p><strong>Gota</strong></p>
+                <p>Este tipo de artritis es causado por la acumulación de cristales de urato (ácido úrico) en una articulación. Esto sucede cuando hay niveles excesivamente altos de ácido úrico en la sangre, ya sea porque el cuerpo produce demasiado o porque los riñones no lo eliminan eficientemente. Estos cristales afilados causan episodios súbitos e intensos de dolor e inflamación, a menudo en el dedo gordo del pie.</p>
+
+                <p><strong>Artritis psoriásica</strong></p>
+                <p>Es una forma de artritis que afecta a algunas personas que padecen psoriasis, una enfermedad de la piel. Generalmente, la psoriasis aparece primero y la artritis se desarrolla después, aunque en ocasiones el dolor articular comienza antes que las lesiones cutáneas.</p>
             </section>
 
             <section>
-                <h3>Tipos de artritis</h3>
+                <h3 id="tipos">Tipos de artritis</h3>
                 <table>
                     <caption>Principales tipos de artritis y sus características</caption>
                     <thead>
@@ -42,73 +81,140 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Osteoartritis</td>
+                            <td>Artrosis (Osteoartritis)</td>
                             <td>Desgaste del cartílago</td>
-                            <td>Dolor, rigidez, pérdida de movilidad</td>
-                            <td>Fisioterapia, analgésicos</td>
+                            <td>Dolor (empeora con actividad), rigidez, pérdida de movilidad</td>
+                            <td>Fisioterapia, analgésicos, control de peso</td>
                         </tr>
                         <tr>
                             <td>Artritis reumatoide</td>
                             <td>Trastorno autoinmune</td>
-                            <td>Inflamación crónica de articulaciones</td>
-                            <td>Inmunopresores, antiinflamatorios</td>
+                            <td>Inflamación crónica, dolor simétrico, rigidez matutina prolongada</td>
+                            <td>Inmunosupresores (<abbr title="Fármacos Antirreumáticos Modificadores de la Enfermedad">FARME</abbr>), antiinflamatorios, biológicos</td>
                         </tr>
                         <tr>
                             <td>Artritis psoriásica</td>
-                            <td>Relacionada con la psoriasis</td>
-                            <td>Dolor articular y lesiones cutáneas</td>
-                            <td>Medicamentos biológicos</td>
+                            <td>Relacionada con la psoriasis (autoinmune)</td>
+                            <td>Dolor articular, lesiones cutáneas, inflamación de dedos (dactilitis)</td>
+                            <td>Medicamentos biológicos, <abbr title="Antiinflamatorios no esteroideos">AINEs</abbr>, <abbr title="Fármacos Antirreumáticos Modificadores de la Enfermedad">FARME</abbr></td>
+                        </tr>
+                         <tr>
+                            <td>Gota</td>
+                            <td>Acumulación de cristales de ácido úrico</td>
+                            <td>Ataques súbitos de dolor intenso, hinchazón, enrojecimiento</td>
+                            <td>Medicamentos (reducir ácido úrico), dieta, antiinflamatorios</td>
+                        </tr>
+                        <tr>
+                            <td>Espondilitis anquilosante</td>
+                            <td>Autoinmune (afecta la columna)</td>
+                            <td>Dolor lumbar crónico, rigidez en columna, fusión vertebral</td>
+                            <td>Fisioterapia, biológicos, <abbr title="Antiinflamatorios no esteroideos">AINEs</abbr></td>
                         </tr>
                     </tbody>
                 </table>
             </section>
 
             <section>
-                <h3>Síntomas</h3>
+                <h3 id="sintomas">Síntomas</h3>
+                <p>Los signos y síntomas más comunes de la artritis afectan a las articulaciones. Dependiendo del tipo, pueden incluir:</p>
                 <ul>
-                    <li>Dolor</li>
-                    <li>Rigidez</li>
+                    <li>Dolor (crónico o agudo)</li>
+                    <li>Rigidez (especialmente matutina)</li>
                     <li>Hinchazón</li>
-                    <li>Enrojecimiento</li>
+                    <li>Enrojecimiento y calor en la articulación</li>
                     <li>Disminución de la amplitud de movimiento</li>
+                    <li>Crujidos o chasquidos al mover la articulación</li>
                 </ul>
+                <p>En la <strong>artrosis</strong>, el dolor suele empeorar con la actividad y mejorar con el reposo. La rigidez matutina suele ser breve (menos de 30 minutos).</p>
+                <p>En la <strong>artritis reumatoide</strong>, la rigidez matutina es un síntoma clave y suele durar más de una hora. A menudo afecta a las mismas articulaciones en ambos lados del cuerpo (simétrica) y puede ir acompañada de fatiga sistémica, fiebre leve y pérdida de peso.</p>
             </section>
 
              <section>
-                <h3>Factores de riesgo</h3>
+                <h3 id="factores-riesgo">Factores de riesgo</h3>
+                <p>Ciertos factores aumentan la probabilidad de desarrollar artritis:</p>
                 <ul>
-                    <li><strong>Antecedentes familiares:</strong> algunos tipos de artritis son hereditarios.</li>
-                    <li><strong>Edad:</strong> el riesgo de padecer algunos tipos de artritis, como la artrosis, aumenta con la edad.</li>
-                    <li><strong>Sexo:</strong> las mujeres son más propensas a desarrollar artritis reumatoide, mientras que los hombres son más propensos a padecer gota (otro tipo de artritis).</li>
-                    <li><strong>Lesión articular previa:</strong> las personas que hayan sufrido una lesión en una articulación tienen más probabilidades de desarrollar artritis en esa articulación.</li>
-                    <li><strong>Obesidad:</strong> el peso extra que aporta la obesidad sobre ciertas articulaciones, como las rodillas, cadera o columna, aumenta el riesgo de desarrollar artritis.</li>
+                    <li><strong>Antecedentes familiares:</strong> Algunos tipos de artritis son hereditarios, por lo que la genética puede hacer a una persona más susceptible.</li>
+                    <li><strong>Edad:</strong> El riesgo de padecer muchos tipos de artritis, especialmente la artrosis y la gota, aumenta con la edad.</li>
+                    <li><strong>Sexo:</strong> Las mujeres son más propensas a desarrollar artritis reumatoide, mientras que los hombres son más propensos a padecer gota.</li>
+                    <li><strong>Lesión articular previa:</strong> Las personas que hayan sufrido una lesión en una articulación (como en un deporte o accidente) tienen más probabilidades de desarrollar artrosis en esa articulación en el futuro.</li>
+                    <li><strong>Obesidad:</strong> El peso extra ejerce una presión adicional sobre las articulaciones que soportan carga, como las rodillas, la cadera y la columna. Esto acelera el desgaste del cartílago y aumenta el riesgo de artrosis.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Pruebas y diagnóstico</h3>
-                <p>Las pruebas para detectar y diagnosticar la artritis incluyen: </p>
+                <h3 id="diagnostico">Pruebas y diagnóstico</h3>
+                <p>El diagnóstico de la artritis implica una revisión de la historia clínica, un examen físico y diversas pruebas:</p>
                 <ul>
-                    <li><strong>Análisis de sangre</strong>, para buscar signos de inflamación y presencia de anticuerpos específicos</li>
-                    <li><strong>Pruebas de imagen</strong>, como las radiografías o la resonancia magnética</li>
-                    <li><strong>Análisis de líquido sinovial</strong>, para buscar infecciones o cristales</li>
+                    <li><strong>Análisis de sangre:</strong> Se utilizan para buscar marcadores de inflamación (como la Proteína C Reactiva o la Velocidad de Sedimentación Globular). En casos de sospecha de artritis reumatoide, se buscan anticuerpos específicos como el factor reumatoide (<abbr title="Factor Reumatoide">FR</abbr>) y los anticuerpos antipéptidos cíclicos citrulinados (<abbr title="Anticuerpos antipéptidos cíclicos citrulinados">anti-CCP</abbr>). También se puede medir el nivel de ácido úrico si se sospecha de gota.</li>
+                    <li><strong>Pruebas de imagen:</strong>
+                        <ul>
+                            <li><strong>Radiografías:</strong> Son útiles para visualizar la pérdida de cartílago (estrechamiento del espacio articular), espolones óseos y daño en el hueso.</li>
+                            <li><strong>Resonancia Magnética (<abbr title="Resonancia Magnética">RM</abbr>):</strong> Ofrece imágenes detalladas de los tejidos blandos, como el cartílago, los tendones y los ligamentos, permitiendo detectar la inflamación y el daño en etapas más tempranas.</li>
+                            <li><strong>Ecografía:</strong> Utiliza ondas sonoras para ver la calidad del cartílago, la inflamación sinovial y detectar cristales o líquido en la articulación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Análisis de líquido sinovial (Artrocentesis):</strong> Se extrae líquido de la articulación afectada con una aguja. Este líquido se analiza para buscar signos de infección o la presencia de cristales de urato (en la gota) o de pirofosfato cálcico (en la pseudogota).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="tratamiento">Tratamiento</h3>
+                <p>El tratamiento de la artritis se centra en aliviar los síntomas, reducir el dolor, prevenir daños mayores en la articulación y mejorar la calidad de vida. El enfoque varía según el tipo:</p> 
+                <dl>
+                    <dt><strong>Medicamentos</strong></dt>
+                    <dd>Dependiendo del tipo de artritis, se pueden usar:
+                        <ul>
+                            <li><strong>Antiinflamatorios no esteroideos (<abbr title="Antiinflamatorios no esteroideos">AINEs</abbr>):</strong> Como el ibuprofeno o el naproxeno, para reducir el dolor y la inflamación.</li>
+                            <li><strong>Analgésicos:</strong> Como el paracetamol, para el dolor sin inflamación.</li>
+                            <li><strong>Corticosteroides:</strong> (Orales o inyectados en la articulación) para reducir la inflamación rápidamente.</li>
+                            <li><strong>Fármacos Antirreumáticos Modificadores de la Enfermedad (<abbr title="Fármacos Antirreumáticos Modificadores de la Enfermedad">FARME</abbr>):</strong> Usados en la artritis reumatoide o psoriásica para frenar el ataque del sistema inmunitario a las articulaciones.</li>
+                            <li><strong>Agentes biológicos:</strong> Un tipo más nuevo de <abbr title="Fármacos Antirreumáticos Modificadores de la Enfermedad">FARME</abbr> que actúa sobre partes específicas del sistema inmunitario.</li>
+                        </ul>
+                    </dd>
+
+                    <dt><strong>Terapias</strong></dt>
+                    <dd>La fisioterapia es fundamental. Un fisioterapeuta puede diseñar ejercicios para fortalecer los músculos que rodean la articulación (dando más soporte) y mejorar la amplitud de movimiento. La terapia ocupacional puede enseñar formas de adaptar las tareas diarias para proteger las articulaciones.</dd>
+
+                    <dt><strong>Cambios en el estilo de vida</strong></dt>
+                    <dd>El autocuidado es clave. Esto incluye mantener un peso saludable (para reducir la presión sobre rodillas y caderas), realizar ejercicio de bajo impacto (como nadar, caminar o montar en bicicleta) y alternar períodos de actividad con descanso.</dd>
+
+                    <dt><strong>Cirugía</strong></dt>
+                    <dd>Cuando el daño articular es severo y el dolor incapacitante, la cirugía puede ser una opción. Los procedimientos incluyen:
+                        <ul>
+                            <li><strong>Artroscopia:</strong> Limpieza o reparación de la articulación.</li>
+                            <li><strong>Artroplastia (Reemplazo articular):</strong> Se extrae la articulación dañada y se reemplaza por una prótesis (común en cadera y rodilla).</li>
+                            <li><strong>Fusión articular (Artrodesis):</strong> Se unen los huesos de la articulación permanentemente (más común en muñecas o tobillos).</li>
+                        </ul>
+                    </d>
+                </dl>
+            </section>
+
+            <section>
+                <h3 id="complicaciones">Complicaciones</h3>
+                <p>La artritis, especialmente los tipos inflamatorios crónicos como la artritis reumatoide, puede tener un impacto más allá de las articulaciones:</p>
+                <ul>
+                    <li><strong>Impacto sistémico (Artritis Reumatoide):</strong> La inflamación puede afectar otros órganos, incluyendo los ojos (sequedad, uveítis), la piel (nódulos reumatoides), los pulmones (fibrosis) y el corazón (aumentando el riesgo de pericarditis o infartos).</li>
+                    <li><strong>Deformidades articulares:</strong> Con el tiempo, la erosión del hueso y el cartílago puede llevar a deformidades severas, especialmente en las manos y los pies, causando pérdida de función.</li>
+                    <li><strong>Discapacidad y movilidad:</strong> El dolor crónico y la rigidez pueden limitar gravemente la capacidad de realizar tareas diarias, afectando la independencia y la calidad de vida.</li>
+                    <li><strong>Problemas de salud mental:</strong> El manejo del dolor crónico y la discapacidad pueden llevar a la ansiedad y la depresión.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 id="prevencion">Prevención</h3>
+                <p>No todos los tipos de artritis se pueden prevenir (como la artritis reumatoide, al ser autoinmune). Sin embargo, se pueden tomar medidas para reducir el riesgo de artrosis o retrasar su aparición:</p>
+                <ul>
+                    <li><strong>Controlar el peso:</strong> Mantener un peso saludable es la medida más eficaz para prevenir la artrosis de rodilla, cadera y columna, ya que reduce la carga sobre estas articulaciones.</li>
+                    <li><strong>Evitar lesiones:</strong> Proteger las articulaciones durante la práctica deportiva (usando equipo adecuado) y en trabajos físicos (con buena técnica) ayuda a prevenir lesiones que pueden degenerar en artrosis años después.</li>
+                    <li><strong>Ejercicio regular:</strong> El ejercicio de bajo impacto fortalece los músculos que rodean y soportan las articulaciones, protegiéndolas.</li>
+                    <li><strong>Dieta (para la Gota):</strong> Evitar el exceso de alcohol (especialmente cerveza), bebidas azucaradas, carnes rojas y mariscos puede ayudar a prevenir los ataques de gota en personas susceptibles.</li>
+                    <li><strong>Buena postura:</strong> Mantener una buena postura al estar sentado o de pie protege las articulaciones de la columna y el cuello.</li>
                 </ul>
             </section>
 
 
             <section>
-                <h3>Tratamiento</h3>
-                <p>El tratamiento de la artritis varía según el tipo, la gravedad y la ubicación, pero suele incluir: </p> 
-                <ul>
-                    <li><strong>Medicamentos</strong>, como antiinflamatorios no esteroideos o corticosteroides</li>
-                    <li><strong>Terapias</strong>, como la fisioterapia o la terapia acuática</li>
-                    <li><strong>Cambios en el estilo de vida</strong>, como mantener un peso saludable o actividad física regular</li>
-                    <li><strong>Cirugía</strong>, como la artroplastia o la sinovectomía</li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>Vídeo explicativo</h3>
+                <h3 id="video">Vídeo explicativo</h3>
                 <h4>Artrosis y Artritis - Qué es, diferencias, causas y síntomas</h4>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/GdYiFnVHbHI?si=IGjFDkHrjFMYcv4o" title="Artrosis y Artritis - Qué es, diferencias, causas y síntomas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>

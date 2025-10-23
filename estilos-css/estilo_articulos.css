@@ -1,0 +1,208 @@
+/*
+ * Hoja de Estilos de la Enciclopedia de la Salud
+ * * Propiedades base: color, font, background, border, margin, padding.
+ * * Propiedades extra añadidas (con explicación):
+ * - max-width: Para limitar el ancho del texto y mejorar la legibilidad.
+ * - margin: auto: (uso de 'auto') Para centrar el contenido en la página.
+ * - box-sizing: Para hacer que el padding y el border se incluyan en el ancho/alto total.
+ * - text-decoration: Para quitar el subrayado de enlaces (ej. en la cabecera).
+ * - list-style: Para quitar los puntos de las listas (ej. en migas de pan).
+ * - display: Para cambiar el modelo de maquetación (ej. poner listas en horizontal).
+ * - content: (Pseudo-elemento) Para añadir separadores (ej. ">") en las migas de pan.
+ * - outline: Para crear un indicador de foco más claro y accesible.
+ * - scroll-behavior: Para animar el desplazamiento al usar la tabla de contenidos.
+ */
+
+/* --- Configuración Global --- */
+html {
+    /* NUEVO: box-sizing hace que padding/border no aumenten el tamaño final del elemento */
+    box-sizing: border-box; 
+    
+    /* NUEVO: scroll-behavior anima el salto al hacer clic en un enlace #ancla */
+    scroll-behavior: smooth;
+}
+
+/* NUEVO: Hereda el box-sizing a todos los elementos */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* --- Estilos Generales (Body) --- */
+body {
+    font-size: 100%; /* Permite al usuario reescalar (WCAG 1.4.4) */
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /* WCAG 1.4.3 (Contraste): Texto oscuro sobre fondo claro */
+    color: #222222;
+    background-color: #ffffff;
+    
+    /* NUEVO: max-width limita el ancho para legibilidad (WCAG 1.4.8) */
+    max-width: 960px;
+    
+    /* * NUEVO: margin: 0 auto; (usando 'auto') centra el body 
+     * cuando la pantalla es más ancha que max-width.
+     */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* --- Cabecera (Header) --- */
+header {
+    background-color: #003366; /* Azul oscuro */
+    color: #ffffff;
+    padding: 1.5rem;
+    border-bottom: 5px solid #0056b3; /* Azul más claro */
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Enlaces dentro de la cabecera */
+header a {
+    color: #ffffff;
+    /* NUEVO: text-decoration: none; quita el subrayado */
+    text-decoration: none;
+}
+
+/* --- Navegación Principal (Header Nav) --- */
+header nav a {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* --- Contenido Principal (Main) --- */
+main {
+    padding: 1rem 0; /* Espaciado vertical */
+}
+
+/* --- Migas de Pan (Breadcrumbs) --- */
+/* Ya no necesita el fondo/borde feo de la versión restringida */
+nav[aria-label="Migas de pan"] {
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+nav[aria-label="Migas de pan"] ol {
+    margin: 0;
+    padding: 0;
+    /* NUEVO: list-style: none; quita los números/puntos de la lista */
+    list-style: none; 
+    /* NUEVO: display: flex; coloca los elementos <li> en una línea horizontal */
+    display: flex;
+}
+
+/* NUEVO: Añade el separador ">" antes de cada <li> */
+nav[aria-label="Migas de pan"] li::before {
+    /* NUEVO: content: '...'; inserta contenido (el separador) */
+    content: '>';
+    margin: 0 0.5rem; /* Separación del texto */
+    color: #555555;
+}
+
+/* NUEVO: Elimina el separador del primer elemento */
+nav[aria-label="Migas de pan"] li:first-child::before {
+    content: '';
+    margin: 0;
+}
+
+/* --- Tabla de Contenidos (Índice) --- */
+#tabla-de-contenidos {
+    background-color: #f0f8ff; /* Azul muy claro */
+    border: 1px solid #bde0ff;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#tabla-de-contenidos h3 {
+    margin-top: 0;
+}
+
+/* --- Tipografía del Contenido --- */
+h2, h3 {
+    color: #003366; /* Azul oscuro para jerarquía */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eeeeee;
+}
+
+/* --- Enlaces Generales (Main/Footer) --- */
+a {
+    color: #0056b3; /* Azul accesible (Contraste 4.5:1 sobre blanco) */
+}
+
+/* * WCAG 2.4.7 (Focus Visible)
+ * NUEVO: outline: ...; es la forma estándar de mostrar el foco, 
+ * es más clara que cambiar el fondo.
+ */
+a:focus {
+    outline: 3px solid #0056b3;
+}
+
+/* NUEVO: Foco de alto contraste para enlaces sobre fondo oscuro (cabecera) */
+header a:focus {
+    outline: 3px solid #ffffff;
+}
+
+/* --- Estilos de Listas --- */
+ul, ol {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+dl {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Tablas --- */
+table {
+    margin-bottom: 1.5rem;
+    border: 1px solid #cccccc; /* Borde exterior */
+    /* NUEVO: border-collapse; une los bordes de las celdas */
+    border-collapse: collapse;
+    /* NUEVO: width: 100%; hace que la tabla ocupe el ancho disponible */
+    width: 100%;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid #dddddd; /* Bordes internos */
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* --- Media (Imágenes y Vídeos) --- */
+img, iframe {
+    /* NUEVO: max-width: 100%; asegura que no se desborden (Responsive) */
+    max-width: 100%;
+    /* NUEVO: height: auto; mantiene la proporción al reescalar */
+    height: auto;
+    /* NUEVO: display: block; permite centrarlas con margin: auto */
+    display: block;
+    margin: 1.5rem auto;
+    border: 1px solid #dddddd;
+    padding: 4px; /* Pequeño marco para imágenes */
+}
+
+iframe {
+    padding: 0; /* Los iframes no deben tener padding */
+    /* Asignamos un ancho habitual pero max-width lo controlará */
+    width: 560px; 
+}
+
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background-color: #f9f9f9;
+    color: #444444;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid #dddddd;
+}
+
