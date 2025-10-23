@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Buscador interactivo - Enciclopedia de la Salud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Buscador interactivo - Enciclopedia de la Salud</title>
+    <link rel="stylesheet" href="../../estilos.css">
 </head>
 <body>
-<header>
-  <h1>Buscador de enfermedades</h1>
-</header>
-<main>
+    <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+        <h1><a href="../../index.html">Buscador de enfermedades</a></h1>
+        <nav>
+            <a href="../../index.html">Inicio</a>
+            <a href="../../buscador.html">Buscador</a>
+        </nav>
+    </header>
+    
+    <main id="contenido-principal"> <h2>Haz clic en un órgano para buscar información</h2>
+        
+        <figure>
+            <img src="../img/cuerpo-humano.jpg" alt="Mapa de imagen interactivo del cuerpo humano, donde se puede hacer clic en el cerebro, pulmones, corazón, hígado y riñones." usemap="#image-map">
+            <figcaption>Mapa interactivo del cuerpo humano. Haz clic en un órgano.</figcaption>
+        </figure>
 
-<img src="../img/cuerpo-humano.jpg" usemap="#image-map">
+        <map name="image-map">
+            <area target="_blank" alt="Corazón" title="Corazón" href="https://medlineplus.gov/spanish/heartdiseases.html" coords="382,569,44" shape="circle">
+            
+            <area target="_blank" alt="Estómago" title="Estómago" href="https://medlineplus.gov/spanish/stomachdisorders.html" coords="391,693,335,715,339,740,407,750,424,726,453,726,481,695,481,650,459,624,426,627" shape="poly">
+            
+            <area target="_blank" alt="Riñones" title="Riñones" href="https://medlineplus.gov/spanish/kidneydiseases.html" coords="447,769,43" shape="circle">
+            
+            <area target="_blank" alt="Riñones" title="Riñones" href="https://medlineplus.gov/spanish/kidneydiseases.html" coords="294,773,41" shape="circle">
+            
+            <area target="_blank" alt="Hígado" title="Hígado" href="https://medlineplus.gov/spanish/liverdiseases.html" coords="317,704,287,723,264,735,254,723,244,694,243,659,255,635,277,621,303,615,338,614,360,615,383,621,414,628,402,648,390,674,360,693" shape="poly">
+            
+            <area target="_blank" alt="Cerebro" title="Cerebro" href="https://medlineplus.gov/spanish/braindiseases.html" coords="441,139,300,48" shape="rect">
+            
+            <area target="_blank" alt="Pulmones" title="Pulmones" href="https://medlineplus.gov/spanish/lungdiseases.html" coords="337,607,236,423" shape="rect">
+            
+            <area target="_blank" alt="Pulmones" title="Pulmones" href="https://medlineplus.gov/spanish/lungdiseases.html" coords="425,616,513,424" shape="rect">
 
-<map name="image-map">
-    <area target="" alt="Corazón" title="Corazón" href="https://medlineplus.gov/spanish/heartdiseases.html" coords="382,569,44" shape="circle">
-    <area target="" alt="Estómago" title="Estómago" href="https://medlineplus.gov/spanish/stomachdisorders.html" coords="391,693,335,715,339,740,407,750,424,726,453,726,481,695,481,650,459,624,426,627" shape="poly">
-    <area target="" alt="Riñones" title="Riñones" href="https://medlineplus.gov/spanish/kidneydiseases.html" coords="447,769,43" shape="circle">
-    <area target="" alt="Riñones" title="Riñones" href="https://medlineplus.gov/spanish/kidneydiseases.html" coords="294,773,41" shape="circle">
-    <area target="" alt="Hígado" title="Hígado" href="https://medlineplus.gov/spanish/liverdiseases.html" coords="317,704,287,723,264,735,254,723,244,694,243,659,255,635,277,621,303,615,338,614,360,615,383,621,414,628,402,648,390,674,360,693" shape="poly">
-    <area target="" alt="Cerebro" title="Cerebro" href="https://medlineplus.gov/spanish/braindiseases.html" coords="441,139,300,48" shape="rect">
-    <area target="" alt="Pulmones" title="Pulmones" href="https://medlineplus.gov/spanish/lungdiseases.html" coords="337,607,236,423" shape="rect">
-    <area target="" alt="Pulmones" title="Pulmones" href="https://medlineplus.gov/spanish/lungdiseases.html" coords="425,616,513,424" shape="rect">
+        </map>
 
-</map>
-</main>
-<footer>
-  <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-  <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
-</footer>
+        <h3>Lista de enlaces directos:</h3>
+        <ul>
+            <li><a href="https://medlineplus.gov/spanish/braindiseases.html">Cerebro</a></li>
+            <li><a href="https://medlineplus.gov/spanish/lungdiseases.html">Pulmones</a></li>
+            <li><a href="https://medlineplus.gov/spanish/heartdiseases.html">Corazón</a></li>
+            <li><a href="https://medlineplus.gov/spanish/liverdiseases.html">Hígado</a></li>
+            <li><a href="https://medlineplus.gov/spanish/stomachdisorders.html">Estómago</a></li>
+            <li><a href="https://medlineplus.gov/spanish/kidneydiseases.html">Riñones</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
+        <p><a href="../../index.html">Volver al inicio</a> | <a href="../../contacto.html">Contacto</a> | <a href="../../sitemap.html">Mapa del sitio</a> | <a href="../../accesibilidad.html">Declaración de accesibilidad</a></p>
+    </footer>
 </body>
-
 </html>
