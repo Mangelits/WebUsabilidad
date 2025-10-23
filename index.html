@@ -2,19 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enciclopedia de la Salud - Página principal</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://kit.fontawesome.com/AQUI_VA_TU_CODIGO.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
         <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="buscador.html">Buscador</a></li>
-                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
+            <ul class="nav-principal">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="buscador.html"><i class="fa-solid fa-magnifying-glass"></i> Buscador</a></li>
+                <li><a href="formulario_avanzado.html"><i class="fa-solid fa-file-lines"></i> Formulario avanzado</a></li>
                 <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
             </ul>
-            <ul>
+            <ul class="nav-letras">
                 <li><a href="letras/letra_a.html">A</a></li>
                 <li><a href="letras/letra_b.html">B</a></li>
                 <li><a href="error_404.html">C</a></li>
@@ -41,30 +45,28 @@
                 <li><a href="error_404.html">X</a></li>
                 <li><a href="error_404.html">Y</a></li>
                 <li><a href="error_404.html">Z</a></li>
-
             </ul>
         </nav>
     </header>
 
-<main>
+<main id="contenido-principal">
     <section>
         <h2>Bienvenido</h2>
         <p>El propósito de esta enciclopedia es aportar información básica sobre enfermedades, síntomas y tratamientos. </p>
         <p>A la vez puedas aprender sobre las partes del cuerpo humano, sus organos, sistemas y afecciones </p>
-
     </section>
 
-    <section>
+    <section class="destacados">
         <h2>Temas destacados</h2>
-        <article>
+        <article class="destacado">
             <h3><a href="articulos/articulo_anemia.html">Anemia</a></h3>
             <p>La anemia es una enfermedad en la que el número de glóbulos rojos,...</p>
         </article>
-        <article>
+        <article class="destacado">
             <h3><a href="articulos/articulo_artritis.html">Artritis</a></h3>
             <p>La artritis es la inflamación o el desgaste de una o varias articulaciones,...</p>
         </article>
-        <article>
+        <article class="destacado">
             <h3><a href="articulos/articulo_botulismo.html">Botulismo</a></h3>
             <p>El botulismo es una intoxicación que afecta a los nervios periféricos...</p>
         </article>
@@ -72,16 +74,14 @@
     <section>
         <h2>Aprende con nosotros</h2>
         <article>
-            <h3><a href="aprender/aprender.html">Entra y aprende con nosotros</a></h3>
+            <h3><a href="aprender/aprender.html"><i class="fa-solid fa-graduation-cap"></i> Entra y aprende con nosotros</a></h3>
         </article>
     </section>
 </main>
 
 <footer>
     <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-    <p><a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-    
-
+    <p><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
 </footer>
 </body>
 </html>
