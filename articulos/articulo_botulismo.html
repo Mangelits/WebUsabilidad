@@ -2,17 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Botulismo - Enciclopedia de la Salud</title>
+    <link rel="stylesheet" href="../estilos.css">
     <link rel="stylesheet" href="../estilos-css/estilo_articulos.css">
 </head>
 <body>
     <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
         <h1><a href="../index.html">Enciclopedia de la Salud</a></h1>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../buscador.html">Buscador</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- Migas de Pan -->
-        <nav aria-label="Migas de pan">
+    <main id="contenido-principal"> <nav aria-label="Migas de pan">
             <ol>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../letras/letra_b.html">Índice B</a></li>
@@ -23,9 +28,9 @@
         <article>
             <h2>Botulismo</h2>
             
-            <!-- INICIO DE LA TABLA DE CONTENIDOS -->
             <section id="tabla-de-contenidos">
                 <h3>Tabla de Contenidos</h3>
+                <p>Navegue rápidamente a la sección de interés:</p>
                 <ul>
                     <li><a href="#descripcion">Descripción</a></li>
                     <li><a href="#tipos-causas">Tipos y causas</a></li>
@@ -44,7 +49,10 @@
                 <h3 id="descripcion">Descripción</h3>
                 <p>El <strong>botulismo</strong> es una intoxicación que afecta a los nervios periféricos y es causada por las denominadas <strong>toxinas botulínicas</strong>, producidas por la bacteria <strong><em>Clostridium botulinum</em></strong>. El botulismo es una afección poco frecuente, pero muy grave y potencialmente mortal.</p>
                 <p>Esta bacteria se encuentra comúnmente en el suelo y el polvo. Sus esporas son extremadamente resistentes y pueden sobrevivir en estado latente. Sin embargo, en condiciones con ausencia de oxígeno (anaerobias), como en alimentos enlatados incorrectamente, heridas profundas o el intestino de un lactante, estas esporas pueden germinar, crecer y liberar la potente neurotoxina.</p>
-                <img src="../img/botulismo.jpg" alt="Bote de conserva infectado por la bacteria que provoca el botulismo" width="300">
+                <figure>
+                    <img src="../img/botulismo.jpg" alt="Bote de conserva infectado por la bacteria que provoca el botulismo" width="300">
+                    <figcaption>Las conservas caseras mal preparadas pueden crear un ambiente anaerobio ideal para la bacteria *Clostridium botulinum*.</figcaption>
+                </figure>
             </section>
 
             <section>
@@ -87,13 +95,13 @@
                             <td>Parálisis descendente, visión borrosa, vómitos</td>
                             <td>Antitoxina, cuidados intensivos</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>Botulismo infantil</td>
                             <td>Ingesta de esporas (ej. miel) que germinan en el intestino</td>
                             <td>Debilidad, llanto débil, estreñimiento, falta de succión</td>
                             <td>Antitoxina específica (<abbr title="Inmunoglobulina Botulínica Humana">BIG-IV</abbr>), hospitalización</td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>Botulismo por heridas</td>
                             <td>Infección de heridas profundas (a menudo por drogas)</td>
                             <td>Debilidad muscular (similar al alimentario), fiebre (por la herida)</td>
@@ -184,7 +192,10 @@
             <section>
                 <h3 id="video">Vídeo explicativo</h3>
                 <h4>BOTULISMO - fisiopatología, microbiología, signos y síntomas, diagnóstico, tratamiento y prevención</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/2Vtd3f6u4f4?si=xQi5lqeXzKhe_XmT" title="BOTULISMO - fisiopatología, microbiología, signos y síntomas, diagnóstico, tratamiento y prevención" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <figure>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2Vtd3f6u4f4?si=xQi5lqeXzKhe_XmT" title="BOTULISMO - fisiopatología, microbiología, signos y síntomas, diagnóstico, tratamiento y prevención" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption>Video explicativo sobre el botulismo, su patología, tratamiento y prevención.</figcaption>
+                </figure>
             </section>
         </article>
     </main>
@@ -192,7 +203,7 @@
     <footer>
         <p><a href="../letras/letra_b.html">Volver al índice de B</a></p>
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
-    
     </footer>
 </body>
 </html>
+
