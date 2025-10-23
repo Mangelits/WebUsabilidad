@@ -2,11 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Diabetes Mellitus - Enciclopedia de la Salud</title>
+    <link rel="stylesheet" href="../estilos.css">
     <link rel="stylesheet" href="../estilos-css/estilo_articulos.css">
 </head>
 <body>
     <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
         <h1><a href="../index.html">Enciclopedia de la Salud</a></h1>
         <nav>
             <a href="../index.html">Inicio</a>
@@ -14,8 +17,7 @@
         </nav>
     </header>
 
-    <main>
-        <nav aria-label="Migas de pan">
+    <main id="contenido-principal"> <nav aria-label="Migas de pan">
             <ol>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../letras/letra_d.html">Índice D</a></li>
@@ -28,6 +30,7 @@
             
             <section id="tabla-de-contenidos">
                 <h3>Tabla de Contenidos</h3>
+                <p>Navegue rápidamente a la sección de interés:</p>
                 <ul>
                     <li><a href="#descripcion">Descripción</a></li>
                     <li><a href="#papel-insulina">El Papel de la Insulina</a></li>
@@ -47,7 +50,10 @@
                 <p>La <strong>diabetes mellitus</strong>, comúnmente conocida simplemente como diabetes, es un grupo de enfermedades crónicas que afectan cómo el cuerpo utiliza el azúcar en sangre (glucosa). La glucosa es la principal fuente de energía para las células del cuerpo y proviene de los alimentos que comemos.</p>
                 <p>Para que la glucosa entre en las células y se use como energía, se necesita una hormona llamada <strong>insulina</strong>, que es producida por el páncreas. En la diabetes, este proceso falla. El cuerpo no produce suficiente insulina, no puede usar la insulina que produce de manera eficaz, o ambas cosas. Esto provoca que la glucosa se acumule en la sangre (hiperglucemia) en lugar de entrar en las células.</p>
                 <p>Con el tiempo, los niveles altos de glucosa en sangre pueden dañar seriamente muchos órganos y sistemas del cuerpo, especialmente los nervios, los ojos, los riñones y el corazón.</p>
-                <img src="../img/diabetes.jpg" alt="Gráfico mostrando el fallo de la insulina en la diabetes" width="300">
+                <figure>
+                    <img src="../img/diabetes.jpg" alt="Gráfico mostrando el fallo de la insulina en la diabetes" width="300">
+                    <figcaption>Ilustración esquemática del proceso de la diabetes, donde la glucosa se acumula en el torrente sanguíneo debido a la falta de insulina o la resistencia celular.</figcaption>
+                </figure>
             </section>
 
             <section>
@@ -148,7 +154,7 @@
 
                     <dt><strong>Prueba de Glucosa en Ayunas</strong></dt>
                     <dd>Mide el nivel de glucosa en sangre después de un ayuno de al menos 8 horas (generalmente durante la noche).
-                         <ul>
+                        <ul>
                             <li><strong>Normal:</strong> Menos de 100 mg/dL</li>
                             <li><strong>Prediabetes:</strong> 100 a 125 mg/dL</li>
                             <li><strong>Diabetes:</strong> 126 mg/dL o más</li>
@@ -157,7 +163,7 @@
                     
                     <dt><strong>Prueba de Tolerancia a la Glucosa Oral (<abbr title="Prueba de Tolerancia a la Glucosa Oral">PTOG</abbr>)</strong></dt>
                     <dd>Mide la glucosa en ayunas y, luego, 2 horas después de beber una bebida azucarada especial. Muestra cómo el cuerpo procesa la glucosa.
-                         <ul>
+                        <ul>
                             <li><strong>Normal (a las 2h):</strong> Menos de 140 mg/dL</li>
                             <li><strong>Prediabetes (a las 2h):</strong> 140 a 199 mg/dL</li>
                             <li><strong>Diabetes (a las 2h):</strong> 200 mg/dL o más</li>
@@ -240,14 +246,17 @@
             <section>
                 <h3 id="video">Vídeo explicativo</h3>
                 <h4>¿Qué es la Diabetes? Tipos, Síntomas y Prevención</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ODF1C-i14XE?si=AOd2QDbAlHa3qSjH" title="¿Qué es la diabetes?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            </section>
+                <figure>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ODF1C-i14XE?si=AOd2QDbAlHa3qSjH" title="¿Qué es la diabetes?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption>Video explicativo sobre los tipos de diabetes, sus síntomas y cómo prevenirla.</figcaption>
+                </figure>
+            </section>
         </article>
     </main>
 
     <footer>
         <p><a href="../letras/letra_d.html">Volver al índice de D</a></p>
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
-    
     </footer>
 </body>
 </html>
