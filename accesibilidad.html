@@ -4,12 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Declaración de accesibilidad - Enciclopedia de la Salud</title>
-    <link rel="stylesheet" href="estilos_css">
+    
+    <!-- CORRECCIÓN CLAVE: Se vincula al CSS BASE del sitio (asumo que es 'estilos.css' en la raíz) -->
+    <!-- Si tu archivo base se llama 'estilos-css/base.css', ajusta la ruta en consecuencia. -->
+    <link rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
     <header>
         <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
-        <h1>Declaración de accesibilidad</h1>
+        
+        <!-- Se corrige para que H1 enlace a index.html y muestre el título correcto -->
+        <h1><a href="index.html">Declaración de accesibilidad</a></h1>
+        
         <nav>
             <a href="index.html">Inicio</a>
             <a href="buscador.html">Buscador</a>
@@ -18,20 +24,23 @@
         </nav>
     </header>
 
-    <main id="contenido-principal"> <p>Este sitio web ha sido diseñado teniendo en cuenta las pautas de accesibilidad para asegurar que la mayor parte de las personas pueda acceder a sus contenidos sin dificultad.</p>
+    <main id="contenido-principal">
+        <p>Este sitio web ha sido diseñado teniendo en cuenta las pautas de accesibilidad para asegurar que la mayor parte de las personas pueda acceder a sus contenidos sin dificultad.</p>
         
         <h2>Medidas adoptadas (HTML & CSS)</h2>
         <p>Las siguientes medidas han sido implementadas en el código para mejorar la accesibilidad y usabilidad del sitio, siguiendo parcialmente las WCAG 2.1:</p>
+        
         <ul>
-            <li>Uso de la **estructura semántica de HTML5** (`<header>`, `<nav>`, `<main>`, `<footer>`, etc.) para definir regiones clave.</li>
-            <li>Uso de **encabezados jerárquicos** (`<h1>` a `<h6>`) para estructurar el contenido de forma coherente.</li>
-            <li>Provisión de **texto alternativo** (`alt`) en imágenes relevantes.</li>
-            <li>**Tablas de datos marcadas correctamente** con `<caption>`, `<th>` y el atributo `scope`.</li>
-            <li>**Formularios accesibles** con etiquetas explícitas (`<label>`), agrupaciones (`<fieldset>`/`<legend>`) y la indicación de campos obligatorios.</li>
-            <li>Uso de **atributos de idioma** (`lang="es"`) en las páginas.</li>
-            <li>Implementación de un **enlace "saltar a"** visible al foco (teclado).</li>
-            <li>Diseño **adaptativo** (`viewport` y `media queries`) para visualizar el contenido correctamente en diferentes tamaños de pantalla.</li>
-            <li>Asegurar un **indicador de foco visible** en todos los elementos interactivos (`:focus`).</li>
+            <!-- CORRECCIÓN: Se usa la etiqueta <strong> en lugar de **asteriscos** -->
+            <li>Uso de la <strong>estructura semántica de HTML5</strong> (`<header>`, `<nav>`, `<main>`, `<footer>`, etc.) para definir regiones clave.</li>
+            <li>Uso de <strong>encabezados jerárquicos</strong> (`<h1>` a `<h6>`) para estructurar el contenido de forma coherente.</li>
+            <li>Provisión de <strong>texto alternativo</strong> (`alt`) en imágenes relevantes.</li>
+            <li><strong>Tablas de datos marcadas correctamente</strong> con `<caption>`, `<th>` y el atributo `scope`.</li>
+            <li><strong>Formularios accesibles</strong> con etiquetas explícitas (`<label>`), agrupaciones (`<fieldset>`/`<legend>`) y la indicación de campos obligatorios.</li>
+            <li>Uso de <strong>atributos de idioma</strong> (`lang="es"`) en las páginas.</li>
+            <li>Implementación de un <strong>enlace "saltar a"</strong> visible al foco (teclado).</li>
+            <li>Diseño <strong>adaptativo</strong> (`viewport` y `media queries`) para visualizar el contenido correctamente en diferentes tamaños de pantalla.</li>
+            <li>Asegurar un <strong>indicador de foco visible</strong> en todos los elementos interactivos (`:focus`).</li>
         </ul>
 
         <h2>Contacto</h2>
@@ -39,11 +48,9 @@
     </main>
 
     <footer>
-    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-    <p><a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-</footer>
+        <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
+        <p><a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
+    </footer>
 </body>
 </html>
-
-
 
