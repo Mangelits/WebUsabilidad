@@ -40,7 +40,7 @@ a {
 }
 
 
-/* 3. ACCESIBILIDAD Y USABILIDAD (REQUISITO) */
+/* 3. ACCESIBILIDAD Y USABILIDAD */
 
 
 /* Foco visible: Evitar el error de outline: none; */
@@ -64,6 +64,7 @@ a:hover {
     background: var(--color-acento); /* background */
     border: 1px solid var(--color-texto-base); /* border */
     z-index: 1000;
+    color: var(--color-texto-base);
 }
 
 .saltar-a:focus {
