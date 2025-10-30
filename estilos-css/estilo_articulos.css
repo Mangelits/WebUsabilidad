@@ -185,6 +185,27 @@ footer a:focus {
     color: #eeeeee; /* un blanco ligeramente más claro al pasar el ratón */
     text-decoration: underline;
 }
+/* Saltar al contenido principal: oculto por defecto y aparece al hacer scroll */
+.saltar-a {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 9999;
+}
+
+.saltar-a.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ===============================================================
    --- MODO OSCURO ---
