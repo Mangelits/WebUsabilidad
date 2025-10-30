@@ -18,8 +18,7 @@ header {
     background-color: #000000;
     color: #ffffff;
     padding: 1.5rem;
-    border-bottom: 3px solid #ffffff; /* Borde fuerte */
-}
+    border-bottom: 3px solid #ffffff;
 
 header h1 {
     margin-top: 0;
@@ -40,7 +39,6 @@ main {
     padding: 1rem 0;
 }
 
-/* --- Migas de Pan --- */
 nav[aria-label="Migas de pan"] {
     padding: 0.5rem 0;
     margin-bottom: 1.5rem;
@@ -64,10 +62,10 @@ nav[aria-label="Migas de pan"] li:first-child::before {
     margin: 0;
 }
 
-/* --- Tabla de Contenidos --- */
+
 #tabla-de-contenidos {
-    background-color: #000000; /* Fondo negro */
-    border: 2px solid #ffffff; /* Borde blanco para delimitar */
+    background-color: #000000;
+    border: 2px solid #ffffff;
     padding: 1rem 1.5rem;
     margin-bottom: 2rem;
 }
@@ -81,7 +79,7 @@ h2, h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #ffffff; /* Borde blanco */
+    border-bottom: 2px solid #ffffff;
 }
 
 a {
@@ -97,7 +95,7 @@ input:focus {
 }
 
 header a:focus {
-    outline: 3px solid #ffff00; /* Foco amarillo */
+    outline: 3px solid #ffff00;
 }
 
 ul, ol {
@@ -128,7 +126,6 @@ th {
     font-weight: bold;
 }
 
-/* --- Imágenes e Iframes --- */
 img, iframe {
     max-width: 100%;
     height: auto;
