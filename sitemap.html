@@ -21,6 +21,8 @@
             <li><a href="buscador.html">Buscador</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
+            <button id="modo-toggle">🌙 Modo oscuro</button>
+
 
             <li><a href="aprender/aprender.html">Aprende con nosotros</a>
                 <ul>
@@ -45,4 +47,14 @@
 </footer>
 </body>
 </html>
+
+<script>
+  const boton = document.getElementById('modo-toggle');
+  boton.addEventListener('click', () => {
+    document.body.classList.toggle('modo-oscuro');
+    boton.textContent = document.body.classList.contains('modo-oscuro')
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
+</script>
 
