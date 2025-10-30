@@ -96,6 +96,10 @@ header {
 header .container {
   text-align: center; /* Centra todo en el header (móvil) */
 }
+header title {
+  margin: 0;
+  justify-content: center;
+}
 
 header h1 {
   margin: 0.5rem 0;
