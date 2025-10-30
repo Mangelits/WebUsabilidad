@@ -10,6 +10,8 @@
     <header>
         <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
         <h1><a href="../index.html">Enciclopedia de la Salud</a></h1>
+        <button id="modo-toggle">🌙 Modo oscuro</button>
+
     </header>
 
     <main id="contenido-principal"> <h2>Artículos con la letra A</h2>
@@ -23,4 +25,15 @@
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
     </footer>
 </body>
+<script>
+  const boton = document.getElementById('modo-toggle');
+  boton.addEventListener('click', () => {
+    document.body.classList.toggle('modo-oscuro');
+    boton.textContent = document.body.classList.contains('modo-oscuro')
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
+</script>
+
 </html>
+
