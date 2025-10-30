@@ -1,8 +1,6 @@
 /*
 ===================================================================
    --- VARIABLES (CUSTOM PROPERTIES) ---
-   Aquí definimos los colores y fuentes principales.
-   Si quieres cambiar el color azul, solo lo cambias en un sitio.
 ===================================================================
 */
 :root {
@@ -35,11 +33,24 @@
 body {
   font-family: var(--fuente-base);
   line-height: 1.6;
-  background-color: var(--color-fondo); /* CAMBIO: Fondo ahora es blanco */
+  background-color: var(--color-fondo);
   color: var(--color-texto);
-  margin: 0 auto; /* Centra la página */
+  margin: 0; /* CAMBIO: Eliminado el centrado (margin: 0 auto) */
   padding: 0;
-  max-width: var(--ancho-maximo); /* Ancho máximo en monitores grandes */
+  /* CAMBIO: Eliminado max-width. El body ahora ocupa el 100% */
+}
+
+/*
+===================================================================
+   --- UTILIDAD DE CONTENEDOR ---
+   NUEVO: Añade esta clase a un div HIJO dentro de header y footer
+   para centrar su contenido. 'main' ya hace este trabajo.
+===================================================================
+*/
+.container {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Espaciado lateral */
 }
 
 /* Estilos de enlaces generales */
@@ -61,7 +72,6 @@ a:hover {
 h1,
 h2,
 h3 {
-  /* ARREGLO: Aseguramos que sean 'bloques' y ocupen el 100% */
   display: block;
   width: 100%;
   color: var(--color-primario-oscuro);
@@ -75,13 +85,17 @@ h3 {
 ===================================================================
 */
 header {
-  /* CAMBIO: Fondo azul primario */
   background-color: var(--color-primario);
-  color: var(--color-texto-claro); /* CAMBIO: Contraste de texto */
-  text-align: center;
+  color: var(--color-texto-claro);
   border-bottom: 2px solid var(--color-primario-oscuro);
-  padding: 1rem; /* CAMBIO: Padding unificado */
+  padding: 1rem 0; /* CAMBIO: Padding vertical. El lateral lo da .container */
   margin-bottom: 1.5rem;
+  /* CAMBIO: Ya no está centrado, ocupa el 100% del ancho */
+}
+
+/* El text-align: center/left ahora se controla en el @media */
+header .container {
+  text-align: center;
 }
 
 header h1 {
@@ -89,14 +103,14 @@ header h1 {
 }
 
 header h1 a {
-  color: var(--color-texto-claro); /* CAMBIO: Contraste de texto */
+  color: var(--color-texto-claro);
   text-decoration: none;
 }
 
 /* CLASE: .nav-principal (Menú principal) */
 .nav-principal {
   display: flex;
-  flex-direction: column; /* Apilado vertical en móvil */
+  flex-direction: column;
   list-style: none;
   padding: 0;
   margin: 1rem 0;
@@ -108,7 +122,7 @@ header h1 a {
   background-color: var(--color-fondo-secundario);
   border-radius: var(--radio-borde);
   margin-bottom: 5px;
-  color: var(--color-enlace); /* Aseguramos color de enlace */
+  color: var(--color-enlace);
 }
 
 .nav-principal li a:hover {
@@ -119,12 +133,12 @@ header h1 a {
 /* CLASE: .nav-letras (Buscador de letras) */
 .nav-letras {
   display: flex;
-  flex-wrap: wrap; /* Las letras que no caben, bajan */
-  justify-content: center; /* Centra las letras */
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 1rem 0;
-  gap: 5px; /* Pequeño espacio entre cada letra */
+  gap: 5px;
 }
 
 .nav-letras li a {
@@ -148,14 +162,17 @@ header h1 a {
 ===================================================================
 */
 main {
-  padding: 0 1rem; /* Añadimos padding lateral que quitamos del body */
+  /* CAMBIO: 'main' es ahora el contenedor que se centra */
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Espaciado lateral */
 }
 
 section {
-  background-color: var(--color-fondo); /* Fondo blanco */
+  background-color: var(--color-fondo);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   margin-bottom: 1.5rem;
 }
 
@@ -167,7 +184,7 @@ section {
   border-radius: var(--radio-borde);
 }
 
-/* CLASE: .destacados (Contenedor de artículos) */
+/* CLASE: .destacado (Artículo individual) */
 .destacado {
   border-bottom: 1px solid #eee;
   padding-bottom: 1rem;
@@ -184,13 +201,13 @@ section {
 ===================================================================
 */
 footer {
-  /* CAMBIO: Fondo azul oscuro */
   background-color: var(--color-primario-oscuro);
-  color: #ccc; /* CAMBIO: Contraste de texto (gris claro) */
+  color: #ccc;
   text-align: center;
   margin-top: 2rem;
-  padding: 2rem 1rem; /* Más padding */
+  padding: 2rem 0; /* CAMBIO: Padding vertical. El lateral lo da .container */
   font-size: 0.9rem;
+  /* CAMBIO: Ya no está centrado, ocupa el 100% del ancho */
 }
 
 /*
@@ -226,30 +243,27 @@ footer {
 */
 
 @media (min-width: 768px) {
-  main {
-    padding: 0 1.5rem; /* Más padding lateral en escritorio */
+  /* El .container ya maneja el padding, así que 'main' no necesita cambiar */
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
   }
 
-  header {
-    /* ARREGLO: Quitamos display:flex para que H1 y Nav no estén en línea */
-    text-align: left; /* Título a la izquierda */
-  }
-
-  /* El .nav-principal se vuelve horizontal */
   .nav-principal {
-    flex-direction: row; /* ¡Horizontal! */
-    justify-content: flex-start; /* Alineado a la izquierda */
-    margin: 1rem 0 0 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0; /* Quitamos el margen superior */
   }
 
   .nav-principal li a {
     margin-bottom: 0;
-    margin-right: 10px; /* CAMBIO: margen derecho en vez de izquierdo */
+    margin-right: 10px;
     background: none;
     padding: 0.25rem 0.5rem;
-    color: var(
-      --color-texto-claro
-    ); /* CAMBIO: Contraste de texto en header */
+    color: var(--color-texto-claro);
   }
 
   .nav-principal li a:hover {
@@ -261,8 +275,17 @@ footer {
   /* Los .destacados se ponen en 3 columnas */
   .destacados {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas de igual tamaño */
-    gap: 1.5rem; /* Espacio entre columnas */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* * ARREGLO: "Temas Destacados"
+   * Si tu <h2> está *dentro* del div .destacados,
+   * esta regla lo fuerza a ocupar todo el ancho (las 3 columnas)
+   * y empuja los artículos (.destacado) debajo.
+   */
+  .destacados h2 {
+    grid-column: 1 / -1; /* El H2 abarca de la línea 1 a la última */
   }
 
   .destacado {
