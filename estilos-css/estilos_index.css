@@ -29,22 +29,18 @@
   box-sizing: border-box;
 }
 
-/* Estilos base para toda la página */
 body {
   font-family: var(--fuente-base);
   line-height: 1.6;
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  margin: 0; /* CAMBIO: Eliminado el centrado (margin: 0 auto) */
+  margin: 0;
   padding: 0;
-  /* CAMBIO: Eliminado max-width. El body ahora ocupa el 100% */
 }
 
 /*
 ===================================================================
    --- UTILIDAD DE CONTENEDOR ---
-   NUEVO: Añade esta clase a un div HIJO dentro de header y footer
-   para centrar su contenido. 'main' ya hace este trabajo.
 ===================================================================
 */
 .container {
@@ -53,7 +49,6 @@ body {
   padding: 0 1.5rem; /* Espaciado lateral */
 }
 
-/* Estilos de enlaces generales */
 a {
   color: var(--color-enlace);
   text-decoration: none;
@@ -88,14 +83,12 @@ header {
   background-color: var(--color-primario);
   color: var(--color-texto-claro);
   border-bottom: 2px solid var(--color-primario-oscuro);
-  padding: 1rem 0; /* CAMBIO: Padding vertical. El lateral lo da .container */
+  padding: 1rem 0;
   margin-bottom: 1.5rem;
-  /* CAMBIO: Ya no está centrado, ocupa el 100% del ancho */
 }
 
-/* El text-align: center/left ahora se controla en el @media */
 header .container {
-  text-align: center;
+  text-align: center; /* Centra todo en el header (móvil) */
 }
 
 header h1 {
@@ -110,7 +103,7 @@ header h1 a {
 /* CLASE: .nav-principal (Menú principal) */
 .nav-principal {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Vertical en móvil */
   list-style: none;
   padding: 0;
   margin: 1rem 0;
@@ -148,6 +141,9 @@ header h1 a {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: var(--color-fondo);
+  color: var(
+    --color-texto
+  ); /* Aseguramos que se lea sobre fondo blanco */
 }
 
 .nav-letras li a:hover {
@@ -162,10 +158,9 @@ header h1 a {
 ===================================================================
 */
 main {
-  /* CAMBIO: 'main' es ahora el contenedor que se centra */
   max-width: var(--ancho-maximo);
   margin: 0 auto;
-  padding: 0 1.5rem; /* Espaciado lateral */
+  padding: 0 1.5rem;
 }
 
 section {
@@ -176,7 +171,6 @@ section {
   margin-bottom: 1.5rem;
 }
 
-/* CLASE: .conBorde */
 .conBorde {
   border: 2px solid var(--color-enlace);
   background-color: #f0f7ff;
@@ -184,7 +178,6 @@ section {
   border-radius: var(--radio-borde);
 }
 
-/* CLASE: .destacado (Artículo individual) */
 .destacado {
   border-bottom: 1px solid #eee;
   padding-bottom: 1rem;
@@ -205,9 +198,8 @@ footer {
   color: #ccc;
   text-align: center;
   margin-top: 2rem;
-  padding: 2rem 0; /* CAMBIO: Padding vertical. El lateral lo da .container */
+  padding: 2rem 0;
   font-size: 0.9rem;
-  /* CAMBIO: Ya no está centrado, ocupa el 100% del ancho */
 }
 
 /*
@@ -215,7 +207,6 @@ footer {
    --- ACCESIBILIDAD ---
 ===================================================================
 */
-/* CLASE: .saltar-a (Enlace de accesibilidad) */
 .saltar-a {
   position: absolute;
   left: -10000px;
@@ -243,19 +234,27 @@ footer {
 */
 
 @media (min-width: 768px) {
-  /* El .container ya maneja el padding, así que 'main' no necesita cambiar */
-
+  /*
+    * * * ¡AQUÍ ESTÁ EL CAMBIO! * * *
+    * Quitamos el 'display: flex' para que los elementos del
+    * header (h1, nav-principal, nav-letras) se apilen
+    * verticalmente, uno debajo del otro.
+    */
   header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+    /* display: flex; <-- ELIMINADO */
+    /* justify-content: space-between; <-- ELIMINADO */
+    /* align-items: center; <-- ELIMINADO */
+    text-align: center; /* Mantenemos todo centrado */
   }
 
+  /*
+    * Hacemos que el menú principal sea horizontal
+    * y centrado, pero AÚN DEBAJO del título.
+    */
   .nav-principal {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0; /* Quitamos el margen superior */
+    flex-direction: row; /* Los enlaces SÍ se ponen en horizontal */
+    justify-content: center; /* Centramos el menú */
+    margin: 1rem 0;
   }
 
   .nav-principal li a {
@@ -272,6 +271,20 @@ footer {
     color: var(--color-texto-claro);
   }
 
+  /* El nav-letras usará los mismos estilos que en móvil,
+     quedando centrado y debajo del nav-principal.
+     Pero sus enlaces serán blancos para contrastar. */
+  .nav-letras li a {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    border-color: var(--color-primario-oscuro);
+  }
+
+  .nav-letras li a:hover {
+    background-color: var(--color-texto-claro);
+    color: var(--color-primario-oscuro);
+  }
+
   /* Los .destacados se ponen en 3 columnas */
   .destacados {
     display: grid;
@@ -279,13 +292,8 @@ footer {
     gap: 1.5rem;
   }
 
-  /* * ARREGLO: "Temas Destacados"
-   * Si tu <h2> está *dentro* del div .destacados,
-   * esta regla lo fuerza a ocupar todo el ancho (las 3 columnas)
-   * y empuja los artículos (.destacado) debajo.
-   */
   .destacados h2 {
-    grid-column: 1 / -1; /* El H2 abarca de la línea 1 a la última */
+    grid-column: 1 / -1;
   }
 
   .destacado {
