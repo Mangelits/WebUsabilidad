@@ -10,7 +10,7 @@ html {
 body {
     
     font-size: 112.5%;  
-    font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+    font-family: 'Merriweather';
     color: #222222;
     background-color: #ffffff;
     max-width: 80ch;
@@ -148,3 +148,4 @@ footer {
     margin-top: 2rem;
     border-top: 1px solid #dddddd;
 }
+
