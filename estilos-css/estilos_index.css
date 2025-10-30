@@ -341,8 +341,8 @@ body.modo-oscuro {
   --color-primario: #4a90e2;
   --color-primario-oscuro: #1c3d5a;
   --color-enlace: #7ab4ff;
-  --color-texto: #e4e4e4;
-  --color-texto-claro: #ffffff;
+  --color-texto: #e4e4e4;      /* Texto principal en blanco-gris */
+  --color-texto-claro: #ffffff; /* Texto claro puro */
   --color-fondo: #121212;
   --color-fondo-secundario: #1e1e1e;
   --color-borde-sutil: #333;
@@ -351,7 +351,7 @@ body.modo-oscuro {
   color: var(--color-texto);
 }
 
-/* Header y footer adaptados */
+/* Header y footer */
 body.modo-oscuro header,
 body.modo-oscuro footer {
   background-color: var(--color-primario-oscuro);
@@ -363,13 +363,39 @@ body.modo-oscuro a {
   color: var(--color-enlace);
 }
 
+body.modo-oscuro a:hover {
+  color: var(--color-texto-claro);
+  text-decoration: underline;
+}
+
 /* Secciones y contenedores */
-body.modo-oscuro section,
 body.modo-oscuro main,
-body.modo-oscuro .container {
+body.modo-oscuro section,
+body.modo-oscuro .container,
+body.modo-oscuro .aprender,           
+body.modo-oscuro #tabla-de-contenidos /* tabla de contenidos */
+{
   background-color: var(--color-fondo-secundario);
-  color: var(--color-texto);
+  color: var(--color-texto-claro);
   border-color: var(--color-borde-sutil);
+}
+
+/* Tablas dentro de secciones y tabla de contenidos */
+body.modo-oscuro table {
+  border: 1px solid var(--color-borde-sutil);
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-claro);
+}
+
+body.modo-oscuro th,
+body.modo-oscuro td {
+  border: 1px solid var(--color-borde-sutil);
+  padding: 0.75rem;
+}
+
+body.modo-oscuro th {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
 }
 
 /* Navegación */
@@ -384,3 +410,4 @@ body.modo-oscuro .nav-letras li a:hover {
   background-color: var(--color-primario);
   color: var(--color-texto-claro);
 }
+
