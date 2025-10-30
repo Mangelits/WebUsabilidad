@@ -348,3 +348,13 @@ body.modo-oscuro a {
 body.modo-oscuro section {
   background-color: var(--color-fondo-secundario);
 }
+/* MODO OSCURO */
+body.modo-oscuro section,
+body.modo-oscuro main,
+body.modo-oscuro .container,
+body.modo-oscuro .aprender {  /* asegúrate de que tu sección tenga esta clase */
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-claro); /* <--- Esto aplica texto blanco a todo */
+  border-color: var(--color-borde-sutil);
+}
+
