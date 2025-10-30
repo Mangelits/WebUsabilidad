@@ -90,8 +90,10 @@ header {
   display: flex;
   flex-direction: column; /* apilar h1 y nav verticalmente */
   justify-content: center; /* centra verticalmente */
-  align-items: center; /* centra horizontalmente *
+  align-items: center; /* centra horizontalmente */
+  text-align: center; /* asegura el centrado del texto */
 }
+
 
 header .container {
   text-align: center; /* Centra todo en el header (móvil) */
