@@ -76,6 +76,7 @@
             <h3><a href="aprender/aprender.html"><i class="fa-solid fa-book"></i> Entra y aprende con nosotros</a></h3>
         </article>
         <p>Visítanos: &#9742; (906 876 324) &#9993; (enciclopedia-es-salud@gmail.com)</p>
+        <button id="modo-toggle">🌙 Modo oscuro</button>
     </section>
 </main>
 
@@ -86,4 +87,12 @@
 </body>
 </html>
 
-
+<script>
+  const boton = document.getElementById('modo-toggle');
+  boton.addEventListener('click', () => {
+    document.body.classList.toggle('modo-oscuro');
+    boton.textContent = document.body.classList.contains('modo-oscuro')
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
+</script>
