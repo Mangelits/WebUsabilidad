@@ -1,178 +1,242 @@
 
-
-/* 1. VARIABLES CSS (MODULARIDAD) */
-
-:root {
-    /* REQUISITO: Variables CSS */
-    --color-principal: #007bff; /* Azul primario, usado en headers, botones */
-    --color-texto-base: #333;
-    --color-fondo-claro: #f4f4f9;
-    --color-acento: #ffc107; /* Amarillo para acentos/foco */
-    --fuente-base: Arial, Helvetica, sans-serif; /* REQUISITO: font */
-    --espacio-s: 8px;
-    --espacio-m: 16px;
-    --espacio-l: 24px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-
-/* 2. ESTILOS BASE Y TIPOGRAFÍA */
-
-/* REQUISITO: Propiedades mínimas: font, color, background, margin, padding */
+/* Estilos base para toda la página */
 body {
-    font-family: var(--fuente-base); /* font */
-    color: var(--color-texto-base); /* color */
-    background: var(--color-fondo-claro); /* background */
-    margin: 0; /* margin */
-    padding: 0; /* padding */
-    line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #639fdb;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2 {
-    color: var(--color-principal); /* color */
-    margin-top: var(--espacio-l); /* margin */
-    padding-bottom: var(--espacio-s); /* padding */
+ */
+body {
+  max-width: 1200px; /* Ancho máximo en monitores grandes */
+  margin: 0 auto; /* Centra la página */
+  padding: 1rem; /* Espacio en los bordes para móviles */
 }
 
-/* Enlaces base */
+/* Estilos de enlaces generales */
 a {
-    color: var(--color-principal); /* color */
-    text-decoration: underline; 
-}
-
-
-/* 3. ACCESIBILIDAD Y USABILIDAD (REQUISITO) */
-
-
-/* Foco visible: Evitar el error de outline: none; */
-:focus {
-    outline: 2px solid var(--color-acento); 
-    outline-offset: 2px;
-    background-color: #eee; /* background (para contraste) */
+  color: #0056b3;
+  text-decoration: none; /* Quitamos el subrayado por defecto */
 }
 
 a:hover {
-    color: var(--color-fondo-claro); /* color */
-    background-color: var(--color-principal); /* background */
-    text-decoration: none;
+  text-decoration: underline; /* Lo mostramos al pasar el ratón */
+  color: #003d80;
 }
 
-/* Enlace "saltar a"*/
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+  text-align: center; /* Centra el título en móvil */
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0.5rem 0;
+}
+
+header h1 a {
+  color: #333; /* El título principal en color de texto normal */
+  text-decoration: none;
+}
+
+/* * CLASE: .nav-principal (Tu menú principal)
+ * En móvil (por defecto) lo mostramos como una lista vertical.
+ */
+.nav-principal {
+  display: flex;
+  flex-direction: column; /* Apilado vertical en móvil */
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.nav-principal li a {
+  display: block; /* Para que ocupe todo el ancho */
+  padding: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.nav-principal li a:hover {
+  background-color: #dee2e6;
+  text-decoration: none;
+}
+
+/* * CLASE: .nav-letras (Tu buscador de letras - LA PARTE CLAVE)
+ * Usamos Flexbox con 'wrap' para que se adapte al zoom/pantalla.
+ * ¡Esta es la solución a tu problema!
+ */
+.nav-letras {
+  display: flex;
+  flex-wrap: wrap; /* ¡MÁGIA! Las letras que no caben, bajan */
+  justify-content: center; /* Centra las letras */
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  gap: 5px; /* Pequeño espacio entre cada letra */
+}
+
+.nav-letras li a {
+  display: block;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.nav-letras li a:hover {
+  background-color: #0056b3;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- CONTENIDO PRINCIPAL (MAIN) --- */
+main {
+  /* El 'id' se usa para el enlace "Saltar al contenido" */
+  padding-top: 1rem;
+}
+
+section {
+  background-color: #ffffff; /* Fondo blanco para las secciones */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  margin-bottom: 1.5rem;
+}
+
+h2,
+h3 {
+  color: #003d80; /* Un azul más oscuro para títulos */
+}
+
+/* * CLASE: .conBorde (La que tenías en tu HTML)
+ * Le damos un estilo destacado como nos pedía el nombre.
+ */
+.conBorde {
+  border: 2px solid #0056b3;
+  background-color: #f0f7ff; /* Fondo azulado muy claro */
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* * CLASE: .destacados (La sección de artículos)
+ * En móvil, los artículos se apilan solos (article es 'block')
+ * Más abajo, en el breakpoint, los pondremos en columnas.
+ */
+.destacado {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.destacado:last-child {
+  border-bottom: none; /* El último artículo no necesita borde */
+}
+
+/* NOTA: Para que <i class="fa-solid fa-book"></i> funcione,
+ * necesitas cargar la librería Font Awesome en el <head> de tu HTML.
+ */
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #dee2e6;
+  font-size: 0.9rem;
+  color: #6c757d; /* Gris para el texto secundario */
+}
+
+/* * CLASE: .saltar-a (Enlace de accesibilidad)
+ * Lo ocultamos visualmente, pero sigue ahí para lectores de pantalla.
+ * Aparecerá si navegas con el tabulador (al hacer :focus).
+ */
 .saltar-a {
-    position: absolute;
-    left: -9999px; /* Oculto fuera de la pantalla */
-    padding: var(--espacio-s); /* padding */
-    background: var(--color-acento); /* background */
-    border: 1px solid var(--color-texto-base); /* border */
-    z-index: 1000;
+  position: absolute;
+  left: -10000px; /* Lo saca de la pantalla */
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .saltar-a:focus {
-    left: 0;
-    top: 0;
-    text-decoration: none;
-    /* Sobrescribe el fondo de :focus, usando el fondo del link */
-    background-color: var(--color-acento); 
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem;
+  font-weight: bold;
 }
 
-/* Campo obligatorio visual */
-.obligatorio {
-    color: red; /* color */
-    font-weight: bold; /* font */
+/*
+ ===================================================================
+                      *** ¡AQUÍ LOS BREAKPOINTS! ***
+ ===================================================================
+ Usamos 'min-width' (ancho mínimo). Estos estilos SÓLO se aplican
+ si la pantalla es MÁS ANCHA que el valor que indicamos.
+*/
+
+/* --- Breakpoint para Tablets (y horizontal) --- */
+@media (min-width: 768px) {
+  body {
+    padding: 1.5rem; /* Un poco más de espacio a los lados */
+  }
+
+  header {
+    display: flex; /* Alineamos horizontalmente */
+    justify-content: space-between; /* Título a la izq, nav a la dcha */
+    align-items: center; /* Centra verticalmente */
+    text-align: left; /* Título a la izquierda */
+  }
+
+  /* * AHORA SÍ: El .nav-principal se vuelve horizontal
+   */
+  .nav-principal {
+    flex-direction: row; /* ¡Horizontal! */
+    margin: 0;
+  }
+
+  .nav-principal li a {
+    margin-bottom: 0;
+    margin-left: 10px;
+    background: none; /* Quitamos el fondo */
+  }
+
+  .nav-principal li a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+
+  /* * AHORA SÍ: Los .destacados se ponen en columnas
+   * Usamos CSS Grid para crear una rejilla perfecta.
+   */
+  .destacados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas de igual tamaño */
+    gap: 1.5rem; /* Espacio entre columnas */
+  }
+
+  .destacado {
+    border-bottom: none; /* Ya no necesitamos el borde en tablet */
+    padding-bottom: 0;
+  }
 }
 
-
-
-/* 4. ESTRUCTURA GLOBAL (HEADER / FOOTER / NAV) */
-
-
-header {
-    background: var(--color-principal); /* background */
-    padding: var(--espacio-m); /* padding */
-    color: white; /* color */
-}
-
-header a {
-    color: white; /* color */
-    text-decoration: none;
-}
-
-header nav {
-    margin-top: var(--espacio-s); /* margin */
-}
-
-/* Navegación principal (Índice, Buscador, etc.) */
-.nav-principal {
-    list-style: none;
-    padding: 0; /* padding */
-    margin: 0 0 var(--espacio-s) 0; /* margin */
-}
-.nav-principal li {
-    display: inline;
-    margin-right: var(--espacio-l); /* margin */
-    font-weight: bold; /* font */
-}
-
-/* Navegación de letras */
-.nav-letras {
-    list-style: none;
-    padding: 0; /* padding */
-    margin: var(--espacio-s) 0 0 0; /* margin */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3); /* border */
-    padding-top: var(--espacio-s); /* padding */
-}
-.nav-letras li {
-    font-size: 0.9em; /* font */
-}
-
-
-main {
-    padding: var(--espacio-l); /* padding */
-    min-height: 50vh;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrar main */
-}
-
-footer {
-    background: var(--color-texto-base); /* background */
-    color: white; /* color */
-    padding: var(--espacio-m); /* padding */
-    text-align: center;
-    border-top: 5px solid var(--color-acento); /* border */
-}
-
-footer a {
-    color: var(--color-acento); /* color */
-}
-
-/* 5. DISEÑO ADAPTATIVO BÁSICO (INDEX PAGE) */
-
-
-/* Estilo para los artículos en la sección destacados */
-.destacado {
-    border: 1px solid #ccc; /* border */
-    margin-bottom: var(--espacio-m); /* margin */
-    padding: var(--espacio-m); /* padding */
-    background: white; /* background */
-}
-
-
-@media screen and (min-width: 768px) {
-    
-    /Maquetación en columnas para los destacados en index.html */
-    .destacados {
-        overflow: hidden; /* Clearfix para los elementos flotantes */
-        margin-top: var(--espacio-l);
-    }
-    .destacado {
-        float: left;
-        width: 31%; 
-        margin-right: 2%; /* Espacio entre columnas */
-        height: auto; /* Ajuste de altura */
-    }
-    .destacado:last-child {
-        margin-right: 0;
-    }
 }
