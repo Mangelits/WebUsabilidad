@@ -1,0 +1,119 @@
+@page {
+    margin: 2cm 1.5cm;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000000;
+    background: #ffffff;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header nav,
+nav[aria-label="Migas de pan"],
+#tabla-de-contenidos,
+iframe,
+footer {
+    display: none;
+}
+
+header {
+    background: none;
+    color: #000000;
+    border: none;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+header h1 {
+    font-size: 20pt; /* Título claro */
+    margin: 0;
+}
+
+main {
+    padding: 0;
+}
+
+
+h2, h3 {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    margin-top: 1.5em;
+    padding-bottom: 2pt;
+    page-break-after: avoid; 
+}
+
+h2 {
+    font-size: 16pt;
+    page-break-before: always;
+}
+
+h3 {
+    font-size: 14pt;
+    border-bottom-width: 1px;
+}
+
+
+a, a:visited {
+    color: #000000;
+    /* Req 5: Subrayado */
+    text-decoration: underline;
+}
+
+main a[href^="http"]::after {
+    content: " [" attr(href) "]";
+    font-size: 10pt;
+    font-style: italic;
+    word-wrap: break-word;
+}
+
+header a::after,
+main a[href^="#"]::after {
+    content: "";
+}
+
+img {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border: 1px solid #999;
+    padding: 0;
+    page-break-inside: avoid;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+    font-size: 10pt;
+}
+
+table th, table td {
+    border: 1px solid #333333 !important;
+    padding: 4pt;
+    text-align: left;
+}
+
+table th {
+    background-color: #eeeeee !important;
+    font-weight: bold;
+}
+
+main::after {
+    content: "\A \A --- \A Fuente: " attr(data-url)
+    display: block;
+    text-align: left;
+    font-size: 10pt;
+    font-style: italic;
+    color: #555555;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid #999;
+    white-space: pre-wrap;
+}
