@@ -1,195 +1,229 @@
+/* ============================================================
+   ESTILOS GENERALES MEJORADOS (2025)
+   Archivo: estilos_css.css
+   ============================================================ */
 
-
-/* 1. VARIABLES CSS (MODULARIDAD) */
-
+/* 1. VARIABLES CSS */
 :root {
-    /* REQUISITO: Variables CSS */
-    --color-principal: #007bff; /* Azul primario, usado en headers, botones */
+    --color-principal: #007bff;
     --color-texto-base: #333;
     --color-fondo-claro: #f4f4f9;
-    --color-acento: #ffc107; /* Amarillo para acentos/foco */
-    --fuente-base: Arial, Helvetica, sans-serif; /* REQUISITO: font */
+    --color-acento: #ffc107;
+    --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
     --espacio-s: 8px;
     --espacio-m: 16px;
     --espacio-l: 24px;
+
+    --ancho-maximo: 1100px;
 }
 
+/* ============================================================
+   2. ESTILOS BASE
+   ============================================================ */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
 
-/* 2. ESTILOS BASE Y TIPOGRAFÍA */
-
-/* REQUISITO: Propiedades mínimas: font, color, background, margin, padding */
 body {
-    font-family: var(--fuente-base); /* font */
-    color: var(--color-texto-base); /* color */
-    background: var(--color-fondo-claro); /* background */
-    margin: 0; /* margin */
-    padding: 0; /* padding */
+    font-family: var(--fuente-base);
+    color: var(--color-texto-base);
+    background: var(--color-fondo-claro);
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-h1, h2 {
-    color: var(--color-principal); /* color */
-    margin-top: var(--espacio-l); /* margin */
-    padding-bottom: var(--espacio-s); /* padding */
+/* Tipografía general */
+h1, h2, h3 {
+    color: var(--color-principal);
+    font-weight: bold;
+    margin-top: var(--espacio-l);
+    margin-bottom: var(--espacio-s);
 }
 
-/* Enlaces base */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
 a {
-    color: var(--color-principal); /* color */
-    text-decoration: underline; 
-}
-
-
-/* 3. ACCESIBILIDAD Y USABILIDAD */
-
-
-/* Foco visible: Evitar el error de outline: none; */
-:focus {
-    outline: 2px solid var(--color-acento); 
-    outline-offset: 2px;
-    background-color: #eee; /* background (para contraste) */
+    color: var(--color-principal);
+    text-decoration: underline;
 }
 
 a:hover {
-    color: var(--color-fondo-claro); /* color */
-    background-color: var(--color-principal); /* background */
+    background-color: var(--color-principal);
+    color: white;
     text-decoration: none;
 }
 
-/* Enlace "saltar a"*/
-.saltar-a {
-    position: absolute;
-    left: -9999px; /* Oculto fuera de la pantalla */
-    padding: var(--espacio-s); /* padding */
-    background: var(--color-acento); /* background */
-    border: 1px solid var(--color-texto-base); /* border */
-    z-index: 1000;
-    color: var(--color-texto-base);
-}
-
-.saltar-a:focus {
-    left: 0;
-    top: 0;
-    text-decoration: none;
-    /* Sobrescribe el fondo de :focus, usando el fondo del link */
-    background-color: var(--color-acento); 
-}
-
-/* Campo obligatorio visual */
-.obligatorio {
-    color: red; /* color */
-    font-weight: bold; /* font */
-}
-
-
-
-/* 4. ESTRUCTURA GLOBAL (HEADER / FOOTER / NAV) */
-
-
+/* ============================================================
+   3. HEADER, NAV Y FOOTER
+   ============================================================ */
 header {
-    background: var(--color-principal); /* background */
-    padding: var(--espacio-m); /* padding */
-    color: white; /* color */
+    background: var(--color-principal);
+    color: white;
+    padding: var(--espacio-m);
 }
 
 header a {
-    color: white; /* color */
+    color: white;
     text-decoration: none;
 }
 
 header nav {
-    margin-top: var(--espacio-s); /* margin */
+    margin-top: var(--espacio-s);
 }
 
-/* Navegación principal (Índice, Buscador, etc.) */
 .nav-principal {
     list-style: none;
-    padding: 0; /* padding */
-    margin: 0 0 var(--espacio-s) 0; /* margin */
-}
-.nav-principal li {
-    display: inline;
-    margin-right: var(--espacio-l); /* margin */
-    font-weight: bold; /* font */
-}
-
-/* Navegación de letras */
-.nav-letras {
-    list-style: none;
-    padding: 0; /* padding */
-    margin: var(--espacio-s) 0 0 0; /* margin */
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3); /* border */
-    padding-top: var(--espacio-s); /* padding */
-}
-.nav-letras li {
-    font-size: 0.9em; /* font */
+    gap: var(--espacio-m);
 }
 
-
-main {
-    padding: var(--espacio-l); /* padding */
-    min-height: 50vh;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrar main */
+.nav-principal li {
+    font-weight: bold;
 }
 
+/* FOOTER */
 footer {
-    background: var(--color-texto-base); /* background */
-    color: white; /* color */
-    padding: var(--espacio-m); /* padding */
+    background: var(--color-texto-base);
+    color: white;
+    padding: var(--espacio-m);
     text-align: center;
-    border-top: 5px solid var(--color-acento); /* border */
+    border-top: 5px solid var(--color-acento);
+    font-size: 0.95rem;
 }
 
 footer a {
-    color: var(--color-acento); /* color */
+    color: var(--color-acento);
 }
 
-/* 5. DISEÑO ADAPTATIVO BÁSICO (INDEX PAGE) */
-
-
-/* Estilo para los artículos en la sección destacados */
-.destacado {
-    border: 1px solid #ccc; /* border */
-    margin-bottom: var(--espacio-m); /* margin */
-    padding: var(--espacio-m); /* padding */
-    background: white; /* background */
+/* ============================================================
+   4. MAIN Y CONTENIDO
+   ============================================================ */
+main {
+    padding: var(--espacio-l);
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-
-@media screen and (min-width: 768px) {
-    
-    /Maquetación en columnas para los destacados en index.html */
-    .destacados {
-        overflow: hidden; /* Clearfix para los elementos flotantes */
-        margin-top: var(--espacio-l);
-    }
-    .destacado {
-        float: left;
-        width: 31%; 
-        margin-right: 2%; /* Espacio entre columnas */
-        height: auto; /* Ajuste de altura */
-    }
-    .destacado:last-child {
-        margin-right: 0;
-    }
+/* Formularios */
+input, select, textarea, button {
+    font-family: var(--fuente-base);
+    font-size: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-ul, ol {
-    margin-left: 1.5em;
-    padding-left: 0;
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: var(--espacio-m);
 }
-h1 {
-    font-size: 2em;
+
+/* ============================================================
+   5. ACCESIBILIDAD
+   ============================================================ */
+/* Enlace "Saltar al contenido principal" */
+.saltar-a {
+    position: fixed;
+    top: -50px; /* Oculto al principio */
+    left: 10px;
+    background: var(--color-acento);
+    color: #000;
+    padding: 10px 15px;
     font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: top 0.3s ease;
+    z-index: 1000;
 }
 
-h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: var(--espacio-l);
+/* Visible al hacer foco (teclado) */
+.saltar-a:focus {
+    top: 10px;
 }
+
+/* Visible al hacer scroll */
+body.scrolled .saltar-a {
+    top: 10px;
+}
+
+/* ============================================================
+   6. ESTADOS DE FOCO Y HOVER
+   ============================================================ */
+:focus {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+    background-color: #eee;
+}
+
+/* ============================================================
+   7. RESPONSIVIDAD (BREAKPOINTS)
+   ============================================================ */
+
+/* Dispositivos pequeños (móvil) */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px; /* Texto un poco más pequeño */
+    }
+
+    main {
+        padding: var(--espacio-m);
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .nav-principal {
+        flex-direction: column;
+        gap: var(--espacio-s);
+    }
+}
+
+/* Tablets y pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .nav-principal {
+        justify-content: flex-start;
+        gap: var(--espacio-m);
+    }
+}
+
+/* Escritorios grandes */
+@media (min-width: 1025px) {
+    html {
+        font-size: 17px;
+    }
+
+    main {
+        max-width: var(--ancho-maximo);
+    }
+}
+/* 8. SCRIPT DE APOYO (activar clase al hacer scroll) */
+
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
 
