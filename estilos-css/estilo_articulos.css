@@ -185,27 +185,32 @@ footer a:focus {
     color: #eeeeee; /* un blanco ligeramente más claro al pasar el ratón */
     text-decoration: underline;
 }
-/* Saltar al contenido principal: oculto por defecto y aparece al hacer scroll */
+/* Enlace "Saltar al contenido principal" inicialmente oculto */
 .saltar-a {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed;     /* Fijo en pantalla */
+  top: 10px;           /* Separación del borde superior */
+  left: 50%;           /* Centrado horizontal */
+  transform: translateX(-50%); /* Ajusta el centrado exacto */
   background-color: #000;
   color: #fff;
   padding: 0.5rem 1rem;
   font-weight: bold;
   border-radius: 4px;
+  z-index: 1000;
+  
+  /* Oculto al inicio */
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-  z-index: 9999;
+  pointer-events: none; /* No se puede hacer clic cuando está oculto */
+  
+  transition: opacity 0.3s ease; /* Suaviza la aparición */
 }
 
+/* Cuando tenga la clase 'visible', se muestra */
 .saltar-a.visible {
   opacity: 1;
   pointer-events: auto;
 }
+
 
 /* ===============================================================
    --- MODO OSCURO ---
