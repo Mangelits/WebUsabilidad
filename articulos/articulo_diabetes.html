@@ -13,6 +13,8 @@
         <nav>
             <a href="../index.html">Inicio</a>
             <a href="../buscador.html">Buscador</a>
+            <button id="modo-toggle">🌙 Modo oscuro</button>
+
         </nav>
     </header>
 
@@ -271,5 +273,15 @@
         <p><a href="../index.html">Volver al inicio</a> | <a href="../contacto.html">Contacto</a> | <a href="../sitemap.html">Mapa del sitio</a> | <a href="../accesibilidad.html">Declaración de accesibilidad</a></p>
     </footer>
 </body>
+<script>
+  const boton = document.getElementById('modo-toggle');
+  boton.addEventListener('click', () => {
+    document.body.classList.toggle('modo-oscuro');
+    boton.textContent = document.body.classList.contains('modo-oscuro')
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
+</script>
+
 </html>
 
