@@ -1,229 +1,350 @@
-/* ============================================================
-   ESTILOS GENERALES MEJORADOS (2025)
-   Archivo: estilos_css.css
-   ============================================================ */
-
-/* 1. VARIABLES CSS */
+/*
+===================================================================
+   --- VARIABLES (CUSTOM PROPERTIES) ---
+===================================================================
+*/
 :root {
-    --color-principal: #007bff;
-    --color-texto-base: #333;
-    --color-fondo-claro: #f4f4f9;
-    --color-acento: #ffc107;
-    --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-    --espacio-s: 8px;
-    --espacio-m: 16px;
-    --espacio-l: 24px;
-
-    --ancho-maximo: 1100px;
+  --color-primario: #639fdb;
+  --color-primario-oscuro: #003d80;
+  --color-enlace: #0056b3;
+  --color-texto: #333;
+  --color-texto-claro: #ffffff;
+  --color-fondo: #ffffff;
+  --color-fondo-secundario: #e9ecef;
+  --color-borde-sutil: #dee2e6;
+  --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --ancho-maximo: 1200px;
+  --radio-borde: 5px;
 }
 
-/* ============================================================
-   2. ESTILOS BASE
-   ============================================================ */
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+/*
+===================================================================
+   --- ESTILOS GLOBALES Y RESET ---
+===================================================================
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--fuente-base);
-    color: var(--color-texto-base);
-    background: var(--color-fondo-claro);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    max-width: 100%;
-    overflow-x: hidden;
+  font-family: var(--fuente-base);
+  line-height: 1.6;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
 }
 
-/* Tipografía general */
-h1, h2, h3 {
-    color: var(--color-principal);
-    font-weight: bold;
-    margin-top: var(--espacio-l);
-    margin-bottom: var(--espacio-s);
+/*
+===================================================================
+   --- UTILIDAD DE CONTENEDOR ---
+===================================================================
+*/
+.container {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
 
 a {
-    color: var(--color-principal);
-    text-decoration: underline;
+  color: var(--color-enlace);
+  text-decoration: none;
 }
 
 a:hover {
-    background-color: var(--color-principal);
-    color: white;
-    text-decoration: none;
+  text-decoration: underline;
+  color: var(--color-primario-oscuro);
 }
 
-/* ============================================================
-   3. HEADER, NAV Y FOOTER
-   ============================================================ */
+/*
+===================================================================
+   --- ENCABEZADOS ---
+===================================================================
+*/
+h1,
+h2,
+h3 {
+  display: block;
+  width: 100%;
+  color: var(--color-primario-oscuro);
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/*
+===================================================================
+   --- HEADER Y NAVEGACIÓN ---
+===================================================================
+*/
 header {
-    background: var(--color-principal);
-    color: white;
-    padding: var(--espacio-m);
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  border-bottom: 2px solid var(--color-primario-oscuro);
+  padding: 1rem 0;
+  margin-bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-header a {
-    color: white;
-    text-decoration: none;
+header h1 {
+  margin: 0.5rem 0;
 }
 
-header nav {
-    margin-top: var(--espacio-s);
+header h1 a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
 }
 
+#modo-toggle {
+  margin-top: 10px;
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#modo-toggle:hover {
+  background-color: var(--color-primario);
+}
+
+/* Navegación principal */
 .nav-principal {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-m);
+  margin: 1rem 0;
 }
 
-.nav-principal li {
-    font-weight: bold;
+.nav-principal ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* FOOTER */
+.nav-principal li a {
+  display: block;
+  padding: 0.75rem;
+  background-color: var(--color-fondo-secundario);
+  border-radius: var(--radio-borde);
+  margin-bottom: 5px;
+  color: var(--color-enlace);
+}
+
+.nav-principal li a:hover {
+  background-color: var(--color-borde-sutil);
+  text-decoration: none;
+}
+
+/* Navegación de letras */
+.nav-letras {
+  margin: 1rem 0;
+}
+
+.nav-letras ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.nav-letras li a {
+  display: block;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.nav-letras li a:hover {
+  background-color: var(--color-enlace);
+  color: var(--color-texto-claro);
+  text-decoration: none;
+}
+
+/*
+===================================================================
+   --- CONTENIDO PRINCIPAL ---
+===================================================================
+*/
+main {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  background-color: var(--color-fondo);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.conBorde {
+  border: 2px solid var(--color-enlace);
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border-radius: var(--radio-borde);
+}
+
+.destacado {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.destacado:last-child {
+  border-bottom: none;
+}
+
+/*
+===================================================================
+   --- FOOTER ---
+===================================================================
+*/
 footer {
-    background: var(--color-texto-base);
-    color: white;
-    padding: var(--espacio-m);
-    text-align: center;
-    border-top: 5px solid var(--color-acento);
-    font-size: 0.95rem;
+  background-color: var(--color-primario-oscuro);
+  color: #ccc;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem 0;
+  font-size: 0.9rem;
 }
 
 footer a {
-    color: var(--color-acento);
+  color: #ffffff;
+  text-decoration: none;
 }
 
-/* ============================================================
-   4. MAIN Y CONTENIDO
-   ============================================================ */
-main {
-    padding: var(--espacio-l);
-    max-width: var(--ancho-maximo);
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+  color: #ffffff;
 }
 
-/* Formularios */
-input, select, textarea, button {
-    font-family: var(--fuente-base);
-    font-size: 1rem;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-fieldset {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: var(--espacio-m);
-}
-
-/* ============================================================
-   5. ACCESIBILIDAD
-   ============================================================ */
-/* Enlace "Saltar al contenido principal" */
+/*
+===================================================================
+   --- ACCESIBILIDAD ---
+===================================================================
+*/
 .saltar-a {
-    position: fixed;
-    top: -50px; /* Oculto al principio */
-    left: 10px;
-    background: var(--color-acento);
-    color: #000;
-    padding: 10px 15px;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid #333;
-    border-radius: 5px;
-    transition: top 0.3s ease;
-    z-index: 1000;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-/* Visible al hacer foco (teclado) */
 .saltar-a:focus {
-    top: 10px;
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem;
+  font-weight: bold;
+  display: inline-block;
+  margin: 1rem auto;
 }
 
-/* Visible al hacer scroll */
-body.scrolled .saltar-a {
-    top: 10px;
+/*
+===================================================================
+   --- BREAKPOINTS ---
+===================================================================
+*/
+@media (min-width: 768px) {
+  header .container {
+    text-align: center;
+  }
+
+  .nav-principal ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-principal li a {
+    margin: 0 5px;
+    background: none;
+    padding: 0.25rem 0.5rem;
+    color: var(--color-texto-claro);
+  }
+
+  .nav-principal li a:hover {
+    background: none;
+    text-decoration: underline;
+    color: var(--color-texto-claro);
+  }
+
+  .nav-letras li a {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    border-color: var(--color-primario-oscuro);
+  }
+
+  .nav-letras li a:hover {
+    background-color: var(--color-texto-claro);
+    color: var(--color-primario-oscuro);
+  }
+
+  .destacados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .destacados h2 {
+    grid-column: 1 / -1;
+  }
+
+  .destacado {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
-/* ============================================================
-   6. ESTADOS DE FOCO Y HOVER
-   ============================================================ */
-:focus {
-    outline: 3px solid var(--color-acento);
-    outline-offset: 2px;
-    background-color: #eee;
+/*
+===================================================================
+   --- MODO OSCURO (manual con botón) ---
+===================================================================
+*/
+body.modo-oscuro {
+  --color-primario: #4a90e2;
+  --color-primario-oscuro: #1c3d5a;
+  --color-enlace: #7ab4ff;
+  --color-texto: #e4e4e4;
+  --color-texto-claro: #ffffff;
+  --color-fondo: #121212;
+  --color-fondo-secundario: #1e1e1e;
+  --color-borde-sutil: #333;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
 }
 
-/* ============================================================
-   7. RESPONSIVIDAD (BREAKPOINTS)
-   ============================================================ */
-
-/* Dispositivos pequeños (móvil) */
-@media (max-width: 600px) {
-    html {
-        font-size: 15px; /* Texto un poco más pequeño */
-    }
-
-    main {
-        padding: var(--espacio-m);
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    .nav-principal {
-        flex-direction: column;
-        gap: var(--espacio-s);
-    }
+body.modo-oscuro header,
+body.modo-oscuro footer {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
 }
 
-/* Tablets y pantallas medianas */
-@media (min-width: 601px) and (max-width: 1024px) {
-    html {
-        font-size: 16px;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    .nav-principal {
-        justify-content: flex-start;
-        gap: var(--espacio-m);
-    }
+body.modo-oscuro a {
+  color: var(--color-enlace);
 }
 
-/* Escritorios grandes */
-@media (min-width: 1025px) {
-    html {
-        font-size: 17px;
-    }
-
-    main {
-        max-width: var(--ancho-maximo);
-    }
+body.modo-oscuro section {
+  background-color: var(--color-fondo-secundario);
 }
-/* 8. SCRIPT DE APOYO (activar clase al hacer scroll) */
-
-
-<script>
-  window.addEventListener('scroll', () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 50);
-  });
-</script>
-
-
