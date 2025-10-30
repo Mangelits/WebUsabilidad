@@ -411,3 +411,9 @@ body.modo-oscuro .nav-letras li a:hover {
   color: var(--color-texto-claro);
 }
 
+/* MODO OSCURO */
+body.modo-oscuro .conBorde {
+  background-color: var(--color-fondo-secundario); /* fondo oscuro */
+  color: var(--color-texto-claro); /* texto blanco */
+  border-color: var(--color-borde-sutil); /* borde más visible en oscuro */
+}
