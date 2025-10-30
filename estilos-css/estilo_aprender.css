@@ -307,3 +307,40 @@ body.modo-oscuro .nav-letras li a:hover {
   background-color: var(--color-primario);
   color: var(--color-texto-claro);
 }
+/* ===============================================================
+   --- AJUSTES EXTRA DE MODO OSCURO (Tablas, Tabla de contenidos) ---
+   =============================================================== */
+
+/* Tabla de contenidos */
+body.modo-oscuro #tabla-de-contenidos {
+  background-color: #1e2a33; /* fondo más oscuro */
+  border: 1px solid #333;
+  color: #e4e4e4;
+}
+
+body.modo-oscuro #tabla-de-contenidos h3 {
+  color: #7ab4ff; /* tono azul claro para resaltar */
+}
+
+/* Tablas */
+body.modo-oscuro table {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+}
+
+body.modo-oscuro th {
+  background-color: #2a2a2a; /* cabecera gris oscura */
+  color: #ffffff;
+}
+
+body.modo-oscuro td {
+  background-color: #1a1a1a;
+  color: #e4e4e4;
+  border: 1px solid #333;
+}
+
+/* Bordes más suaves y contrastados */
+body.modo-oscuro th,
+body.modo-oscuro td {
+  border-color: #444;
+}
