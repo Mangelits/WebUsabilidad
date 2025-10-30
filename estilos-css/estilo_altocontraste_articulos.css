@@ -1,0 +1,163 @@
+html {
+    box-sizing: border-box; 
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 110%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1.5rem;
+    border-bottom: 3px solid #ffffff; /* Borde fuerte */
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header nav a {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+main {
+    padding: 1rem 0;
+}
+
+/* --- Migas de Pan --- */
+nav[aria-label="Migas de pan"] {
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+nav[aria-label="Migas de pan"] ol {
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+    display: flex;
+}
+
+nav[aria-label="Migas de pan"] li::before {
+    content: '>';
+    margin: 0 0.5rem;
+    color: #ffffff; /* Blanco */
+}
+nav[aria-label="Migas de pan"] li:first-child::before {
+    content: '';
+    margin: 0;
+}
+
+/* --- Tabla de Contenidos --- */
+#tabla-de-contenidos {
+    background-color: #000000; /* Fondo negro */
+    border: 2px solid #ffffff; /* Borde blanco para delimitar */
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#tabla-de-contenidos h3 {
+    margin-top: 0;
+}
+
+h2, h3 {
+    color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ffffff; /* Borde blanco */
+}
+
+a {
+    color: #ffff00;
+    text-decoration: underline;
+}
+
+a:focus,
+button:focus,
+input:focus {
+    outline: 3px solid #ffff00; 
+    background-color: #333; 
+}
+
+header a:focus {
+    outline: 3px solid #ffff00; /* Foco amarillo */
+}
+
+ul, ol {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+dl {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    margin-bottom: 1.5rem;
+    border: 2px solid #ffffff;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 0.75rem;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+th {
+    background-color: #000000;
+    font-weight: bold;
+}
+
+/* --- Imágenes e Iframes --- */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto;
+    border: 1px solid #ffffff;
+    padding: 4px;
+}
+
+iframe {
+    padding: 0;
+    width: 560px; 
+}
+
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 3px solid #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ffff00;
+}
