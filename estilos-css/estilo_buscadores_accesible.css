@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+.saltar-a {
+    color: #ffffff ; 
+    background-color: #004d40; 
+    padding: 0.6em 1.2em;
+    position: absolute;
+    left: -9999px;
+    z-index: 9999;
+    border: 3px solid #ffc107;
+    font-size: 1.1em;
+}
+
+.saltar-a:focus {
+    position: fixed; 
+    left: 10px;
+    top: 10px;
+    color: #ffffff !important; 
+    text-decoration: underline;
+}
+
+body {
+    font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+    font-size: 19px; 
+    color: #222;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+header, footer {
+    background-color: #004d40;
+    color: #ffffff;
+    padding: 1.25em 1.5em;
+    margin: 0;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 a, footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header h1 a:hover, footer a:hover, footer a:focus {
+    text-decoration: underline;
+}
+
+header nav {
+    margin-top: 0.5em;
+}
+
+header nav a {
+    color: #ffffff;
+    font-size: 1.1em;
+    padding-right: 1.5em;
+}
+
+footer {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 2.5em;
+    border-top: 5px solid #00251a;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+main {
+    max-width: 80ch; 
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+article {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1em 2.5em 2.5em 2.5em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+article h2 {
+    font-size: 2.4em;
+    color: #004d40;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+article h3 {
+    font-size: 1.7em;
+    color: #333;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+    margin-bottom: 1.25em;
+}
+
+article p, article li {
+    margin-bottom: 1em;
+}
+
+article strong {
+    color: #00251a;
+}
+
+nav[aria-label="Migas de pan"] {
+    font-size: 0.9em;
+    margin-bottom: 1.5em;
+    padding: 0.5em 0;
+}
+
+nav[aria-label="Migas de pan"] ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav[aria-label="Migas de pan"] li {
+    margin: 0;
+}
+
+nav[aria-label="Migas de pan"] li:not(:last-child)::after {
+    content: '>';
+    margin: 0 0.75em;
+    color: #777;
+}
+
+nav[aria-label="Migas de pan"] a {
+    color: #004d40;
+    text-decoration: none;
+}
+
+nav[aria-label="Migas de pan"] a:hover {
+    text-decoration: underline;
+}
+
+nav[aria-label="Migas de pan"] span[aria-current="page"] {
+    color: #555;
+    font-weight: bold;
+}
+
+#tabla-de-contenidos {
+    background-color: #e8f5e9;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    padding: 1em 1.5em 1.5em 1.5em;
+    margin-bottom: 2em;
+}
+
+#tabla-de-contenidos h3 {
+    border-bottom: none;
+    margin-top: 0.5em;
+    margin-bottom: 0.75em;
+    color: #004d40;
+}
+
+#tabla-de-contenidos ul {
+    margin: 0;
+    padding-left: 1.5em;
+}
+
+#tabla-de-contenidos li {
+    margin-bottom: 0.5em;
+}
+
+#tabla-de-contenidos a {
+    text-decoration: none;
+    color: #004d40;
+    font-weight: bold;
+}
+
+#tabla-de-contenidos a:hover,
+#tabla-de-contenidos a:focus {
+    text-decoration: underline;
+}
+
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.95em;
+}
+
+table caption {
+    font-size: 1em;
+    font-style: italic;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left; 
+}
+
+table th {
+    background-color: #e8f5e9;
+    color: #00251a;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+dl {
+    margin: 1.5em 0;
+}
+
+dt {
+    font-weight: bold;
+    color: #222;
+    margin-top: 1em;
+}
+
+dd {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #00695c;
+    outline-offset: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
