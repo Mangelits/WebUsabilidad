@@ -239,8 +239,27 @@
       : "🌙 Modo oscuro";
   });
 </script>
+<script>
+  // Seleccionamos el elemento con la clase 'saltar-a'
+  const saltar = document.querySelector('.saltar-a');
+
+  // Añadimos un "listener" que se ejecuta cada vez que el usuario hace scroll
+  window.addEventListener('scroll', () => {
+    
+    // Comprobamos si la ventana se ha desplazado verticalmente más de 100 píxeles
+    if (window.scrollY > 100) {
+      // Si es así, añadimos la clase 'visible' al enlace, que hace que se muestre
+      saltar.classList.add('visible');
+    } else {
+      // Si el scroll es menor de 100px, quitamos la clase 'visible', ocultando el enlace
+      saltar.classList.remove('visible');
+    }
+  });
+</script>
+
 
 </html>
+
 
 
 
