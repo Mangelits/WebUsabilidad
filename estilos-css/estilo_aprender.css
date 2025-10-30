@@ -256,3 +256,54 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ===============================================================
+   --- MODO OSCURO ---
+   =============================================================== */
+
+body.modo-oscuro {
+  --color-primario: #4a90e2;
+  --color-primario-oscuro: #1c3d5a;
+  --color-enlace: #7ab4ff;
+  --color-texto: #e4e4e4;
+  --color-texto-claro: #ffffff;
+  --color-fondo: #121212;
+  --color-fondo-secundario: #1e1e1e;
+  --color-borde-sutil: #333;
+
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* Header y footer adaptados */
+body.modo-oscuro header,
+body.modo-oscuro footer {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
+}
+
+/* Enlaces en modo oscuro */
+body.modo-oscuro a {
+  color: var(--color-enlace);
+}
+
+/* Secciones y contenedores */
+body.modo-oscuro section,
+body.modo-oscuro main,
+body.modo-oscuro .container {
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto);
+  border-color: var(--color-borde-sutil);
+}
+
+/* Navegación */
+body.modo-oscuro .nav-principal li a,
+body.modo-oscuro .nav-letras li a {
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-claro);
+}
+
+body.modo-oscuro .nav-principal li a:hover,
+body.modo-oscuro .nav-letras li a:hover {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+}
