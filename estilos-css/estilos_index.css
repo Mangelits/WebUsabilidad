@@ -100,13 +100,23 @@ header h1 a {
   text-decoration: none;
 }
 
-/* CLASE: .nav-principal (Menú principal) */
+/*
+ * * * CSS CORREGIDO * * *
+ * Ahora los estilos se aplican al <ul> de dentro
+ */
+
+/* Contenedor <nav> principal */
 .nav-principal {
+  margin: 1rem 0; /* Espacio vertical */
+}
+
+/* Lista <ul> principal */
+.nav-principal ul {
   display: flex;
   flex-direction: column; /* Vertical en móvil */
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0;
 }
 
 .nav-principal li a {
@@ -123,14 +133,19 @@ header h1 a {
   text-decoration: none;
 }
 
-/* CLASE: .nav-letras (Buscador de letras) */
+/* Contenedor <nav> de letras */
 .nav-letras {
+  margin: 1rem 0; /* Espacio vertical */
+}
+
+/* Lista <ul> de letras */
+.nav-letras ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0;
   gap: 5px;
 }
 
@@ -141,9 +156,7 @@ header h1 a {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: var(--color-fondo);
-  color: var(
-    --color-texto
-  ); /* Aseguramos que se lea sobre fondo blanco */
+  color: var(--color-texto);
 }
 
 .nav-letras li a:hover {
@@ -214,6 +227,7 @@ footer {
   width: 1px;
   height: 1px;
   overflow: hidden;
+  /* Nota: El :focus está más abajo, en el breakpoint */
 }
 
 .saltar-a:focus {
@@ -225,7 +239,12 @@ footer {
   color: #fff;
   padding: 0.5rem;
   font-weight: bold;
+  
+  /* Hacemos que ocupe el espacio dentro del .container */
+  display: inline-block;
+  margin: 1rem auto;
 }
+
 
 /*
 ===================================================================
@@ -234,32 +253,23 @@ footer {
 */
 
 @media (min-width: 768px) {
-  /*
-    * * * ¡AQUÍ ESTÁ EL CAMBIO! * * *
-    * Quitamos el 'display: flex' para que los elementos del
-    * header (h1, nav-principal, nav-letras) se apilen
-    * verticalmente, uno debajo del otro.
-    */
+
+  /* El .container del header se mantiene centrado (text-align: center) */
+  /* Esto asegura que h1, nav-principal y nav-letras se apilen */
   header .container {
-    /* display: flex; <-- ELIMINADO */
-    /* justify-content: space-between; <-- ELIMINADO */
-    /* align-items: center; <-- ELIMINADO */
-    text-align: center; /* Mantenemos todo centrado */
+    text-align: center;
   }
 
-  /*
-    * Hacemos que el menú principal sea horizontal
-    * y centrado, pero AÚN DEBAJO del título.
-    */
-  .nav-principal {
-    flex-direction: row; /* Los enlaces SÍ se ponen en horizontal */
-    justify-content: center; /* Centramos el menú */
-    margin: 1rem 0;
+  /* El <ul> principal SÍ se pone horizontal */
+  .nav-principal ul {
+    flex-direction: row;
+    justify-content: center;
   }
 
   .nav-principal li a {
     margin-bottom: 0;
-    margin-right: 10px;
+    margin-left: 5px; /* Ajuste de 'right' a 'left' */
+    margin-right: 5px;
     background: none;
     padding: 0.25rem 0.5rem;
     color: var(--color-texto-claro);
@@ -271,9 +281,7 @@ footer {
     color: var(--color-texto-claro);
   }
 
-  /* El nav-letras usará los mismos estilos que en móvil,
-     quedando centrado y debajo del nav-principal.
-     Pero sus enlaces serán blancos para contrastar. */
+  /* Los enlaces de letras cambian de color para contrastar */
   .nav-letras li a {
     background-color: var(--color-primario);
     color: var(--color-texto-claro);
@@ -285,7 +293,7 @@ footer {
     color: var(--color-primario-oscuro);
   }
 
-  /* Los .destacados se ponen en 3 columnas */
+  /* --- Estilos de Grid para el contenido --- */
   .destacados {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
