@@ -85,15 +85,20 @@
     <p><a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
 </footer>
 </body>
-</html>
-
 <script>
-  const boton = document.getElementById('modo-toggle');
-  boton.addEventListener('click', () => {
-    document.body.classList.toggle('modo-oscuro');
-    boton.textContent = document.body.classList.contains('modo-oscuro')
+  const boton = document.getElementById('modo-toggle'); /* Busca el botón que activa el modo oscuro */
+  boton.addEventListener('click', () => { */ Cada vez que el usuario pulsa el botón, se ejecuta la función dentro de addEventListener*/
+    document.body.classList.toggle('modo-oscuro'); /*Añade la clase modo oscuro si no estaba, o la quita si ya estaba*/
+    boton.textContent = document.body.classList.contains('modo-oscuro') /* Si el modo oscuro está activado, el botón muestra */
+    */ "Modo claro" y si está desactivado, muestra "Modo oscuro" */
       ? "☀️ Modo claro"
       : "🌙 Modo oscuro";
   });
+    /* Cuando en el body ponemos este script con la clase modo-oscuro, en el archivo de css se aplican todos estos colores oscuros a la página: fondo, textos, secciones, enlaces, 
+    botones, etc. */
 </script>
+</html>
+
+
+
 
