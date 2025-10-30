@@ -1,4 +1,30 @@
+/*
+===================================================================
+   --- VARIABLES (CUSTOM PROPERTIES) ---
+   Aquí definimos los colores y fuentes principales.
+   Si quieres cambiar el color azul, solo lo cambias en un sitio.
+===================================================================
+*/
+:root {
+  --color-primario: #639fdb;
+  --color-primario-oscuro: #003d80;
+  --color-enlace: #0056b3;
+  --color-texto: #333;
+  --color-texto-claro: #ffffff;
+  --color-fondo: #ffffff;
+  --color-fondo-secundario: #e9ecef;
+  --color-borde-sutil: #dee2e6;
+  --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --ancho-maximo: 1200px;
+  --radio-borde: 5px;
+}
 
+/*
+===================================================================
+   --- ESTILOS GLOBALES Y RESET ---
+===================================================================
+*/
 *,
 *::before,
 *::after {
@@ -7,38 +33,54 @@
 
 /* Estilos base para toda la página */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fuente-base);
   line-height: 1.6;
-  background-color: #639fdb;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
- */
-body {
-  max-width: 1200px; /* Ancho máximo en monitores grandes */
+  background-color: var(--color-fondo); /* CAMBIO: Fondo ahora es blanco */
+  color: var(--color-texto);
   margin: 0 auto; /* Centra la página */
-  padding: 1rem; /* Espacio en los bordes para móviles */
+  padding: 0;
+  max-width: var(--ancho-maximo); /* Ancho máximo en monitores grandes */
 }
 
 /* Estilos de enlaces generales */
 a {
-  color: #0056b3;
-  text-decoration: none; /* Quitamos el subrayado por defecto */
+  color: var(--color-enlace);
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Lo mostramos al pasar el ratón */
-  color: #003d80;
+  text-decoration: underline;
+  color: var(--color-primario-oscuro);
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
+/*
+  ===================================================================
+   --- CORRECCIÓN DE ENCABEZADOS (H1, H2, H3) ---
+  ===================================================================
+*/
+h1,
+h2,
+h3 {
+  /* ARREGLO: Aseguramos que sean 'bloques' y ocupen el 100% */
+  display: block;
+  width: 100%;
+  color: var(--color-primario-oscuro);
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/*
+===================================================================
+   --- HEADER Y NAVEGACIÓN ---
+===================================================================
+*/
 header {
-  text-align: center; /* Centra el título en móvil */
-  border-bottom: 2px solid #dee2e6;
-  padding-bottom: 1rem;
+  /* CAMBIO: Fondo azul primario */
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro); /* CAMBIO: Contraste de texto */
+  text-align: center;
+  border-bottom: 2px solid var(--color-primario-oscuro);
+  padding: 1rem; /* CAMBIO: Padding unificado */
   margin-bottom: 1.5rem;
 }
 
@@ -47,13 +89,11 @@ header h1 {
 }
 
 header h1 a {
-  color: #333; /* El título principal en color de texto normal */
+  color: var(--color-texto-claro); /* CAMBIO: Contraste de texto */
   text-decoration: none;
 }
 
-/* * CLASE: .nav-principal (Tu menú principal)
- * En móvil (por defecto) lo mostramos como una lista vertical.
- */
+/* CLASE: .nav-principal (Menú principal) */
 .nav-principal {
   display: flex;
   flex-direction: column; /* Apilado vertical en móvil */
@@ -63,25 +103,23 @@ header h1 a {
 }
 
 .nav-principal li a {
-  display: block; /* Para que ocupe todo el ancho */
+  display: block;
   padding: 0.75rem;
-  background-color: #e9ecef;
-  border-radius: 5px;
+  background-color: var(--color-fondo-secundario);
+  border-radius: var(--radio-borde);
   margin-bottom: 5px;
+  color: var(--color-enlace); /* Aseguramos color de enlace */
 }
 
 .nav-principal li a:hover {
-  background-color: #dee2e6;
+  background-color: var(--color-borde-sutil);
   text-decoration: none;
 }
 
-/* * CLASE: .nav-letras (Tu buscador de letras - LA PARTE CLAVE)
- * Usamos Flexbox con 'wrap' para que se adapte al zoom/pantalla.
- * ¡Esta es la solución a tu problema!
- */
+/* CLASE: .nav-letras (Buscador de letras) */
 .nav-letras {
   display: flex;
-  flex-wrap: wrap; /* ¡MÁGIA! Las letras que no caben, bajan */
+  flex-wrap: wrap; /* Las letras que no caben, bajan */
   justify-content: center; /* Centra las letras */
   list-style: none;
   padding: 0;
@@ -95,48 +133,41 @@ header h1 a {
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--color-fondo);
 }
 
 .nav-letras li a:hover {
-  background-color: #0056b3;
-  color: #fff;
+  background-color: var(--color-enlace);
+  color: var(--color-texto-claro);
   text-decoration: none;
 }
 
-/* --- CONTENIDO PRINCIPAL (MAIN) --- */
+/*
+===================================================================
+   --- CONTENIDO PRINCIPAL (MAIN) ---
+===================================================================
+*/
 main {
-  /* El 'id' se usa para el enlace "Saltar al contenido" */
-  padding-top: 1rem;
+  padding: 0 1rem; /* Añadimos padding lateral que quitamos del body */
 }
 
 section {
-  background-color: #ffffff; /* Fondo blanco para las secciones */
+  background-color: var(--color-fondo); /* Fondo blanco */
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra sutil */
   margin-bottom: 1.5rem;
 }
 
-h2,
-h3 {
-  color: #003d80; /* Un azul más oscuro para títulos */
-}
-
-/* * CLASE: .conBorde (La que tenías en tu HTML)
- * Le damos un estilo destacado como nos pedía el nombre.
- */
+/* CLASE: .conBorde */
 .conBorde {
-  border: 2px solid #0056b3;
-  background-color: #f0f7ff; /* Fondo azulado muy claro */
+  border: 2px solid var(--color-enlace);
+  background-color: #f0f7ff;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: var(--radio-borde);
 }
 
-/* * CLASE: .destacados (La sección de artículos)
- * En móvil, los artículos se apilan solos (article es 'block')
- * Más abajo, en el breakpoint, los pondremos en columnas.
- */
+/* CLASE: .destacados (Contenedor de artículos) */
 .destacado {
   border-bottom: 1px solid #eee;
   padding-bottom: 1rem;
@@ -144,30 +175,33 @@ h3 {
 }
 
 .destacado:last-child {
-  border-bottom: none; /* El último artículo no necesita borde */
+  border-bottom: none;
 }
 
-/* NOTA: Para que <i class="fa-solid fa-book"></i> funcione,
- * necesitas cargar la librería Font Awesome en el <head> de tu HTML.
- */
-
-/* --- FOOTER --- */
+/*
+===================================================================
+   --- FOOTER ---
+===================================================================
+*/
 footer {
+  /* CAMBIO: Fondo azul oscuro */
+  background-color: var(--color-primario-oscuro);
+  color: #ccc; /* CAMBIO: Contraste de texto (gris claro) */
   text-align: center;
   margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #dee2e6;
+  padding: 2rem 1rem; /* Más padding */
   font-size: 0.9rem;
-  color: #6c757d; /* Gris para el texto secundario */
 }
 
-/* * CLASE: .saltar-a (Enlace de accesibilidad)
- * Lo ocultamos visualmente, pero sigue ahí para lectores de pantalla.
- * Aparecerá si navegas con el tabulador (al hacer :focus).
- */
+/*
+===================================================================
+   --- ACCESIBILIDAD ---
+===================================================================
+*/
+/* CLASE: .saltar-a (Enlace de accesibilidad) */
 .saltar-a {
   position: absolute;
-  left: -10000px; /* Lo saca de la pantalla */
+  left: -10000px;
   top: auto;
   width: 1px;
   height: 1px;
@@ -186,47 +220,45 @@ footer {
 }
 
 /*
- ===================================================================
-                      *** ¡AQUÍ LOS BREAKPOINTS! ***
- ===================================================================
- Usamos 'min-width' (ancho mínimo). Estos estilos SÓLO se aplican
- si la pantalla es MÁS ANCHA que el valor que indicamos.
+===================================================================
+   --- BREAKPOINTS (TABLET Y ESCRITORIO) ---
+===================================================================
 */
 
-/* --- Breakpoint para Tablets (y horizontal) --- */
 @media (min-width: 768px) {
-  body {
-    padding: 1.5rem; /* Un poco más de espacio a los lados */
+  main {
+    padding: 0 1.5rem; /* Más padding lateral en escritorio */
   }
 
   header {
-    display: flex; /* Alineamos horizontalmente */
-    justify-content: space-between; /* Título a la izq, nav a la dcha */
-    align-items: center; /* Centra verticalmente */
+    /* ARREGLO: Quitamos display:flex para que H1 y Nav no estén en línea */
     text-align: left; /* Título a la izquierda */
   }
 
-  /* * AHORA SÍ: El .nav-principal se vuelve horizontal
-   */
+  /* El .nav-principal se vuelve horizontal */
   .nav-principal {
     flex-direction: row; /* ¡Horizontal! */
-    margin: 0;
+    justify-content: flex-start; /* Alineado a la izquierda */
+    margin: 1rem 0 0 0;
   }
 
   .nav-principal li a {
     margin-bottom: 0;
-    margin-left: 10px;
-    background: none; /* Quitamos el fondo */
+    margin-right: 10px; /* CAMBIO: margen derecho en vez de izquierdo */
+    background: none;
+    padding: 0.25rem 0.5rem;
+    color: var(
+      --color-texto-claro
+    ); /* CAMBIO: Contraste de texto en header */
   }
 
   .nav-principal li a:hover {
     background: none;
     text-decoration: underline;
+    color: var(--color-texto-claro);
   }
 
-  /* * AHORA SÍ: Los .destacados se ponen en columnas
-   * Usamos CSS Grid para crear una rejilla perfecta.
-   */
+  /* Los .destacados se ponen en 3 columnas */
   .destacados {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* 3 columnas de igual tamaño */
@@ -234,9 +266,7 @@ footer {
   }
 
   .destacado {
-    border-bottom: none; /* Ya no necesitamos el borde en tablet */
+    border-bottom: none;
     padding-bottom: 0;
   }
-}
-
 }
