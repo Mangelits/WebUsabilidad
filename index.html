@@ -78,19 +78,25 @@
         </article>
         <p>Visítanos: &#9742; (906 876 324) &#9993; (enciclopedia-es-salud@gmail.com)</p>
     </section>
+    <section>
+        <p><strong>Documentos de Bienestar:</strong><br>
+        <a href="PDF_Accesible.pdf">Guía de Hábitos Saludables (Versión Accesible)</a><br>
+        <a href="PDF NO Accesible.pdf">Guía de Hábitos Saludables (Versión No Accesible)</a>
+        </p>
+    </section>
 </main>
 
 <footer>
     <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
     <p><a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-</footer>
+    </footer>
 </body>
 <script>
   const boton = document.getElementById('modo-toggle'); /* Busca el botón que activa el modo oscuro */
-  boton.addEventListener('click', () => { */ Cada vez que el usuario pulsa el botón, se ejecuta la función dentro de addEventListener*/
+  boton.addEventListener('click', () => { /* Cuando se hace click en el botón, se ejecuta esta función */
     document.body.classList.toggle('modo-oscuro'); /*Añade la clase modo oscuro si no estaba, o la quita si ya estaba*/
     boton.textContent = document.body.classList.contains('modo-oscuro') /* Si el modo oscuro está activado, el botón muestra */
-    */ "Modo claro" y si está desactivado, muestra "Modo oscuro" */
+    /* el texto de "Modo claro", si no, muestra el de "Modo oscuro" */
       ? "☀️ Modo claro"
       : "🌙 Modo oscuro";
   });
@@ -98,8 +104,3 @@
     botones, etc. */
 </script>
 </html>
-
-
-
-
-
