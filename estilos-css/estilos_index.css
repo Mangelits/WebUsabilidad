@@ -213,6 +213,25 @@ section {
   border-bottom: none;
 }
 
+/* Contenedor del Iframe: Esto gestiona el comportamiento adaptable */
+.contenedor-blog {
+    position: relative;
+    overflow: hidden;
+    /* Ratio de aspecto 16:9 (100% / (16/9) = 56.25%) */
+    padding-top: 56.25%; 
+    height: 0;
+}
+
+/* El Iframe en sí: Ocupa el 100% del espacio del contenedor */
+.contenedor-blog iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    border: 1px solid #ccc; /* Bordes para diferenciarlo del resto de la página */
+}
+
 /*
 ===================================================================
    --- FOOTER ---
