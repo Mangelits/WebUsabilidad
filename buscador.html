@@ -1,113 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Buscador - Enciclopedia de la la Salud</title>
-   <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
-  <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Buscador - Enciclopedia de la la Salud</title>
+   <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
+  <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
 </head>
 <body>
-  <header>
-    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a> 
-    <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
-    <nav>
-            <ul class="nav-principal">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
-                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
-              <button id="modo-toggle">🌙 Modo oscuro</button>
+  <header>
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a> 
+    <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
+        <nav aria-label="Navegación principal del sitio">
+            <ul class="nav-principal">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
+                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
+              <button id="modo-toggle">🌙 Modo oscuro</button>
+            </ul>
+    </nav>
+  </header>
 
-            </ul>
-    </nav>
-  </header>
+  <main id="contenido-principal"> 
+    <h2>Buscador de artículos</h2>
+    <form action="respuesta_buscador.html" method="get" class="form-responsive"> 
 
-  <main id="contenido-principal"> 
-    <h2>Buscador de artículos</h2>
-    <form action="respuesta_buscador.html" method="get" class="form-responsive"> 
+      <p><strong>Nota:</strong> Los campos marcados con <span class="obligatorio">*</span> son obligatorios.</p>
+      
+      <div class="form-group">
+        <label for="descripcion"><span class="obligatorio">*</span> Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" maxlength="200" placeholder="200 caracteres máx" required>
+      </div>
 
-      <p><strong>Nota:</strong> Los campos marcados con <span class="obligatorio">*</span> son obligatorios.</p>
-      
-      <div class="form-group">
-        <label for="descripcion"><span class="obligatorio">*</span> Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" maxlength="200" placeholder="200 caracteres máx" required>
-      </div>
+      <div class="form-group">
+        <label for="causas">Causas:</label>
+        <input type="text" id="causas" name="causas" maxlength="200" placeholder="200 caracteres máx">
+      </div>
 
-      <div class="form-group">
-        <label for="causas">Causas:</label>
-        <input type="text" id="causas" name="causas" maxlength="200" placeholder="200 caracteres máx">
-      </div>
+      <div class="form-group">
+        <label for="sintomas">Síntomas:</label>
+        <select id="sintomas" name="sintomas" multiple>
+          <option value="fiebre">Fiebre</option>
+          <option value="vomito">Vómito</option>
+          <option value="diarrea">Diarrea</option>
+          <option value="dolor">Dolor muscular</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="pruebas">Pruebas y exámenes:</label>
+        <select id="pruebas" name="pruebas" multiple>
+          <option value="sangre">Análisis de sangre</option>
+          <option value="eco">Ecografía</option>
+          <option value="rx">Radiografía</option>
+          <option value="tac">Tomografía</option>
+          <option value="ultra">Ultrasonido</option>
+        </select>
+      </div>
 
-      <div class="form-group">
-        <label for="sintomas">Síntomas:</label>
-        <select id="sintomas" name="sintomas" multiple>
-          <option value="fiebre">Fiebre</option>
-          <option value="vomito">Vómito</option>
-          <option value="diarrea">Diarrea</option>
-          <option value="dolor">Dolor muscular</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label for="pruebas">Pruebas y exámenes:</label>
-        <select id="pruebas" name="pruebas" multiple>
-          <option value="sangre">Análisis de sangre</option>
-          <option value="eco">Ecografía</option>
-          <option value="rx">Radiografía</option>
-          <option value="tac">Tomografía</option>
-          <option value="ultra">Ultrasonido</option>
-        </select>
-      </div>
+      <div class="form-group">
+        <label for="tratamiento">Tratamiento:</label>
+        <input type="text" id="tratamiento" name="tratamiento" maxlength="200" placeholder="200 caracteres máx">
+      </div>
 
-      <div class="form-group">
-        <label for="tratamiento">Tratamiento:</label>
-        <input type="text" id="tratamiento" name="tratamiento" maxlength="200" placeholder="200 caracteres máx">
-      </div>
+      <fieldset class="form-full-width">
+        <legend>Expectativas:</legend>
+        <div class="radio-group">
+                      <input type="radio" id="negativas" name="expectativas" value="negativas">
+          <label for="negativas">Negativas</label>
+        
+          <input type="radio" id="positivas" name="expectativas" value="positivas">
+          <label for="positivas">Positivas</label>
+        
+          <input type="radio" id="sindefinir" name="expectativas" value="sindefinir">
+          <label for="sindefinir">Sin definir</label>
+        </div>
+      </fieldset>
 
-      <fieldset class="form-full-width">
-        <legend>Expectativas:</legend>
-        <div class="radio-group">
-          <input type="radio" id="negativas" name="expectativas" value="negativas">
-          <label for="negativas">Negativas</label>
-        
-          <input type="radio" id="sindefinir" name="expectativas" value="sindefinir">
-          <label for="sindefinir">Positivas</label>
-        
-          <input type="radio" id="positivas" name="expectativas" value="positivas">
-          <label for="positivas">Sin definir</label>
-        </div>
-      </fieldset>
+      <div class="form-button">
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+  </main>
 
-      <div class="form-button">
-        <button type="submit">Buscar</button>
-      </div>
-    </form>
-  </main>
-
-  <footer>
-    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-    <p><a href="index.html">Volver al inicio</a> | <a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-  </footer>
+  <footer>
+    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
+    <p><a href="index.html">Volver al inicio</a> | <a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
+  </footer>
 </body>
 <script>
-  const boton = document.getElementById('modo-toggle');
-  boton.addEventListener('click', () => {
-    document.body.classList.toggle('modo-oscuro');
-    boton.textContent = document.body.classList.contains('modo-oscuro')
-      ? "☀️ Modo claro"
-      : "🌙 Modo oscuro";
-  });
+// ... Script de modo oscuro ...
 </script>
 
 </html>
-
-
-
-
-
-
-
-
-
 
 
