@@ -1,74 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Declaración de accesibilidad - Enciclopedia de la Salud</title>
-    <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
-    <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Declaración de accesibilidad - Enciclopedia de la Salud</title>
+    <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
+    <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
+    
 </head>
 <body>
-    <header>
-        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+    <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
 
-        <h1><a href="index.html">Declaración de accesibilidad</a></h1>
+                <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
 
-        <!-- Navegación principal con lista y clases correctas -->
-        <nav>
-            <ul class="nav-principal">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="buscador.html">Buscador</a></li>
-                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
-                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
-                <button id="modo-toggle">🌙 Modo oscuro</button>
+                <nav aria-label="Navegación principal del sitio">
+            <ul class="nav-principal">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="buscador.html">Buscador</a></li>
+                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
+                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
+                <button id="modo-toggle">🌙 Modo oscuro</button>
 
-            </ul>
-        </nav>
-    </header>
+            </ul>
+        </nav>
+    </header>
 
-    <main id="contenido-principal">
-        <p>Este sitio web ha sido diseñado teniendo en cuenta las pautas de accesibilidad para asegurar que la mayor parte de las personas pueda acceder a sus contenidos sin dificultad.</p>
-        
-        <h2>Medidas adoptadas (HTML &amp; CSS)</h2>
-        <p>Las siguientes medidas han sido implementadas en el código para mejorar la accesibilidad y usabilidad del sitio, siguiendo parcialmente las WCAG 2.1:</p>
-        
-        <ul>
-            <li>Uso de la <strong>estructura semántica de HTML5</strong> (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.) para definir regiones clave.</li>
-            <li>Uso de <strong>encabezados jerárquicos</strong> (&lt;h1&gt; a &lt;h6&gt;) para estructurar el contenido de forma coherente.</li>
-            <li>Provisión de <strong>texto alternativo</strong> (<code>alt</code>) en imágenes relevantes.</li>
-            <li><strong>Tablas de datos marcadas correctamente</strong> con &lt;caption&gt;, &lt;th&gt; y el atributo <code>scope</code>.</li>
-            <li><strong>Formularios accesibles</strong> con etiquetas explícitas (&lt;label&gt;), agrupaciones (&lt;fieldset&gt;/&lt;legend&gt;) y la indicación de campos obligatorios.</li>
-            <li>Uso de <strong>atributos de idioma</strong> (<code>lang="es"</code>) en las páginas.</li>
-            <li>Implementación de un <strong>enlace “saltar a”</strong> visible al foco del teclado.</li>
-            <li>Diseño <strong>adaptativo</strong> (uso de <code>viewport</code> y <code>media queries</code>) para visualizar el contenido correctamente en diferentes tamaños de pantalla.</li>
-            <li>Asegurar un <strong>indicador de foco visible</strong> en todos los elementos interactivos (<code>:focus</code>).</li>
-        </ul>
+    <main id="contenido-principal">
+        <h2>Declaración de accesibilidad</h2> 
+        <p>Este sitio web ha sido diseñado teniendo en cuenta las pautas de accesibilidad para asegurar que la mayor parte de las personas pueda acceder a sus contenidos sin dificultad.</p>
+        
+        <h3>Medidas adoptadas (HTML &amp; CSS)</h3>         <p>Las siguientes medidas han sido implementadas en el código para mejorar la accesibilidad y usabilidad del sitio, siguiendo parcialmente las WCAG 2.1:</p>
+        
+        <ul>
+            <li>Uso de la <strong>estructura semántica de HTML5</strong> (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.) para definir regiones clave.</li>
+            <li>Uso de <strong>encabezados jerárquicos</strong> (&lt;h1&gt; a &lt;h6&gt;) para estructurar el contenido de forma coherente.</li>
+            <li>Provisión de <strong>texto alternativo</strong> (<code>alt</code>) en imágenes relevantes.</li>
+            <li><strong>Tablas de datos marcadas correctamente</strong> con &lt;caption&gt;, &lt;th&gt; y el atributo <code>scope</code>.</li>
+            <li><strong>Formularios accesibles</strong> con etiquetas explícitas (&lt;label&gt;), agrupaciones (&lt;fieldset&gt;/&lt;legend&gt;) y la indicación de campos obligatorios.</li>
+            <li>Uso de <strong>atributos de idioma</strong> (<code>lang="es"</code>) en las páginas.</li>
+            <li>Implementación de un <strong>enlace “saltar a”</strong> visible al foco del teclado.</li>
+            <li>Diseño <strong>adaptativo</strong> (uso de <code>viewport</code> y <code>media queries</code>) para visualizar el contenido correctamente en diferentes tamaños de pantalla.</li>
+            <li>Asegurar un <strong>indicador de foco visible</strong> en todos los elementos interactivos (<code>:focus</code>).</li>
+        </ul>
 
-        <h2>Contacto</h2>
-        <p>Si encuentra alguna barrera de accesibilidad en este sitio, por favor comuníquese a través de la página de <a href="contacto.html">Contacto</a>.</p>
-    </main>
+        <h3>Contacto</h3>         <p>Si encuentra alguna barrera de accesibilidad en este sitio, por favor comuníquese a través de la página de <a href="contacto.html">Contacto</a>.</p>
+    </main>
 
-    <footer>
-        <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-        <p>
-            <a href="contacto.html">Contacto</a> |
-            <a href="sitemap.html">Mapa del sitio</a> |
-            <a href="accesibilidad.html">Declaración de accesibilidad</a>
-        </p>
-    </footer>
+    <footer>
+        <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
+        <p>
+            <a href="contacto.html">Contacto</a> |
+            <a href="sitemap.html">Mapa del sitio</a> |
+            <a href="accesibilidad.html">Declaración de accesibilidad</a>
+        </p>
+    </footer>
 </body>
-    <script>
-  const boton = document.getElementById('modo-toggle');
-  boton.addEventListener('click', () => {
-    document.body.classList.toggle('modo-oscuro');
-    boton.textContent = document.body.classList.contains('modo-oscuro')
-      ? "☀️ Modo claro"
-      : "🌙 Modo oscuro";
-  });
+    <script>
+  const boton = document.getElementById('modo-toggle');
+  boton.addEventListener('click', () => {
+    document.body.classList.toggle('modo-oscuro');
+    boton.textContent = document.body.classList.contains('modo-oscuro')
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
 </script>
 
 </html>
+
 
 
 
