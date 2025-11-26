@@ -1,17 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
 /*
- * Hoja de Estilos de la Enciclopedia de la Salud
- * * Propiedades base: color, font, background, border, margin, padding.
- * * Propiedades extra añadidas (con explicación):
- * - max-width: Para limitar el ancho del texto y mejorar la legibilidad.
- * - margin: auto: (uso de 'auto') Para centrar el contenido en la página.
- * - box-sizing: Para hacer que el padding y el border se incluyan en el ancho/alto total.
- * - text-decoration: Para quitar el subrayado de enlaces (ej. en la cabecera).
- * - list-style: Para quitar los puntos de las listas (ej. en migas de pan).
- * - display: Para cambiar el modelo de maquetación (ej. poner listas en horizontal).
- * - content: (Pseudo-elemento) Para añadir separadores (ej. ">") en las migas de pan.
- * - outline: Para crear un indicador de foco más claro y accesible.
- * - scroll-behavior: Para animar el desplazamiento al usar la tabla de contenidos.
- */
+===================================================================
+  --- VARIABLES DE MODO OSCURO (Para referencia) ---
+===================================================================
+*/
+:root {
+    --color-texto-claro: #f0f0f0; /* Gris muy claro */
+    --color-fondo-oscuro-principal: #121212;
+    --color-fondo-oscuro-secundario: #1e1e1e;
+    --color-enlace-oscuro: #93c5fd; /* Azul de alto contraste para enlaces */
+    --color-primario-oscuro: #1c3d5a; /* Color de cabecera/pie en modo oscuro */
+}
+
 
 html {
     box-sizing: border-box; 
@@ -21,15 +22,11 @@ html {
 
 /* --- Body --- */
 body {
-    font-size: 100%; /* Permite al usuario reescalar (WCAG 1.4.4) */
-    font-family: Arial, Helvetica, sans-serif;
-    
-    /* WCAG 1.4.3 (Contraste) */
+    font-size: 112.5%;  
+    font-family: 'Merriweather';
     color: #222222;
     background-color: #ffffff;
-    
-    /* NUEVO: max-width limita el ancho para legibilidad (WCAG 1.4.8) */
-    max-width: 960px;
+    max-width: 80ch;
     margin: 0 auto;
     padding: 1rem;
 }
@@ -53,7 +50,6 @@ header a {
     text-decoration: none;
 }
 
-/* --- Header Nav --- */
 header nav a {
     padding: 0.5rem;
     font-size: 1.1rem;
@@ -63,7 +59,7 @@ main {
     padding: 1rem 0;
 }
 
-/* --- Migas de Pan --- */
+/* --- Migas de pan (Breadcrumbs) --- */
 nav[aria-label="Migas de pan"] {
     padding: 0.5rem 0;
     margin-bottom: 1.5rem;
@@ -80,14 +76,14 @@ nav[aria-label="Migas de pan"] ol {
 nav[aria-label="Migas de pan"] li::before {
     content: '>';
     margin: 0 0.5rem;
-    color: #555555;
+    color: #333333; /* CORREGIDO: Alto contraste sobre fondo blanco. */
 }
 nav[aria-label="Migas de pan"] li:first-child::before {
     content: '';
     margin: 0;
 }
 
-/* --- Tabla de Contenidos --- */
+/* --- Títulos de Contenido --- */
 #tabla-de-contenidos {
     background-color: #f0f8ff;
     border: 1px solid #bde0ff;
@@ -107,12 +103,11 @@ h2, h3 {
     border-bottom: 2px solid #eeeeee;
 }
 
-/* --- Main/Footer --- */
+/* --- Enlaces de Contenido --- */
 a {
-    color: #0056b3; /* Azul accesible (Contraste 4.5:1 sobre blanco) */
+    color: #0056b3;
 }
 
-/* * WCAG 2.4.7 (Focus Visible) */
 a:focus {
     outline: 3px solid #0056b3;
 }
@@ -134,23 +129,22 @@ dl {
 /* --- Tablas --- */
 table {
     margin-bottom: 1.5rem;
-    border: 1px solid #cccccc; /* Borde exterior */
-    /* NUEVO: border-collapse; une los bordes de las celdas */
+    border: 1px solid #cccccc;
     border-collapse: collapse;
-    /* NUEVO: width: 100%; hace que la tabla ocupe el ancho disponible */
     width: 100%;
 }
 
 th, td {
     padding: 0.75rem;
-    border: 1px solid #dddddd; /* Bordes internos */
+    border: 1px solid #dddddd;
+    text-align: left;
 }
 
 th {
     background-color: #f4f4f4;
 }
 
-/* --- Imágenes e Iframes --- */
+/* --- Multimedia --- */
 img, iframe {
     max-width: 100%;
     height: auto;
@@ -165,140 +159,91 @@ iframe {
     width: 560px; 
 }
 
-
 /* --- Footer --- */
 footer {
     background-color: #408589;
-    color: #444444;
+    color: #1a1a1a; /* CORREGIDO: Texto oscuro seguro sobre el fondo del footer. */
     padding: 1.5rem;
     margin-top: 2rem;
     border-top: 1px solid #dddddd;
 }
-/* Enlaces del footer en blanco */
 footer a {
-    color: #ffffff; /* blanco */
-    text-decoration: none;
+    color: #003366; /* Enlaces oscuros sobre el fondo del footer para contraste. */
 }
 
-footer a:hover,
-footer a:focus {
-    color: #eeeeee; /* un blanco ligeramente más claro al pasar el ratón */
-    text-decoration: underline;
-}
-/* Enlace "Saltar al contenido principal" inicialmente oculto */
-.saltar-a {
-  position: fixed;     /* Fijo en pantalla */
-  top: 10px;           /* Separación del borde superior */
-  left: 50%;           /* Centrado horizontal */
-  transform: translateX(-50%); /* Ajusta el centrado exacto */
-  background-color: #000;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  border-radius: 4px;
-  z-index: 1000;
-  
-  /* Oculto al inicio */
-  opacity: 0;
-  pointer-events: none; /* No se puede hacer clic cuando está oculto */
-  
-  transition: opacity 0.3s ease; /* Suaviza la aparición */
-}
-
-/* Cuando tenga la clase 'visible', se muestra */
-.saltar-a.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
-/* ===============================================================
-   --- MODO OSCURO ---
-   =============================================================== */
+/*
+===================================================================
+  --- MODO OSCURO (BODY.MODO-OSCURO) ---
+===================================================================
+*/
 
 body.modo-oscuro {
-  --color-primario: #4a90e2;
-  --color-primario-oscuro: #1c3d5a;
-  --color-enlace: #7ab4ff;
-  --color-texto: #e4e4e4;
-  --color-texto-claro: #ffffff;
-  --color-fondo: #121212;
-  --color-fondo-secundario: #1e1e1e;
-  --color-borde-sutil: #333;
-
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+    color: var(--color-texto-claro); /* Texto principal blanco/gris */
+    background-color: var(--color-fondo-oscuro-principal); /* Fondo oscuro principal */
 }
 
-/* Header y footer adaptados */
-body.modo-oscuro header,
+/* Header y Footer en modo oscuro */
+body.modo-oscuro header, 
 body.modo-oscuro footer {
-  background-color: var(--color-primario-oscuro);
-  color: var(--color-texto-claro);
+    background-color: var(--color-primario-oscuro); /* Azul oscuro de alto contraste */
+    color: var(--color-texto-claro);
 }
 
-/* Enlaces en modo oscuro */
+/* Enlaces y botonería en modo oscuro */
 body.modo-oscuro a {
-  color: var(--color-enlace);
+    color: var(--color-enlace-oscuro); /* Azul claro de alto contraste */
 }
 
-/* Secciones y contenedores */
-body.modo-oscuro section,
+body.modo-oscuro a:hover {
+    color: var(--color-texto-claro); /* Texto claro puro */
+}
+
+body.modo-oscuro header a {
+    color: var(--color-texto-claro);
+}
+body.modo-oscuro footer a {
+    color: var(--color-enlace-oscuro);
+}
+
+/* Contenido principal y secciones en modo oscuro */
 body.modo-oscuro main,
-body.modo-oscuro .container {
-  background-color: var(--color-fondo-secundario);
-  color: var(--color-texto);
-  border-color: var(--color-borde-sutil);
+body.modo-oscuro article,
+body.modo-oscuro section {
+    background-color: var(--color-fondo-oscuro-secundario); /* Fondo secundario más claro */
+    color: var(--color-texto-claro);
 }
 
-/* Navegación */
-body.modo-oscuro .nav-principal li a,
-body.modo-oscuro .nav-letras li a {
-  background-color: var(--color-fondo-secundario);
-  color: var(--color-texto-claro);
+/* Títulos en modo oscuro */
+body.modo-oscuro h2, 
+body.modo-oscuro h3 {
+    color: var(--color-enlace-oscuro);
+    border-bottom-color: #444444;
 }
 
-body.modo-oscuro .nav-principal li a:hover,
-body.modo-oscuro .nav-letras li a:hover {
-  background-color: var(--color-primario);
-  color: var(--color-texto-claro);
-}
-/* ===============================================================
-   --- AJUSTES EXTRA DE MODO OSCURO (Tablas, Tabla de contenidos) ---
-   =============================================================== */
-
-/* Tabla de contenidos */
+/* Tabla de Contenidos en modo oscuro */
 body.modo-oscuro #tabla-de-contenidos {
-  background-color: #1e2a33; /* fondo más oscuro */
-  border: 1px solid #333;
-  color: #e4e4e4;
+    background-color: #2a2a2a;
+    border-color: #444444;
 }
 
-body.modo-oscuro #tabla-de-contenidos h3 {
-  color: #7ab4ff; /* tono azul claro para resaltar */
-}
-
-/* Tablas */
+/* Tabla de Datos en modo oscuro */
 body.modo-oscuro table {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
+    background-color: var(--color-fondo-oscuro-secundario);
+    color: var(--color-texto-claro);
+    border-color: #444444;
+}
+
+body.modo-oscuro th, 
+body.modo-oscuro td {
+    border-color: #444444;
 }
 
 body.modo-oscuro th {
-  background-color: #2a2a2a; /* cabecera gris oscura */
-  color: #ffffff;
+    background-color: var(--color-primario-oscuro);
+    color: var(--color-texto-claro);
 }
 
-body.modo-oscuro td {
-  background-color: #1a1a1a;
-  color: #e4e4e4;
-  border: 1px solid #333;
+/* Migas de pan en modo oscuro */
+body.modo-oscuro nav[aria-label="Migas de pan"] li::before {
+    color: var(--color-texto-claro);
 }
-
-/* Bordes más suaves y contrastados */
-body.modo-oscuro th,
-body.modo-oscuro td {
-  border-color: #444;
-}
-
-
