@@ -3,62 +3,83 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Declaración de accesibilidad - Enciclopedia de la Salud</title>
+    <title>Declaración de Accesibilidad - Enciclopedia de la Salud</title>
     <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
     <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
-    
 </head>
 <body>
     <header>
-        <a href="#contenido-principal" class="saltar-a" title="Saltar a contenido principal">Saltar al contenido principal</a>
-
-        <h1><a href="accesibilidad.html" title="Inicio">Declaración de accesibilidad</a></h1>
-
-        <!-- Navegación principal con lista y clases correctas -->
-        <nav>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a> 
+        <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
+        <nav aria-label="Navegación principal del sitio">
             <ul class="nav-principal">
-                <li><a href="index.html" title="Inicio">Inicio</a></li>
-                <li><a href="buscador.html" title="Buscador">Buscador</a></li>
-                <li><a href="formulario_avanzado.html" title="Formulario Avanzado">Formulario avanzado</a></li>
-                <li><a href="buscador-interactivo/buscador_interactivo.html" title="Buscador interactivo">Buscador interactivo</a></li>
-                <button id="modo-toggle" title="Modo oscuro">🌙 Modo oscuro</button>
-
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="buscador.html">Buscador</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <button id="modo-toggle">🌙 Modo oscuro</button>
             </ul>
         </nav>
     </header>
 
     <main id="contenido-principal">
-        <p>Este sitio web ha sido diseñado teniendo en cuenta las pautas de accesibilidad para asegurar que la mayor parte de las personas pueda acceder a sus contenidos sin dificultad.</p>
-        
-        <h2>Medidas adoptadas (HTML &amp; CSS)</h2>
-        <p>Las siguientes medidas han sido implementadas en el código para mejorar la accesibilidad y usabilidad del sitio, siguiendo parcialmente las WCAG 2.1:</p>
-        
-        <ul>
-            <li>Uso de la <strong>estructura semántica de HTML5</strong> (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, etc.) para definir regiones clave.</li>
-            <li>Uso de <strong>encabezados jerárquicos</strong> (&lt;h1&gt; a &lt;h6&gt;) para estructurar el contenido de forma coherente.</li>
-            <li>Provisión de <strong>texto alternativo</strong> (<code>alt</code>) en imágenes relevantes.</li>
-            <li><strong>Tablas de datos marcadas correctamente</strong> con &lt;caption&gt;, &lt;th&gt; y el atributo <code>scope</code>.</li>
-            <li><strong>Formularios accesibles</strong> con etiquetas explícitas (&lt;label&gt;), agrupaciones (&lt;fieldset&gt;/&lt;legend&gt;) y la indicación de campos obligatorios.</li>
-            <li>Uso de <strong>atributos de idioma</strong> (<code>lang="es"</code>) en las páginas.</li>
-            <li>Implementación de un <strong>enlace “saltar a”</strong> visible al foco del teclado.</li>
-            <li>Diseño <strong>adaptativo</strong> (uso de <code>viewport</code> y <code>media queries</code>) para visualizar el contenido correctamente en diferentes tamaños de pantalla.</li>
-            <li>Asegurar un <strong>indicador de foco visible</strong> en todos los elementos interactivos (<code>:focus</code>).</li>
-        </ul>
+        <h2>Declaración de Accesibilidad</h2>
 
-        <h2>Contacto</h2>
-        <p>Si encuentra alguna barrera de accesibilidad en este sitio, por favor comuníquese a través de la página de <a href="contacto.html" title="Contacto">Contacto</a>.</p>
+        <section>
+            <h3>Entidad y Sitio Web</h3>
+            <p><strong>Entidad responsable:</strong> Silvia Larrosa y Miguel Ángel Amorós</p>
+            <p><strong>Este sitio web:</strong> <a href="https://web-usabilidad.vercel.app/">https://web-usabilidad.vercel.app/</a></p>
+        </section>
+
+        <section>
+            <h2>Situación de Cumplimiento</h2>
+            <p>Este sitio web es <strong>Parcialmente Conforme</strong> con el Real Decreto 1112/2018, de 7 de septiembre (que transpone la Directiva (UE) 2016/2102), debido a la falta de conformidad de los aspectos que se indican a continuación.</p>
+        </section>
+
+        <section>
+            <h2>Contenido no Accesible</h2>
+            <p>El contenido que se recoge a continuación no es accesible por los siguientes motivos:</p>
+
+            <h3>1. Falta de conformidad con el RD 1112/2018</h3>
+            <ul>
+                <li><strong>Contenido de Terceros (Vídeos y Blog):</strong> La incrustación de elementos externos, como vídeos de plataformas externas (YouTube, Amara) y el blog de WordPress (insertado mediante <code>&lt;iframe&gt;</code>), puede presentar fallos de accesibilidad en el código fuente que no son controlables por el responsable de este sitio web. Esto afecta potencialmente a los criterios WCAG 4.1.2 (Nombre, función, valor) y 1.2.2 (Subtítulos pregrabados).</li>
+                <li><strong>[Opcional: Dejar en caso de errores menores residuales]</strong> Puede existir algún error puntual de contraste en imágenes o textos que se haya podido pasar por alto en la revisión automática.</li>
+            </ul>
+
+            <h3>2. Carga desproporcionada</h3>
+            <p>No se ha identificado ninguna carga desproporcionada.</p>
+        </section>
+
+        <section>
+            <h2>Preparación de la presente Declaración de Accesibilidad</h2>
+            <p>La presente declaración fue preparada el <strong>27/11/2025</strong>.</p>
+            <p>El método empleado para la preparación de la declaración ha sido una <strong>autoevaluación</strong> llevada a cabo por el responsable del sitio web, utilizando herramientas de auditoría automática como *WAVE* y *TAW/Lighthouse*, además de una revisión manual.</p>
+        </section>
+
+        <section>
+            <h2>Comunicaciones y Buzón de Sugerencias</h2>
+            <p>Puede realizar comunicaciones sobre requisitos de accesibilidad, informar sobre posibles incumplimientos o formular sugerencias a través de:</p>
+            <ul>
+                <li>El <a href="contacto.html" title="contacto">Formulario de Contacto</a>.</li>
+                <li>Correo electrónico a: <a href="mailto:enciclopediasalud@gmail.com">enciclopediasalud@gmail.com</a>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Procedimiento de Queja (Artículo 13 del RD 1112/2018)</h2>
+            <p>Si una vez realizada la solicitud de información accesible o una queja, esta hubiera sido desestimada o la respuesta no fuera satisfactoria, se podrá iniciar un procedimiento de queja. Este procedimiento deberá ser dirigido al órgano competente de la administración pública.</p>
+        </section>
     </main>
 
     <footer>
         <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
         <p>
-            <a href="contacto.html" title="Contacto">Contacto</a> |
-            <a href="sitemap.html" title="Mapa del sitio">Mapa del sitio</a> |
-            <a href="accesibilidad.html" title="Declaración de accesibilidad">Declaración de accesibilidad</a>
+            <a href="index.html" title="Inicio">Volver al inicio</a> | 
+            <a href="contacto.html" title="contacto">Contacto</a> | 
+            <a href="sitemap.html" title="mapa del sitio">Mapa del sitio</a> | 
+            <a href="accesibilidad.html" title="accesibilidad">Declaración de accesibilidad</a>
         </p>
     </footer>
-</body>
-    <script>
+        <script>
   const boton = document.getElementById('modo-toggle');
   boton.addEventListener('click', () => {
     document.body.classList.toggle('modo-oscuro');
@@ -66,6 +87,6 @@
       ? "☀️ Modo claro"
       : "🌙 Modo oscuro";
   });
-</script>
-
+    </script>
+</body>
 </html>
