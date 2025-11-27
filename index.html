@@ -1,133 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enciclopedia de la Salud - Página principal</title>
-  <link rel="stylesheet" href="estilos-css/estilos_index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Enciclopedia de la Salud - Página principal</title>
+    <link rel="stylesheet" href="estilos-css/estilos_index.css">
 </head>
 <body>
-  <a class="saltar-a" href="#contenido-principal">Saltar al contenido principal</a>
+    <header>
+        <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a> 
+        <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
+        <nav class="nav-principal">
+            <ul class="nav-principal">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="buscador.html">Buscador</a></li>
+                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
+                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
+                <button id="modo-toggle">🌙 Modo oscuro</button>
+            </ul>
+        <nav class="nav-letras">
+            <ul class="nav-letras">
+                <li><a href="letras/letra_a.html">A</a></li>
+                <li><a href="letras/letra_b.html">B</a></li>
+                <li><a href="error_404.html">C</a></li>
+                <li><a href="letras/letra_d.html">D</a></li>
+                <li><a href="error_404.html">E</a></li>
+                <li><a href="error_404.html">F</a></li>
+                <li><a href="letras/letra_g.html">G</a></li>
+                <li><a href="error_404.html">H</a></li>
+                <li><a href="error_404.html">I</a></li>
+                <li><a href="error_404.html">J</a></li>
+                <li><a href="error_404.html">K</a></li>
+                <li><a href="error_404.html">L</a></li>
+                <li><a href="error_404.html">M</a></li>
+                <li><a href="error_404.html">N</a></li>
+                <li><a href="error_404.html">O</a></li>
+                <li><a href="error_404.html">P</a></li>
+                <li><a href="error_404.html">Q</a></li>
+                <li><a href="error_404.html">R</a></li>
+                <li><a href="error_404.html">S</a></li>
+                <li><a href="error_404.html">T</a></li>
+                <li><a href="error_404.html">U</a></li>
+                <li><a href="error_404.html">V</a></li>
+                <li><a href="error_404.html">W</a></li>
+                <li><a href="error_404.html">X</a></li>
+                <li><a href="error_404.html">Y</a></li>
+                <li><a href="error_404.html">Z</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
-
-    <!-- Navegación principal -->
-    <nav class="nav-principal" aria-label="Navegación principal">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="buscador.html">Buscador</a></li>
-        <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
-        <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
-        <li><button id="modo-toggle" aria-pressed="false">🌙 Modo oscuro</button></li>
-      </ul>
-    </nav>
-
-    <!-- Navegación de letras -->
-    <nav class="nav-letras" aria-label="Navegación por letras">
-      <ul>
-        <li><a href="letras/letra_a.html">A</a></li>
-        <li><a href="letras/letra_b.html">B</a></li>
-        <li><a href="error_404.html">C</a></li>
-        <li><a href="letras/letra_d.html">D</a></li>
-        <li><a href="error_404.html">E</a></li>
-        <li><a href="error_404.html">F</a></li>
-        <li><a href="letras/letra_g.html">G</a></li>
-        <li><a href="error_404.html">H</a></li>
-        <li><a href="error_404.html">I</a></li>
-        <li><a href="error_404.html">J</a></li>
-        <li><a href="error_404.html">K</a></li>
-        <li><a href="letras/letra_l.html">L</a></li>
-        <li><a href="error_404.html">M</a></li>
-        <li><a href="error_404.html">N</a></li>
-        <li><a href="error_404.html">O</a></li>
-        <li><a href="error_404.html">P</a></li>
-        <li><a href="error_404.html">Q</a></li>
-        <li><a href="error_404.html">R</a></li>
-        <li><a href="error_404.html">S</a></li>
-        <li><a href="error_404.html">T</a></li>
-        <li><a href="error_404.html">U</a></li>
-        <li><a href="error_404.html">V</a></li>
-        <li><a href="error_404.html">W</a></li>
-        <li><a href="error_404.html">X</a></li>
-        <li><a href="error_404.html">Y</a></li>
-        <li><a href="error_404.html">Z</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="contenido-principal" class="container">
-    <section>
-      <h2>Bienvenido</h2>
-      <p>El propósito de esta enciclopedia es aportar información básica sobre enfermedades, síntomas y tratamientos.</p>
-      <p class="conBorde">Y a la vez puedas aprender sobre las partes del cuerpo humano, sus órganos, sistemas y afecciones</p>
-    </section>
+<main id="contenido-principal"> <section>
+        <h2>Bienvenido</h2>
+        <p>El propósito de esta enciclopedia es aportar información básica sobre enfermedades, síntomas y tratamientos. </p>
+        <p class="conBorde">Y a la vez puedas aprender sobre las partes del cuerpo humano, sus órganos, sistemas y afecciones </p>
+        </section>
 
     <section class="destacados">
-      <h2>Temas destacados</h2>
-      <article class="destacado">
-        <h3><a href="articulos/articulo_anemia.html">Anemia</a></h3>
-        <p>La anemia es una enfermedad en la que el número de glóbulos rojos,...</p>
-      </article>
-      <article class="destacado">
-        <h3><a href="articulos/articulo_artritis.html">Artritis</a></h3>
-        <p>La artritis es la inflamación o el desgaste de una o varias articulaciones,...</p>
-      </article>
-      <article class="destacado">
-        <h3><a href="articulos/articulo_botulismo.html">Botulismo</a></h3>
-        <p>El botulismo es una intoxicación que afecta a los nervios periféricos...</p>
-      </article>
+        <h2>Temas destacados</h2>
+        <article class="destacado">
+            <h3><a href="articulos/articulo_anemia.html">Anemia</a></h3>
+            <p>La anemia es una enfermedad en la que el número de glóbulos rojos,...</p>
+        </article>
+        <article class="destacado">
+            <h3><a href="articulos/articulo_artritis.html">Artritis</a></h3>
+            <p>La artritis es la inflamación o el desgaste de una o varias articulaciones,...</p>
+        </article>
+        <article class="destacado">
+            <h3><a href="articulos/articulo_botulismo.html">Botulismo</a></h3>
+            <p>El botulismo es una intoxicación que afecta a los nervios periféricos...</p>
+        </article>
     </section>
-
     <section>
-      <h2>Aprende con nosotros</h2>
-      <article>
-        <h3><a href="aprender/aprender.html" aria-label="Entrar y aprender con nosotros (enlace a recursos)"><i class="fa-solid fa-book" aria-hidden="true"></i> Entra y aprende con nosotros</a></h3>
-      </article>
-      <p>Visítanos: &#9742; (906 876 324) &#9993; (enciclopedia-es-salud@gmail.com)</p>
+        <h2>Aprende con nosotros</h2>
+        <article>
+            <h3><a href="aprender/aprender.html"><i class="fa-solid fa-book"></i> Entra y aprende con nosotros</a></h3>
+        </article>
+        <p>Visítanos: &#9742; (906 876 324) &#9993; (enciclopedia-es-salud@gmail.com)</p>
     </section>
-
     <section>
-      <p><strong>Documentos de Bienestar:</strong><br>
+        <p><strong>Documentos de Bienestar:</strong><br>
         <a href="PDF_Accesible.pdf">Guía de Hábitos Saludables (Versión Accesible)</a><br>
         <a href="PDF NO Accesible.pdf">Guía de Hábitos Saludables (Versión No Accesible)</a>
-      </p>
+        </p>
     </section>
 
     <section>
-      <h2>Vídeos de La Enciclopedia</h2>
-      <article class="video">
-        <h3>Más allá de la Ausencia de Enfermedad</h3>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/R4vQ5fsSEy8?si=KOEPmf-72HrlWpep"
-          title="Más Allá de la Ausencia de Enfermedad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </article>
-    </section>
-  </main>
-
-  <section class="container">
+        <h2>Vídeos de La Enciclopedia</h2>
+        <article class="video">
+            <h3>Más allá de la Ausencia de Enfermedad</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/R4vQ5fsSEy8?si=KOEPmf-72HrlWpep" title="Más Allá de la Ausencia de Enfermedad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+</main>
+<section>
     <h2>Blog de la Enciclopedia (Novedades)</h2>
-    <p>Si la ventana del blog no carga o desea verlo en pantalla completa, acceda a:
-      <a href="https://webusabilidad.wordpress.com/" target="_blank" rel="noopener noreferrer">Blog de la Enciclopedia</a>
+    <p>Si la ventana del blog no carga o desea verlo en pantalla completa, acceda a: 
+        <a href="https://webusabilidad.wordpress.com/" target="_blank">Blog de la Enciclopedia</a>
     </p>
 
     <div class="contenedor-blog">
-      <iframe src="https://webusabilidad.wordpress.com/" title="Blog de la Enciclopedia de la Salud, con noticias y artículos de interés" frameborder="0" allowfullscreen></iframe>
+        <iframe 
+            src="https://webusabilidad.wordpress.com/" 
+            title="Blog de la Enciclopedia de la Salud, con noticias y artículos de interés"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
     </div>
-  </section>
+</section>
 
-  <footer>
+<footer>
     <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
     <p><a href="contacto.html">Contacto</a> | <a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
-  </footer>
-
-  <script>
-    const boton = document.getElementById('modo-toggle');
-    boton.addEventListener('click', () => {
-      const activo = document.body.classList.toggle('modo-oscuro');
-      boton.textContent = activo ? "☀️ Modo claro" : "🌙 Modo oscuro";
-      boton.setAttribute('aria-pressed', activo ? 'true' : 'false');
-    });
-  </script>
+    </footer>
 </body>
+<script>
+  const boton = document.getElementById('modo-toggle'); /* Busca el botón que activa el modo oscuro */
+  boton.addEventListener('click', () => { /* Cuando se hace click en el botón, se ejecuta esta función */
+    document.body.classList.toggle('modo-oscuro'); /*Añade la clase modo oscuro si no estaba, o la quita si ya estaba*/
+    boton.textContent = document.body.classList.contains('modo-oscuro') /* Si el modo oscuro está activado, el botón muestra */
+    /* el texto de "Modo claro", si no, muestra el de "Modo oscuro" */
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
+    /* Cuando en el body ponemos este script con la clase modo-oscuro, en el archivo de css se aplican todos estos colores oscuros a la página: fondo, textos, secciones, enlaces, 
+    botones, etc. */
+</script>
+
 </html>
+
+
+
