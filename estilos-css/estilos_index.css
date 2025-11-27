@@ -1,206 +1,444 @@
 /*
 ===================================================================
-    --- VARIABLES (CUSTOM PROPERTIES) ---
+   --- VARIABLES (CUSTOM PROPERTIES) ---
 ===================================================================
 */
 :root {
-    --color-primario: #639fdb;
-    --color-primario-oscuro: #003d80;
-    --color-enlace: #0056b3;
-    --color-texto: #333;
-    --color-texto-claro: #ffffff;
-    --color-fondo: #ffffff;
-    --color-fondo-secundario: #e9ecef;
-    --color-borde-sutil: #dee2e6;
-    --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, sans-serif;
-    --ancho-maximo: 1200px;
-    --radio-borde: 5px;
+  --color-primario: #639fdb;
+  --color-primario-oscuro: #003d80;
+  --color-enlace: #0056b3;
+  --color-texto: #333;
+  --color-texto-claro: #ffffff;
+  --color-fondo: #ffffff;
+  --color-fondo-secundario: #e9ecef;
+  --color-borde-sutil: #dee2e6;
+  --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --ancho-maximo: 1200px;
+  --radio-borde: 5px;
 }
 
 /*
 ===================================================================
-    --- ESTILOS GLOBALES Y RESET ---
+   --- ESTILOS GLOBALES Y RESET ---
 ===================================================================
 */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--fuente-base);
-    line-height: 1.6;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    margin: 0;
-    padding: 0;
+  font-family: var(--fuente-base);
+  line-height: 1.6;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
 }
 
 /*
 ===================================================================
-    --- UTILIDAD DE CONTENEDOR ---
+   --- UTILIDAD DE CONTENEDOR ---
 ===================================================================
 */
 .container {
-    max-width: var(--ancho-maximo);
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Espaciado lateral */
 }
 
 a {
-    color: var(--color-enlace);
-    text-decoration: none;
+  color: var(--color-enlace);
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: var(--color-primario-oscuro);
+  text-decoration: underline;
+  color: var(--color-primario-oscuro);
 }
 
 /*
-     ===================================================================
-    --- CORRECCIÓN DE ENCABEZADOS (H1, H2, H3) ---
-     ===================================================================
+  ===================================================================
+   --- CORRECCIÓN DE ENCABEZADOS (H1, H2, H3) ---
+  ===================================================================
 */
 h1,
 h2,
 h3 {
-    display: block;
-    width: 100%;
-    color: var(--color-primario-oscuro);
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
+  display: block;
+  width: 100%;
+  color: var(--color-primario-oscuro);
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 /*
 ===================================================================
-    --- HEADER Y NAVEGACIÓN ---
+   --- HEADER Y NAVEGACIÓN ---
 ===================================================================
 */
 header {
-    background-color: var(--color-primario);
-    color: var(--color-texto-claro);
-    border-bottom: 2px solid var(--color-primario-oscuro);
-    padding: 1rem 0;
-    margin-bottom: 0;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  border-bottom: 2px solid var(--color-primario-oscuro);
+  padding: 1rem 0;
+  margin-bottom: 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  /* Centrar el título en el centro de la ventana */
+  display: flex;
+  flex-direction: column; /* apilar h1 y nav verticalmente */
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
+  text-align: center; /* asegura el centrado del texto */
+}
+
+
+header .container {
+  text-align: center; /* Centra todo en el header (móvil) */
+}
+header title {
+  margin: 0;
+  justify-content: center;
 }
 
 header h1 {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 header h1 a {
-    color: var(--color-texto-claro);
-    text-decoration: none;
+  color: var(--color-texto-claro);
+  text-decoration: none;
 }
 
-#modo-toggle {
-    margin-top: 10px;
-    background-color: var(--color-primario-oscuro);
-    color: var(--color-texto-claro);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/*
+ * * * CSS CORREGIDO * * *
+ * Ahora los estilos se aplican al <ul> de dentro
+ */
 
-#modo-toggle:hover {
-    background-color: var(--color-primario);
-}
-
-/* Navegación principal */
+/* Contenedor <nav> principal */
 .nav-principal {
-    margin: 1rem 0;
+  margin: 1rem 0; /* Espacio vertical */
 }
 
+/* Lista <ul> principal */
 .nav-principal ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-direction: column; /* Vertical en móvil */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-principal li a {
-    display: block;
-    padding: 0.75rem;
-    background-color: var(--color-fondo-secundario);
-    border-radius: var(--radio-borde);
-    margin-bottom: 5px;
-    color: var(--color-enlace);
+  display: block;
+  padding: 0.75rem;
+  background-color: var(--color-fondo-secundario);
+  border-radius: var(--radio-borde);
+  margin-bottom: 5px;
+  color: var(--color-enlace);
 }
 
 .nav-principal li a:hover {
-    background-color: var(--color-borde-sutil);
-    text-decoration: none;
+  background-color: var(--color-borde-sutil);
+  text-decoration: none;
 }
 
-/* Navegación de letras */
+/* Contenedor <nav> de letras */
 .nav-letras {
-    margin: 1rem 0;
+  margin: 1rem 0; /* Espacio vertical */
 }
 
+/* Lista <ul> de letras */
 .nav-letras ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
 }
 
 .nav-letras li a {
-    display: block;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
+  display: block;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
 }
 
 .nav-letras li a:hover {
-    background-color: var(--color-enlace);
-    color: var(--color-texto-claro);
-    text-decoration: none;
+  background-color: var(--color-enlace);
+  color: var(--color-texto-claro);
+  text-decoration: none;
 }
 
 /*
 ===================================================================
-    --- CONTENIDO PRINCIPAL ---
+   --- CONTENIDO PRINCIPAL (MAIN) ---
 ===================================================================
 */
 main {
-    max-width: var(--ancho-maximo);
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 section {
-    background-color: var(--color-fondo);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-bottom: 1.5rem;
+  background-color: var(--color-fondo);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
 }
 
 .conBorde {
-    border: 2px solid var(--color-enlace);
-    background-color: #f0f7ff;
-    padding: 1rem;
-    border-radius: var(--radio-borde);
+  border: 2px solid var(--color-enlace);
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border-radius: var(--radio-borde);
 }
 
 .destacado {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.destacado:last-child {
+  border-bottom: none;
+}
+
+/* Contenedor del Iframe: Esto gestiona el comportamiento adaptable */
+.contenedor-blog {
+    position: relative;
+    overflow: hidden;
+    /* Ratio de aspecto 16:9 (100% / (16/9) = 56.25%) */
+    padding-top: 56.25%; 
+    height: 0;
+}
+
+/* El Iframe en sí: Ocupa el 100% del espacio del contenedor */
+.contenedor-blog iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    border: 1px solid #ccc; /* Bordes para diferenciarlo del resto de la página */
+}
+
+/*
+===================================================================
+   --- FOOTER ---
+===================================================================
+*/
+footer {
+  background-color: var(--color-primario-oscuro);
+  color: #ccc;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+/* Enlaces del footer con alto contraste (texto blanco) */
+footer a {
+  color: #ffffff; /* blanco para buen contraste */
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/*
+===================================================================
+   --- ACCESIBILIDAD ---
+===================================================================
+*/
+.saltar-a {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  /* Nota: El :focus está más abajo, en el breakpoint */
+}
+
+.saltar-a:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem;
+  font-weight: bold;
+  
+  /* Hacemos que ocupe el espacio dentro del .container */
+  display: inline-block;
+  margin: 1rem auto;
+}
+
+
+/*
+===================================================================
+   --- BREAKPOINTS (TABLET Y ESCRITORIO) ---
+===================================================================
+*/
+
+@media (min-width: 768px) {
+
+  /* El .container del header se mantiene centrado (text-align: center) */
+  /* Esto asegura que h1, nav-principal y nav-letras se apilen */
+  header .container {
+    text-align: center;
+  }
+
+  /* El <ul> principal SÍ se pone horizontal */
+  .nav-principal ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-principal li a {
+    margin-bottom: 0;
+    margin-left: 5px; /* Ajuste de 'right' a 'left' */
+    margin-right: 5px;
+    background: none;
+    padding: 0.25rem 0.5rem;
+    color: var(--color-texto-claro);
+  }
+
+  .nav-principal li a:hover {
+    background: none;
+    text-decoration: underline;
+    color: var(--color-texto-claro);
+  }
+
+  /* Los enlaces de letras cambian de color para contrastar */
+  .nav-letras li a {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    border-color: var(--color-primario-oscuro);
+  }
+
+  .nav-letras li a:hover {
+    background-color: var(--color-texto-claro);
+    color: var(--color-primario-oscuro);
+  }
+
+  /* --- Estilos de Grid para el contenido --- */
+  .destacados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .destacados h2 {
+    grid-column: 1 / -1;
+  }
+
+  .destacado {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+/* ===============================================================
+   --- MODO OSCURO ---
+   =============================================================== */
+
+body.modo-oscuro {
+  --color-primario: #4a90e2;
+  --color-primario-oscuro: #1c3d5a;
+  --color-enlace: #7ab4ff;
+  --color-texto: #e4e4e4;      /* Texto principal en blanco-gris */
+  --color-texto-claro: #ffffff; /* Texto claro puro */
+  --color-fondo: #121212;
+  --color-fondo-secundario: #1e1e1e;
+  --color-borde-sutil: #333;
+
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* Header y footer */
+body.modo-oscuro header,
+body.modo-oscuro footer {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
+}
+
+/* Enlaces en modo oscuro */
+body.modo-oscuro a {
+  color: var(--color-enlace);
+}
+
+body.modo-oscuro a:hover {
+  color: var(--color-texto-claro);
+  text-decoration: underline;
+}
+
+/* Secciones y contenedores */
+body.modo-oscuro main,
+body.modo-oscuro section,
+body.modo-oscuro .container,
+body.modo-oscuro .aprender,           
+body.modo-oscuro #tabla-de-contenidos /* tabla de contenidos */
+{
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-claro);
+  border-color: var(--color-borde-sutil);
+}
+
+/* Tablas dentro de secciones y tabla de contenidos */
+body.modo-oscuro table {
+  border: 1px solid var(--color-borde-sutil);
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-claro);
+}
+
+body.modo-oscuro th,
+body.modo-oscuro td {
+  border: 1px solid var(--color-borde-sutil);
+  padding: 0.75rem;
+}
+
+body.modo-oscuro th {
+  background-color: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
+}
+
+/* Navegación */
+body.modo-oscuro .nav-principal li a,
+body.modo-oscuro .nav-letras li a {
+  background-color: var(--color-fondo-secundario);
+  color: var(--color-texto-claro);
+}
+
+body.modo-oscuro .nav-principal li a:hover,
+body.modo-oscuro .nav-letras li a:hover {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+}
+
+/* MODO OSCURO */
+body.modo-oscuro .conBorde {
+  background-color: var(--color-fondo-secundario); /* fondo oscuro */
+  color: var(--color-texto-claro); /* texto blanco */
+  border-color: var(--color-borde-sutil); /* borde más visible en oscuro */
+}
+/* Modo oscuro específico para .conBorde */
+body.modo-oscuro .conBorde {
+  background-color: var(--color-fondo-secundario); /* fondo oscuro */
+  color: var(--color-texto-claro); /* texto blanco */
+  border-color: var(--color-borde-sutil); /* borde visible en oscuro */
+}
