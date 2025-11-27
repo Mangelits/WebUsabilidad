@@ -1,104 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Formulario de contacto - Enciclopedia de la Salud</title>
-  <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
-  <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
-  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Formulario de contacto - Enciclopedia de la Salud</title>
+  <link rel="stylesheet" href="estilos-css/estilo_buscadores-formularios.css" title="Estilo estándar">
+  <link rel="alternate stylesheet" href="estilos-css/estilo_buscadores_accesible.css" title="Estilo accesible">
+  </head>
 <body>
-  <header>
-    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
-    <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
-        <nav aria-label="Navegación principal del sitio">
-            <ul class="nav-principal">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="buscador.html">Buscador</a></li>
-                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
-                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
-              <button id="modo-toggle">🌙 Modo oscuro</button>
-            </ul>
-    </nav>
-  </header>
+  <header>
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+    <h1><a href="index.html">Enciclopedia de la Salud</a></h1>
+    <nav>
+            <ul class="nav-principal">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="buscador.html">Buscador</a></li>
+                <li><a href="formulario_avanzado.html">Formulario avanzado</a></li>
+                <li><a href="buscador-interactivo/buscador_interactivo.html">Buscador interactivo</a></li>
+              <button id="modo-toggle">🌙 Modo oscuro</button>
 
-  <main id="contenido-principal"> <h2>Formulario de contacto</h2>
-    
-    <form action="respuesta_contacto.html" method="get" class="form-responsive"> 
+            </ul>
+    </nav>
+  </header>
 
-      <p>Por favor, rellene los siguientes campos. Los campos marcados como <span class="obligatorio">*</span> son necesarios.</p>
-      
-      <div class="form-group">
-        <label for="asunto"><span class="obligatorio">*</span> Asunto:</label>
-        <input type="text" id="asunto" name="asunto" maxlength="100" required>
-      </div>
+  <main id="contenido-principal"> <h2>Formulario de contacto</h2>
+    
+    <form action="respuesta_contacto.html" method="get" class="form-responsive"> 
 
-      <div class="form-group">
-        <label for="comentario">Comentario o pregunta:</label>
-        <textarea id="comentario" name="comentario" rows="5" cols="40" maxlength="2000" required></textarea>
-      </div>
+      <p>Por favor, rellene los siguientes campos. Los campos marcados como <span class="obligatorio">*</span> son necesarios.</p>
+      
+      <div class="form-group">
+        <label for="asunto"><span class="obligatorio">*</span> Asunto:</label>
+        <input type="text" id="asunto" name="asunto" maxlength="100" required>
+      </div>
 
-      <div class="form-group">
-        <label for="yo-soy">Yo soy:</label>
-        <select id="yo-soy" name="yo-soy">
-          <option value="" selected>Seleccione una opción</option>
-          <option value="paciente">Paciente</option>
-          <option value="científico">Científico</option>
-          <option value="médico">Médico</option>
-          <option value="educador">Educador</option>
-          <option value="fabricante">Fabricante</option>
-          <option value="periodista">Periodista</option>
-        </select>
-      </div>
+      <div class="form-group">
+        <label for="comentario">Comentario o pregunta:</label>
+        <textarea id="comentario" name="comentario" rows="5" cols="40" maxlength="2000" required></textarea>
+      </div>
 
-      <div class="form-group">
-        <label for="fecha-nacimiento">Fecha de nacimiento:</label>
-        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
-      </div>
+      <div class="form-group">
+        <label for="yo-soy">Yo soy:</label>
+        <select id="yo-soy" name="yo-soy">
+          <option value="" selected>Seleccione una opción</option>
+          <option value="paciente">Paciente</option>
+          <option value="científico">Científico</option>
+          <option value="médico">Médico</option>
+          <option value="educador">Educador</option>
+          <option value="fabricante">Fabricante</option>
+          <option value="periodista">Periodista</option>
+        </select>
+      </div>
 
-      <fieldset class="form-full-width"> <legend>Sexo:</legend>
-        <input type="radio" id="hombre" name="sexo" value="hombre">
-        <label for="hombre">Hombre</label>
-        
-        <input type="radio" id="mujer" name="sexo" value="mujer">
-        <label for="mujer">Mujer</label>
-        
-        <input type="radio" id="otro" name="sexo" value="otro">
-        <label for="otro">Otro</label>
-      </fieldset>
+      <div class="form-group">
+        <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+      </div>
 
-      <div class="form-group">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="modelo-email@mail.com" maxlength="1000">
-      </div>
+      <fieldset class="form-full-width"> <legend>Sexo:</legend>
+        <input type="radio" id="hombre" name="sexo" value="hombre">
+        <label for="hombre">Hombre</label>
+        
+        <input type="radio" id="mujer" name="sexo" value="mujer">
+        <label for="mujer">Mujer</label>
+        
+        <input type="radio" id="otro" name="sexo" value="otro">
+        <label for="otro">Otro</label>
+      </fieldset>
 
-      <div class="form-checkbox">
-        <input type="checkbox" id="info" name="info" value="si">
-        <label for="info">Deseo recibir más información</label>
-      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="modelo-email@mail.com" maxlength="1000">
+      </div>
 
-      <div class="form-button">
-        <button type="submit">Enviar</button>
-      </div>
-    </form>
-    
-  </main>
+      <div class="form-checkbox">
+        <input type="checkbox" id="info" name="info" value="si">
+        <label for="info">Deseo recibir más información</label>
+      </div>
 
-  <footer>
-    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-    <p>
-        <a href="index.html">Volver al inicio</a> | 
-        <a href="contacto.html">Contacto</a> | 
-        <a href="sitemap.html">Mapa del sitio</a> | 
-        <a href="accesibilidad.html">Declaración de accesibilidad</a>
-    </p>
-  </footer>
+      <div class="form-button">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+    
+  </main>
+
+  <footer>
+    <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
+    <p><a href="sitemap.html">Mapa del sitio</a> | <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
+  </footer>
 </body>
 <script>
-// ... Script de modo oscuro ...
+  const boton = document.getElementById('modo-toggle');
+  boton.addEventListener('click', () => {
+    document.body.classList.toggle('modo-oscuro');
+    boton.textContent = document.body.classList.contains('modo-oscuro')
+      ? "☀️ Modo claro"
+      : "🌙 Modo oscuro";
+  });
 </script>
 
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
