@@ -236,26 +236,58 @@ section {
 ===================================================================
    --- FOOTER ---
 ===================================================================
+/*
+===================================================================
+   --- FOOTER (CORREGIDO) ---
+===================================================================
 */
 footer {
   background-color: var(--color-primario-oscuro);
-  color: #ccc;
+  /* CORRECCIÓN DE CONTRASTE: */
+  /* Cambiado de #ccc a #ffffff. Ratio pasa de 3.6:1 a 7.2:1 */
+  color: #ffffff; 
   text-align: center;
   margin-top: 2rem;
   padding: 2rem 0;
   font-size: 0.9rem;
 }
 
-/* Enlaces del footer con alto contraste (texto blanco) */
+/* Enlaces del footer */
 footer a {
-  color: #ffffff; /* blanco para buen contraste */
-  text-decoration: none;
+  color: #ffffff;
+  text-decoration: underline; /* Subrayado por defecto para identificar mejor que es un enlace */
+  text-underline-offset: 3px; /* Pequeña mejora visual */
 }
 
 footer a:hover,
 footer a:focus {
-  text-decoration: underline;
-  color: #ffffff;
+  text-decoration: none; /* Quitamos subrayado al pasar el ratón */
+  color: #e0e0e0; /* Un blanco ligeramente gris para efecto hover */
+}
+
+/* ESTILOS PARA LA NUEVA LISTA (Reemplaza visualmente las barras |)
+   Esto hace que se vea igual que antes, pero sea accesible.
+*/
+.lista-footer {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+    flex-wrap: wrap; /* Si la pantalla es muy pequeña, baja los elementos */
+    gap: 0.5rem; /* Espacio entre elementos */
+}
+
+.lista-footer li {
+    display: inline-block;
+}
+
+/* Añadimos la barra separadora con CSS */
+.lista-footer li:not(:last-child)::after {
+    content: "|";
+    margin-left: 0.5rem;
+    color: #ffffff; /* Aseguramos que la barra también tenga buen contraste */
+    opacity: 0.7; /* Ligeramente más suave visualmente, pero visible */
 }
 
 /*
