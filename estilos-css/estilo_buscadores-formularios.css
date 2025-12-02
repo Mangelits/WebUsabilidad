@@ -116,16 +116,32 @@ fieldset legend {
     margin-right: 3px;
 }
 
+
 input[type="text"],
 input[type="email"],
+input[type="date"],
+input[type="color"],
 select {
     width: 100%;
     padding: 0.75em;
     font-size: 1em;
     font-family: Arial, sans-serif;
-    border: 1px solid #ccc;
+    
+    /* CORRECCIÓN DE CONTRASTE */
+    /* Antes era #ccc (ratio 1.6:1). */
+    /* Ahora es #767676 (ratio 4.54:1). Pasa WCAG AA */
+    border: 1px solid #767676; 
+    
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: #ffffff; /* Aseguramos fondo blanco */
+    color: #333; /* Aseguramos texto oscuro */
+}
+
+/* Ajuste específico para el input de color para que se vea bien */
+input[type="color"] {
+    height: 3rem; /* Darle un poco más de altura para facilitar el click */
+    padding: 0.2rem;
 }
 
 select[multiple] {
@@ -218,6 +234,18 @@ select:focus,
 textarea:focus {
     outline: 3px solid #007bff;
     outline-offset: 2px;
+}
+/* Clase utilitaria para ocultar texto visualmente pero mantenerlo accesible */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 /* ===============================================================
    --- MODO OSCURO ---
