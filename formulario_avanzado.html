@@ -22,31 +22,36 @@
     </nav>
   </header>
 
-  <main id="contenido-principal"> <h2>Formulario de preferencias</h2>
-    
-    <form action="respuesta_formulario_avanzado.html" method="get" class="form-responsive"> 
+<main id="contenido-principal"> <h2>Formulario de preferencias</h2>
+<form action="respuesta_formulario_avanzado.html" method="get" class="form-responsive"> 
 
-      <p>Por favor, complete los siguientes campos. Los campos marcados con <span class="obligatorio">*</span> son obligatorios. </p>
-      
-      <div class="form-group">
-        <label for="color">Color favorito:</label>
-        <input type="color" id="color" name="color">
-        <p class="aclaracion">Elige un color para personalizar la apariencia de los resultados.</p>
-      </div>
+  <p>Por favor, complete los siguientes campos. Los campos marcados con <span class="obligatorio" aria-hidden="true">*</span><span class="sr-only"> (obligatorio)</span> son obligatorios. </p>
+  
+  <div class="form-group">
+    <label for="color">Color favorito:</label>
+    <input type="color" id="color" name="color" aria-describedby="desc-color">
+    <p id="desc-color" class="aclaracion">Elige un color para personalizar la apariencia de los resultados.</p>
+  </div>
 
-      <div class="form-group">
-        <label for="fecha">Fecha de cita médica <span class="obligatorio">*</span>:</label>
-        <input type="date" id="fecha" name="fecha" required> 
-        <p class="aclaracion">Usaremos esta fecha para estimar la próxima fecha disponible.</p>
-      </div>
+  <div class="form-group">
+    <label for="fecha">Fecha de cita médica <span class="obligatorio" aria-hidden="true">*</span>:</label>
+    <input type="date" id="fecha" name="fecha" required aria-describedby="desc-fecha"> 
+    <p id="desc-fecha" class="aclaracion">Formato requerido (dd/mm/aaaa). Usaremos esta fecha para estimar la próxima fecha disponible.</p>
+  </div>
 
-      <div class="form-group">
-        <label for="correo">Correo electrónico <span class="obligatorio">*</span>:</label>
-        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
-        <p class="aclaracion">Debe seguir el formato estándar, ej: nombre@dominio.com.</p>
-      </div>
+  <div class="form-group">
+    <label for="correo">Correo electrónico <span class="obligatorio" aria-hidden="true">*</span>:</label>
+    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required aria-describedby="desc-correo">
+    <p id="desc-correo" class="aclaracion">Debe seguir el formato estándar, ej: nombre@dominio.com.</p>
+  </div>
 
-      <script>
+  <div class="form-button">
+    <button type="submit">Enviar</button>
+  </div>
+</form>
+   
+
+<script>
   const boton = document.getElementById('modo-toggle');
   boton.addEventListener('click', () => {
     document.body.classList.toggle('modo-oscuro');
