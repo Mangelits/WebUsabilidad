@@ -16,7 +16,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="buscador.html">Buscador</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <button id="modo-toggle">🌙 Modo oscuro</button>
+                <li><button id="modo-toggle" type="button">🌙 Modo oscuro</button></li>
             </ul>
         </nav>
     </header>
@@ -42,7 +42,7 @@
             <h3>1. Falta de conformidad con el RD 1112/2018</h3>
             <ul>
                 <li><strong>Contenido de Terceros (Vídeos y Blog):</strong> La incrustación de elementos externos, como vídeos de plataformas externas (YouTube, Amara) y el blog de WordPress (insertado mediante <code>&lt;iframe&gt;</code>), puede presentar fallos de accesibilidad en el código fuente que no son controlables por el responsable de este sitio web. Esto afecta potencialmente a los criterios WCAG 4.1.2 (Nombre, función, valor) y 1.2.2 (Subtítulos pregrabados).</li>
-                <li><strong>[Opcional: Dejar en caso de errores menores residuales]</strong> Puede existir algún error puntual de contraste en imágenes o textos que se haya podido pasar por alto en la revisión automática.</li>
+                <li>Puede existir algún error puntual de contraste en imágenes o textos que se haya podido pasar por alto en la revisión automática.</li>
             </ul>
 
             <h3>2. Carga desproporcionada</h3>
@@ -59,7 +59,7 @@
             <h2>Comunicaciones y Buzón de Sugerencias</h2>
             <p>Puede realizar comunicaciones sobre requisitos de accesibilidad, informar sobre posibles incumplimientos o formular sugerencias a través de:</p>
             <ul>
-                <li>El <a href="contacto.html" title="contacto">Formulario de Contacto</a>.</li>
+                <li>El <a href="contacto.html" title="Ir al formulario de contacto">Formulario de Contacto</a>.</li>
                 <li>Correo electrónico a: <a href="mailto:enciclopediasalud@gmail.com">enciclopediasalud@gmail.com</a>.</li>
             </ul>
         </section>
@@ -72,21 +72,24 @@
 
     <footer>
         <p>Autores: Miguel Ángel Amorós y Silvia Larrosa</p>
-        <p>
-            <a href="index.html" title="Inicio">Volver al inicio</a> | 
-            <a href="contacto.html" title="contacto">Contacto</a> | 
-            <a href="sitemap.html" title="mapa del sitio">Mapa del sitio</a> | 
-            <a href="accesibilidad.html" title="accesibilidad">Declaración de accesibilidad</a>
-        </p>
+        <nav aria-label="Enlaces del pie de página">
+            <ul class="lista-footer">
+                <li><a href="index.html" title="Inicio">Volver al inicio</a></li>
+                <li><a href="contacto.html" title="contacto">Contacto</a></li>
+                <li><a href="sitemap.html" title="mapa del sitio">Mapa del sitio</a></li>
+                <li><a href="accesibilidad.html" title="accesibilidad">Declaración de accesibilidad</a></li>
+            </ul>
+        </nav>
     </footer>
-        <script>
-  const boton = document.getElementById('modo-toggle');
-  boton.addEventListener('click', () => {
-    document.body.classList.toggle('modo-oscuro');
-    boton.textContent = document.body.classList.contains('modo-oscuro')
-      ? "☀️ Modo claro"
-      : "🌙 Modo oscuro";
-  });
+
+    <script>
+      const boton = document.getElementById('modo-toggle');
+      boton.addEventListener('click', () => {
+        document.body.classList.toggle('modo-oscuro');
+        boton.textContent = document.body.classList.contains('modo-oscuro')
+          ? "☀️ Modo claro"
+          : "🌙 Modo oscuro";
+      });
     </script>
 </body>
 </html>
