@@ -219,7 +219,7 @@ button[type="submit"]:focus {
     display: block;
     padding: 0.75em 1em;
     background-color: #ffffff;
-    color: #004a99;
+    color: white;
     font-size: 1.1em;
     font-weight: bold;
     text-align: center;
