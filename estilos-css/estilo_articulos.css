@@ -178,7 +178,7 @@ footer a:focus {
   left: 50%;           /* Centrado horizontal */
   transform: translateX(-50%); /* Ajusta el centrado exacto */
   background-color: #000;
-  color: #fff;
+  color: white;
   padding: 0.5rem 1rem;
   font-weight: bold;
   border-radius: 4px;
